@@ -1,6 +1,24 @@
 {
+  "api": {
+    "iotapp": {
+      "service": "AppSync",
+      "providerPlugin": "awscloudformation",
+      "output": {
+        "authConfig": {
+          "defaultAuthentication": {
+            "authenticationType": "API_KEY",
+            "apiKeyConfig": {
+              "apiKeyExpirationDays": 7,
+              "description": "iotapp's API key"
+            }
+          },
+          "additionalAuthenticationProviders": []
+        }
+      }
+    }
+  },
   "auth": {
-    "iotapp2a8dc41e": {
+    "iotapp6d68eba6": {
       "service": "Cognito",
       "providerPlugin": "awscloudformation",
       "dependsOn": [],
