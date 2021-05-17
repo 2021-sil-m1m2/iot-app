@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5FD863C2BBF7D88831734823 /* amplifyconfiguration.json in Resources */ = {isa = PBXBuildFile; fileRef = 78D0375AA456260E0D9ECD11 /* amplifyconfiguration.json */; };
+		6F010160B059B66D32FA7AE2 /* Pods_iot_app.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6981A9689769AE2591ACECE1 /* Pods_iot_app.framework */; };
+		AFA06DB3A36DCC6868BC51FC /* awsconfiguration.json in Resources */ = {isa = PBXBuildFile; fileRef = 69ECCDE0E5805E7354A00990 /* awsconfiguration.json */; };
 		C14781362652C6200003E18D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C14781352652C6200003E18D /* AppDelegate.swift */; };
 		C14781382652C6200003E18D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C14781372652C6200003E18D /* SceneDelegate.swift */; };
 		C147813A2652C6200003E18D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C14781392652C6200003E18D /* ViewController.swift */; };
@@ -16,6 +19,11 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2A04224097416CE66DA1CAE8 /* Pods-iot-app.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iot-app.release.xcconfig"; path = "Target Support Files/Pods-iot-app/Pods-iot-app.release.xcconfig"; sourceTree = "<group>"; };
+		2ED55E2BD5D336D93ABC0430 /* Pods-iot-app.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iot-app.debug.xcconfig"; path = "Target Support Files/Pods-iot-app/Pods-iot-app.debug.xcconfig"; sourceTree = "<group>"; };
+		6981A9689769AE2591ACECE1 /* Pods_iot_app.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_iot_app.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		69ECCDE0E5805E7354A00990 /* awsconfiguration.json */ = {isa = PBXFileReference; explicitFileType = text.json; lastKnownFileType = text.json; name = awsconfiguration.json; path = awsconfiguration.json; sourceTree = "<group>"; };
+		78D0375AA456260E0D9ECD11 /* amplifyconfiguration.json */ = {isa = PBXFileReference; explicitFileType = text.json; lastKnownFileType = text.json; name = amplifyconfiguration.json; path = amplifyconfiguration.json; sourceTree = "<group>"; };
 		C14781322652C6200003E18D /* iot-app.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "iot-app.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C14781352652C6200003E18D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C14781372652C6200003E18D /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -31,17 +39,31 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6F010160B059B66D32FA7AE2 /* Pods_iot_app.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		26ADE89C93918C40D6BE6B03 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				2ED55E2BD5D336D93ABC0430 /* Pods-iot-app.debug.xcconfig */,
+				2A04224097416CE66DA1CAE8 /* Pods-iot-app.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		C14781292652C6200003E18D = {
 			isa = PBXGroup;
 			children = (
 				C14781342652C6200003E18D /* iot-app */,
 				C14781332652C6200003E18D /* Products */,
+				26ADE89C93918C40D6BE6B03 /* Pods */,
+				D198E9570ED9FD463988C76E /* Frameworks */,
+				CD1529D09F084FEE33B0AC4D /* AmplifyConfig */,
 			);
 			sourceTree = "<group>";
 		};
@@ -67,6 +89,23 @@
 			path = "iot-app";
 			sourceTree = "<group>";
 		};
+		CD1529D09F084FEE33B0AC4D /* AmplifyConfig */ = {
+			isa = PBXGroup;
+			children = (
+				69ECCDE0E5805E7354A00990 /* awsconfiguration.json */,
+				78D0375AA456260E0D9ECD11 /* amplifyconfiguration.json */,
+			);
+			name = AmplifyConfig;
+			sourceTree = "<group>";
+		};
+		D198E9570ED9FD463988C76E /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				6981A9689769AE2591ACECE1 /* Pods_iot_app.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -74,9 +113,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = C14781462652C6230003E18D /* Build configuration list for PBXNativeTarget "iot-app" */;
 			buildPhases = (
+				C8BEE1E64226C32A8CFB849D /* [CP] Check Pods Manifest.lock */,
 				C147812E2652C6200003E18D /* Sources */,
 				C147812F2652C6200003E18D /* Frameworks */,
 				C14781302652C6200003E18D /* Resources */,
+				DA7B92D1ECEF5F15FDC784BD /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -127,10 +168,58 @@
 				C14781422652C6230003E18D /* LaunchScreen.storyboard in Resources */,
 				C147813F2652C6230003E18D /* Assets.xcassets in Resources */,
 				C147813D2652C6200003E18D /* Main.storyboard in Resources */,
+				AFA06DB3A36DCC6868BC51FC /* awsconfiguration.json in Resources */,
+				5FD863C2BBF7D88831734823 /* amplifyconfiguration.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		C8BEE1E64226C32A8CFB849D /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-iot-app-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		DA7B92D1ECEF5F15FDC784BD /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-iot-app/Pods-iot-app-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-iot-app/Pods-iot-app-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-iot-app/Pods-iot-app-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		C147812E2652C6200003E18D /* Sources */ = {
@@ -283,6 +372,7 @@
 		};
 		C14781472652C6230003E18D /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2ED55E2BD5D336D93ABC0430 /* Pods-iot-app.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -302,6 +392,7 @@
 		};
 		C14781482652C6230003E18D /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2A04224097416CE66DA1CAE8 /* Pods-iot-app.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
