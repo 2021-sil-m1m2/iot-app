@@ -1,7 +1,7 @@
 # iot-app
 
 ## システム構成図（仮）
-https://app.diagrams.net/  
+![システム構成図](https://user-images.githubusercontent.com/63495124/118546668-3ad44f00-b793-11eb-9369-f7643bf1e4d8.jpeg)
 
 ## iOSアプリの主要機能
 優先度順↓
@@ -18,7 +18,6 @@ https://app.diagrams.net/
 
 ## 2. プランター情報閲覧機能
 ![②プランター情報閲覧機能](https://user-images.githubusercontent.com/63495124/118545950-42dfbf00-b792-11eb-82d2-5ac359d7eb1f.jpeg)
-
 
 ## 3. 間引きガイド機能
 ![③間引きガイド機能](https://user-images.githubusercontent.com/63495124/118545964-45daaf80-b792-11eb-9d33-a302d806fb1b.jpeg)
