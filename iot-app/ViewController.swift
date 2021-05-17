@@ -45,6 +45,23 @@ class ViewController: UIViewController {
                 }
     }
 
+    @IBAction func signOutButton(_ sender: Any) {
+        AWSMobileClient.sharedInstance().signOut()
 
+        
+        // サインイン画面を表示
+        AWSMobileClient.sharedInstance().showSignIn(navigationController: self.navigationController!, { (signInState, error) in
+            
+            // 初期表示画面（GoalView）に遷移する
+            self.navigationController?.popViewController(animated: true)
+            
+            if let signInState = signInState {
+                print("Sign In")
+            } else if let error = error {
+                print("error logging in: \(error.localizedDescription)")
+            }
+        })
+    }
+    
 }
 
