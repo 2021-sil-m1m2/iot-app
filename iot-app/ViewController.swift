@@ -7,6 +7,9 @@
 
 import UIKit
 import AWSMobileClient
+import AWSS3
+import Amplify
+import AmplifyPlugins
 
 class ViewController: UIViewController {
 
@@ -62,6 +65,29 @@ class ViewController: UIViewController {
             }
         })
     }
+    
+    @IBAction func uploadDataToS3(_ sender: Any) {
+        let dataString = "My Data"
+        let data = dataString.data(using: .utf8)!
+        
+        
+        // access levelを指定
+        // let options = StorageUploadDataRequest.Options(accessLevel: .protected)
+        let options = StorageUploadDataRequest.Options(accessLevel: .private)
+        
+        Amplify.Storage.uploadData(key: "ExampleKey", data: data, options: options) { progress in
+                print("Progress: \(progress)")
+            } resultListener: { event in
+                switch event {
+                case .success(let data):
+                    print("Completed: \(data)")
+                case .failure(let storageError):
+                    print("Failed: \(storageError.errorDescription). \(storageError.recoverySuggestion)")
+                }
+            }
+
+        }
+    
     
 }
 

@@ -24,6 +24,14 @@
                                     <action selector="signOutButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="PUs-gE-xje"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="au1-XH-IHq">
+                                <rect key="frame" x="144" y="472" width="126" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="S3へアップロード"/>
+                                <connections>
+                                    <action selector="uploadDataToS3:" destination="BYZ-38-t0r" eventType="touchUpInside" id="dVj-Ib-Obq"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>

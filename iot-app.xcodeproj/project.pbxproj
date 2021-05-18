@@ -7,14 +7,19 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		138511A1EEF9033CBB034615 /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F54B2B51AD03326FAB195DF /* Post.swift */; };
 		194B44120EE569FA1B40F9F1 /* awsconfiguration.json in Resources */ = {isa = PBXBuildFile; fileRef = 69ECCDE0E5805E7354A00990 /* awsconfiguration.json */; };
+		204942E881C540C6F18CD4A5 /* Post+Schema.swift in Sources */ = {isa = PBXBuildFile; fileRef = B88629AB7419B69755F3639B /* Post+Schema.swift */; };
+		28BE85DE0878D68BD86384B0 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9285BBF4B5AAD7A13E99D794 /* User.swift */; };
 		2FEC47E418A9D6ADE3ED3088 /* amplifyconfiguration.json in Resources */ = {isa = PBXBuildFile; fileRef = 78D0375AA456260E0D9ECD11 /* amplifyconfiguration.json */; };
 		447E032C0C1B0DF0D15618A5 /* awsconfiguration.json in Resources */ = {isa = PBXBuildFile; fileRef = 69ECCDE0E5805E7354A00990 /* awsconfiguration.json */; };
+		59A4F9AD9EF5B85FA10A95A1 /* AmplifyModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C480D70593D2306D8BDFF46 /* AmplifyModels.swift */; };
 		5DA8BD444C3D4222CB8E38F3 /* amplifyconfiguration.json in Resources */ = {isa = PBXBuildFile; fileRef = 78D0375AA456260E0D9ECD11 /* amplifyconfiguration.json */; };
 		5FD863C2BBF7D88831734823 /* amplifyconfiguration.json in Resources */ = {isa = PBXBuildFile; fileRef = 78D0375AA456260E0D9ECD11 /* amplifyconfiguration.json */; };
 		6F010160B059B66D32FA7AE2 /* Pods_iot_app.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6981A9689769AE2591ACECE1 /* Pods_iot_app.framework */; };
 		720911BDD77D2709003E249F /* amplifyconfiguration.json in Resources */ = {isa = PBXBuildFile; fileRef = 78D0375AA456260E0D9ECD11 /* amplifyconfiguration.json */; };
 		A99288BB3571617F8666A49A /* awsconfiguration.json in Resources */ = {isa = PBXBuildFile; fileRef = 69ECCDE0E5805E7354A00990 /* awsconfiguration.json */; };
+		AF8D526856262C209BA3BFD0 /* User+Schema.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1545355C046F7984F0B89C5 /* User+Schema.swift */; };
 		AFA06DB3A36DCC6868BC51FC /* awsconfiguration.json in Resources */ = {isa = PBXBuildFile; fileRef = 69ECCDE0E5805E7354A00990 /* awsconfiguration.json */; };
 		C14781362652C6200003E18D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C14781352652C6200003E18D /* AppDelegate.swift */; };
 		C14781382652C6200003E18D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C14781372652C6200003E18D /* SceneDelegate.swift */; };
@@ -22,16 +27,23 @@
 		C147813D2652C6200003E18D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C147813B2652C6200003E18D /* Main.storyboard */; };
 		C147813F2652C6230003E18D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C147813E2652C6230003E18D /* Assets.xcassets */; };
 		C14781422652C6230003E18D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C14781402652C6230003E18D /* LaunchScreen.storyboard */; };
-		C147814A2652D08F0003E18D /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = C14781492652D08F0003E18D /* User.swift */; };
 		C147814E2653F2D10003E18D /* Backend.swift in Sources */ = {isa = PBXBuildFile; fileRef = C147814D2653F2D10003E18D /* Backend.swift */; };
+		C1478150265414CA0003E18D /* awsconfiguration.json in Resources */ = {isa = PBXBuildFile; fileRef = C147814F265414CA0003E18D /* awsconfiguration.json */; };
+		C1478152265414FD0003E18D /* amplifyconfiguration.json in Resources */ = {isa = PBXBuildFile; fileRef = C1478151265414FD0003E18D /* amplifyconfiguration.json */; };
+		C1F7AF782654199000208046 /* generated in Resources */ = {isa = PBXBuildFile; fileRef = C1F7AF772654199000208046 /* generated */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		2A04224097416CE66DA1CAE8 /* Pods-iot-app.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iot-app.release.xcconfig"; path = "Target Support Files/Pods-iot-app/Pods-iot-app.release.xcconfig"; sourceTree = "<group>"; };
 		2ED55E2BD5D336D93ABC0430 /* Pods-iot-app.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iot-app.debug.xcconfig"; path = "Target Support Files/Pods-iot-app/Pods-iot-app.debug.xcconfig"; sourceTree = "<group>"; };
+		3C480D70593D2306D8BDFF46 /* AmplifyModels.swift */ = {isa = PBXFileReference; explicitFileType = sourcecode.swift; name = AmplifyModels.swift; path = amplify/generated/models/AmplifyModels.swift; sourceTree = "<group>"; };
 		6981A9689769AE2591ACECE1 /* Pods_iot_app.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_iot_app.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		69ECCDE0E5805E7354A00990 /* awsconfiguration.json */ = {isa = PBXFileReference; explicitFileType = text.json; path = awsconfiguration.json; sourceTree = "<group>"; };
 		78D0375AA456260E0D9ECD11 /* amplifyconfiguration.json */ = {isa = PBXFileReference; explicitFileType = text.json; path = amplifyconfiguration.json; sourceTree = "<group>"; };
+		9285BBF4B5AAD7A13E99D794 /* User.swift */ = {isa = PBXFileReference; explicitFileType = sourcecode.swift; name = User.swift; path = amplify/generated/models/User.swift; sourceTree = "<group>"; };
+		9F54B2B51AD03326FAB195DF /* Post.swift */ = {isa = PBXFileReference; explicitFileType = sourcecode.swift; name = Post.swift; path = amplify/generated/models/Post.swift; sourceTree = "<group>"; };
+		A1545355C046F7984F0B89C5 /* User+Schema.swift */ = {isa = PBXFileReference; explicitFileType = sourcecode.swift; name = "User+Schema.swift"; path = "amplify/generated/models/User+Schema.swift"; sourceTree = "<group>"; };
+		B88629AB7419B69755F3639B /* Post+Schema.swift */ = {isa = PBXFileReference; explicitFileType = sourcecode.swift; name = "Post+Schema.swift"; path = "amplify/generated/models/Post+Schema.swift"; sourceTree = "<group>"; };
 		C14781322652C6200003E18D /* iot-app.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "iot-app.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C14781352652C6200003E18D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C14781372652C6200003E18D /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -40,8 +52,10 @@
 		C147813E2652C6230003E18D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C14781412652C6230003E18D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C14781432652C6230003E18D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		C14781492652D08F0003E18D /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		C147814D2653F2D10003E18D /* Backend.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Backend.swift; sourceTree = "<group>"; };
+		C147814F265414CA0003E18D /* awsconfiguration.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = awsconfiguration.json; sourceTree = "<group>"; };
+		C1478151265414FD0003E18D /* amplifyconfiguration.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = amplifyconfiguration.json; sourceTree = "<group>"; };
+		C1F7AF772654199000208046 /* generated */ = {isa = PBXFileReference; lastKnownFileType = folder; name = generated; path = amplify/generated; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -65,15 +79,31 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		449716C38EB0026B8A9DE02C /* AmplifyModels */ = {
+			isa = PBXGroup;
+			children = (
+				3C480D70593D2306D8BDFF46 /* AmplifyModels.swift */,
+				B88629AB7419B69755F3639B /* Post+Schema.swift */,
+				9F54B2B51AD03326FAB195DF /* Post.swift */,
+				A1545355C046F7984F0B89C5 /* User+Schema.swift */,
+				9285BBF4B5AAD7A13E99D794 /* User.swift */,
+			);
+			name = AmplifyModels;
+			sourceTree = "<group>";
+		};
 		C14781292652C6200003E18D = {
 			isa = PBXGroup;
 			children = (
+				C1F7AF772654199000208046 /* generated */,
+				C1478151265414FD0003E18D /* amplifyconfiguration.json */,
+				C147814F265414CA0003E18D /* awsconfiguration.json */,
 				C147814D2653F2D10003E18D /* Backend.swift */,
 				C14781342652C6200003E18D /* iot-app */,
 				C14781332652C6200003E18D /* Products */,
 				26ADE89C93918C40D6BE6B03 /* Pods */,
 				D198E9570ED9FD463988C76E /* Frameworks */,
 				CD1529D09F084FEE33B0AC4D /* AmplifyConfig */,
+				449716C38EB0026B8A9DE02C /* AmplifyModels */,
 			);
 			sourceTree = "<group>";
 		};
@@ -95,7 +125,6 @@
 				C147813E2652C6230003E18D /* Assets.xcassets */,
 				C14781402652C6230003E18D /* LaunchScreen.storyboard */,
 				C14781432652C6230003E18D /* Info.plist */,
-				C14781492652D08F0003E18D /* User.swift */,
 			);
 			path = "iot-app";
 			sourceTree = "<group>";
@@ -182,8 +211,11 @@
 				AFA06DB3A36DCC6868BC51FC /* awsconfiguration.json in Resources */,
 				5FD863C2BBF7D88831734823 /* amplifyconfiguration.json in Resources */,
 				447E032C0C1B0DF0D15618A5 /* awsconfiguration.json in Resources */,
+				C1F7AF782654199000208046 /* generated in Resources */,
 				2FEC47E418A9D6ADE3ED3088 /* amplifyconfiguration.json in Resources */,
+				C1478152265414FD0003E18D /* amplifyconfiguration.json in Resources */,
 				194B44120EE569FA1B40F9F1 /* awsconfiguration.json in Resources */,
+				C1478150265414CA0003E18D /* awsconfiguration.json in Resources */,
 				720911BDD77D2709003E249F /* amplifyconfiguration.json in Resources */,
 				A99288BB3571617F8666A49A /* awsconfiguration.json in Resources */,
 				5DA8BD444C3D4222CB8E38F3 /* amplifyconfiguration.json in Resources */,
@@ -243,11 +275,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C147814A2652D08F0003E18D /* User.swift in Sources */,
 				C147813A2652C6200003E18D /* ViewController.swift in Sources */,
 				C14781362652C6200003E18D /* AppDelegate.swift in Sources */,
 				C14781382652C6200003E18D /* SceneDelegate.swift in Sources */,
 				C147814E2653F2D10003E18D /* Backend.swift in Sources */,
+				59A4F9AD9EF5B85FA10A95A1 /* AmplifyModels.swift in Sources */,
+				204942E881C540C6F18CD4A5 /* Post+Schema.swift in Sources */,
+				138511A1EEF9033CBB034615 /* Post.swift in Sources */,
+				AF8D526856262C209BA3BFD0 /* User+Schema.swift in Sources */,
+				28BE85DE0878D68BD86384B0 /* User.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
