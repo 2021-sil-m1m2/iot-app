@@ -70,7 +70,7 @@ class ViewController: UIViewController {
         let dataString = "My Data"
         let data = dataString.data(using: .utf8)!
         
-        
+        /*
         // access levelを指定
         // let options = StorageUploadDataRequest.Options(accessLevel: .protected)
         let options = StorageUploadDataRequest.Options(accessLevel: .private)
@@ -87,7 +87,25 @@ class ViewController: UIViewController {
             }
 
         }
-    
+        */
+        
+        // public level
+        Amplify.Storage.uploadData(
+            key: "ExampleKey",
+            data: data,
+            progressListener: { progress in
+                print("Progress: \(progress)")
+            }, resultListener: { event in
+                switch event {
+                case .success(let data):
+                    print("Completed: \(data)")
+                case .failure(let storageError):
+                    print("Failed: \(storageError.errorDescription). \(storageError.recoverySuggestion)")
+                }
+            }
+        )
+    }
+        
     
 }
 
