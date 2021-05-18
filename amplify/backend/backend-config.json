@@ -24,5 +24,11 @@
         }
       }
     }
+  },
+  "storage": {
+    "s33fc13847": {
+      "service": "S3",
+      "providerPlugin": "awscloudformation"
+    }
   }
 }
