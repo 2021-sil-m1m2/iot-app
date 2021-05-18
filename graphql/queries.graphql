@@ -2,8 +2,20 @@
 query GetUser($id: ID!) {
   getUser(id: $id) {
     id
-    username
+    name
     planterID
+    posts {
+      items {
+        id
+        userID
+        title
+        tags
+        content
+        createdAt
+        updatedAt
+      }
+      nextToken
+    }
     createdAt
     updatedAt
   }
@@ -16,8 +28,57 @@ query ListUsers(
   listUsers(filter: $filter, limit: $limit, nextToken: $nextToken) {
     items {
       id
-      username
+      name
       planterID
+      posts {
+        nextToken
+      }
+      createdAt
+      updatedAt
+    }
+    nextToken
+  }
+}
+query GetPost($id: ID!) {
+  getPost(id: $id) {
+    id
+    userID
+    user {
+      id
+      name
+      planterID
+      posts {
+        nextToken
+      }
+      createdAt
+      updatedAt
+    }
+    title
+    tags
+    content
+    createdAt
+    updatedAt
+  }
+}
+query ListPosts(
+  $filter: ModelPostFilterInput
+  $limit: Int
+  $nextToken: String
+) {
+  listPosts(filter: $filter, limit: $limit, nextToken: $nextToken) {
+    items {
+      id
+      userID
+      user {
+        id
+        name
+        planterID
+        createdAt
+        updatedAt
+      }
+      title
+      tags
+      content
       createdAt
       updatedAt
     }

@@ -1,9 +1,11 @@
 import boto3
 import uuid
+
 def lambda_handler(event, context):
     dynamoDB = boto3.resource("dynamodb")
     # DynamoDBのテーブル名
-    table = dynamoDB.Table("User-sfjkyk7wzrde3fuqfc5vpuuc3i-okada")
+    table = dynamoDB.Table("User-hw5ptmnfgvafrhxywx4qeoa3cm-dev")
+    
     table.put_item(
       Item = {
         "id": str(uuid.uuid4()),
@@ -11,5 +13,6 @@ def lambda_handler(event, context):
         "planterID": "Not set"
       }
     )
+    
     # Return to Amazon Cognito
     return event

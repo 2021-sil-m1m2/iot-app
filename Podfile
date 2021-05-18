@@ -13,5 +13,8 @@ target 'iot-app' do
   pod 'AWSDynamoDB'
   pod 'AWSAppSync'
   pod 'Amplify'
-
+  pod 'Amplify/Tools'
+  pod 'AmplifyPlugins/AWSCognitoAuthPlugin'
+  pod 'AmplifyPlugins/AWSAPIPlugin'
+  pod 'AmplifyPlugins/AWSS3StoragePlugin'
 end

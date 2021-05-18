@@ -10,9 +10,11 @@
 		194B44120EE569FA1B40F9F1 /* awsconfiguration.json in Resources */ = {isa = PBXBuildFile; fileRef = 69ECCDE0E5805E7354A00990 /* awsconfiguration.json */; };
 		2FEC47E418A9D6ADE3ED3088 /* amplifyconfiguration.json in Resources */ = {isa = PBXBuildFile; fileRef = 78D0375AA456260E0D9ECD11 /* amplifyconfiguration.json */; };
 		447E032C0C1B0DF0D15618A5 /* awsconfiguration.json in Resources */ = {isa = PBXBuildFile; fileRef = 69ECCDE0E5805E7354A00990 /* awsconfiguration.json */; };
+		5DA8BD444C3D4222CB8E38F3 /* amplifyconfiguration.json in Resources */ = {isa = PBXBuildFile; fileRef = 78D0375AA456260E0D9ECD11 /* amplifyconfiguration.json */; };
 		5FD863C2BBF7D88831734823 /* amplifyconfiguration.json in Resources */ = {isa = PBXBuildFile; fileRef = 78D0375AA456260E0D9ECD11 /* amplifyconfiguration.json */; };
 		6F010160B059B66D32FA7AE2 /* Pods_iot_app.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6981A9689769AE2591ACECE1 /* Pods_iot_app.framework */; };
 		720911BDD77D2709003E249F /* amplifyconfiguration.json in Resources */ = {isa = PBXBuildFile; fileRef = 78D0375AA456260E0D9ECD11 /* amplifyconfiguration.json */; };
+		A99288BB3571617F8666A49A /* awsconfiguration.json in Resources */ = {isa = PBXBuildFile; fileRef = 69ECCDE0E5805E7354A00990 /* awsconfiguration.json */; };
 		AFA06DB3A36DCC6868BC51FC /* awsconfiguration.json in Resources */ = {isa = PBXBuildFile; fileRef = 69ECCDE0E5805E7354A00990 /* awsconfiguration.json */; };
 		C14781362652C6200003E18D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C14781352652C6200003E18D /* AppDelegate.swift */; };
 		C14781382652C6200003E18D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C14781372652C6200003E18D /* SceneDelegate.swift */; };
@@ -21,6 +23,7 @@
 		C147813F2652C6230003E18D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C147813E2652C6230003E18D /* Assets.xcassets */; };
 		C14781422652C6230003E18D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C14781402652C6230003E18D /* LaunchScreen.storyboard */; };
 		C147814A2652D08F0003E18D /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = C14781492652D08F0003E18D /* User.swift */; };
+		C147814E2653F2D10003E18D /* Backend.swift in Sources */ = {isa = PBXBuildFile; fileRef = C147814D2653F2D10003E18D /* Backend.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +41,7 @@
 		C14781412652C6230003E18D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C14781432652C6230003E18D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C14781492652D08F0003E18D /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		C147814D2653F2D10003E18D /* Backend.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Backend.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,6 +68,7 @@
 		C14781292652C6200003E18D = {
 			isa = PBXGroup;
 			children = (
+				C147814D2653F2D10003E18D /* Backend.swift */,
 				C14781342652C6200003E18D /* iot-app */,
 				C14781332652C6200003E18D /* Products */,
 				26ADE89C93918C40D6BE6B03 /* Pods */,
@@ -180,6 +185,8 @@
 				2FEC47E418A9D6ADE3ED3088 /* amplifyconfiguration.json in Resources */,
 				194B44120EE569FA1B40F9F1 /* awsconfiguration.json in Resources */,
 				720911BDD77D2709003E249F /* amplifyconfiguration.json in Resources */,
+				A99288BB3571617F8666A49A /* awsconfiguration.json in Resources */,
+				5DA8BD444C3D4222CB8E38F3 /* amplifyconfiguration.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -240,6 +247,7 @@
 				C147813A2652C6200003E18D /* ViewController.swift in Sources */,
 				C14781362652C6200003E18D /* AppDelegate.swift in Sources */,
 				C14781382652C6200003E18D /* SceneDelegate.swift in Sources */,
+				C147814E2653F2D10003E18D /* Backend.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
