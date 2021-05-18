@@ -2,8 +2,20 @@
 subscription OnCreateUser {
   onCreateUser {
     id
-    username
+    name
     planterID
+    posts {
+      items {
+        id
+        userID
+        title
+        tags
+        content
+        createdAt
+        updatedAt
+      }
+      nextToken
+    }
     createdAt
     updatedAt
   }
@@ -11,8 +23,20 @@ subscription OnCreateUser {
 subscription OnUpdateUser {
   onUpdateUser {
     id
-    username
+    name
     planterID
+    posts {
+      items {
+        id
+        userID
+        title
+        tags
+        content
+        createdAt
+        updatedAt
+      }
+      nextToken
+    }
     createdAt
     updatedAt
   }
@@ -20,8 +44,83 @@ subscription OnUpdateUser {
 subscription OnDeleteUser {
   onDeleteUser {
     id
-    username
+    name
     planterID
+    posts {
+      items {
+        id
+        userID
+        title
+        tags
+        content
+        createdAt
+        updatedAt
+      }
+      nextToken
+    }
+    createdAt
+    updatedAt
+  }
+}
+subscription OnCreatePost {
+  onCreatePost {
+    id
+    userID
+    user {
+      id
+      name
+      planterID
+      posts {
+        nextToken
+      }
+      createdAt
+      updatedAt
+    }
+    title
+    tags
+    content
+    createdAt
+    updatedAt
+  }
+}
+subscription OnUpdatePost {
+  onUpdatePost {
+    id
+    userID
+    user {
+      id
+      name
+      planterID
+      posts {
+        nextToken
+      }
+      createdAt
+      updatedAt
+    }
+    title
+    tags
+    content
+    createdAt
+    updatedAt
+  }
+}
+subscription OnDeletePost {
+  onDeletePost {
+    id
+    userID
+    user {
+      id
+      name
+      planterID
+      posts {
+        nextToken
+      }
+      createdAt
+      updatedAt
+    }
+    title
+    tags
+    content
     createdAt
     updatedAt
   }

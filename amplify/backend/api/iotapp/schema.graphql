@@ -1,5 +1,15 @@
 type User @model {
-  id: String!
-  username: String!
+  id: ID!
+  name: String!
   planterID: String!
+  posts: [Post] @connection(keyName: "byUser", fields: ["id"])
+}
+
+type Post @model @key(name: "byUser", fields: ["userID"]) {
+  id: ID!
+  userID: ID!
+  user: User @connection(fields: ["userID"])
+  title: String
+  tags: String
+  content: String
 }

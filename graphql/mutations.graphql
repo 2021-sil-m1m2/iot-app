@@ -5,8 +5,20 @@ mutation CreateUser(
 ) {
   createUser(input: $input, condition: $condition) {
     id
-    username
+    name
     planterID
+    posts {
+      items {
+        id
+        userID
+        title
+        tags
+        content
+        createdAt
+        updatedAt
+      }
+      nextToken
+    }
     createdAt
     updatedAt
   }
@@ -17,8 +29,20 @@ mutation UpdateUser(
 ) {
   updateUser(input: $input, condition: $condition) {
     id
-    username
+    name
     planterID
+    posts {
+      items {
+        id
+        userID
+        title
+        tags
+        content
+        createdAt
+        updatedAt
+      }
+      nextToken
+    }
     createdAt
     updatedAt
   }
@@ -29,8 +53,92 @@ mutation DeleteUser(
 ) {
   deleteUser(input: $input, condition: $condition) {
     id
-    username
+    name
     planterID
+    posts {
+      items {
+        id
+        userID
+        title
+        tags
+        content
+        createdAt
+        updatedAt
+      }
+      nextToken
+    }
+    createdAt
+    updatedAt
+  }
+}
+mutation CreatePost(
+  $input: CreatePostInput!
+  $condition: ModelPostConditionInput
+) {
+  createPost(input: $input, condition: $condition) {
+    id
+    userID
+    user {
+      id
+      name
+      planterID
+      posts {
+        nextToken
+      }
+      createdAt
+      updatedAt
+    }
+    title
+    tags
+    content
+    createdAt
+    updatedAt
+  }
+}
+mutation UpdatePost(
+  $input: UpdatePostInput!
+  $condition: ModelPostConditionInput
+) {
+  updatePost(input: $input, condition: $condition) {
+    id
+    userID
+    user {
+      id
+      name
+      planterID
+      posts {
+        nextToken
+      }
+      createdAt
+      updatedAt
+    }
+    title
+    tags
+    content
+    createdAt
+    updatedAt
+  }
+}
+mutation DeletePost(
+  $input: DeletePostInput!
+  $condition: ModelPostConditionInput
+) {
+  deletePost(input: $input, condition: $condition) {
+    id
+    userID
+    user {
+      id
+      name
+      planterID
+      posts {
+        nextToken
+      }
+      createdAt
+      updatedAt
+    }
+    title
+    tags
+    content
     createdAt
     updatedAt
   }
