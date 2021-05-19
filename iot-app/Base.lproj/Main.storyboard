@@ -32,11 +32,26 @@
                                     <action selector="uploadDataToS3:" destination="BYZ-38-t0r" eventType="touchUpInside" id="dVj-Ib-Obq"/>
                                 </connections>
                             </button>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Puf-76-hHK">
+                                <rect key="frame" x="87" y="637" width="240" height="128"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HND-J4-yk0">
+                                <rect key="frame" x="98" y="789" width="218" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="S3からファイルをダウンロード"/>
+                                <connections>
+                                    <action selector="downloadFileFromS3:" destination="BYZ-38-t0r" eventType="touchUpInside" id="fk4-Zh-KlR"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
                     <navigationItem key="navigationItem" id="iRV-Q4-vol"/>
+                    <connections>
+                        <outlet property="imageView" destination="Puf-76-hHK" id="JY4-44-gDZ"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
