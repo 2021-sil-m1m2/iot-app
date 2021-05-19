@@ -13,6 +13,8 @@ import AmplifyPlugins
 
 class ViewController: UIViewController {
 
+    @IBOutlet weak var imageView: UIImageView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
@@ -66,13 +68,14 @@ class ViewController: UIViewController {
         })
     }
     
+    
     @IBAction func uploadDataToS3(_ sender: Any) {
 //        let dataString = "My Data"
 //        let data = dataString.data(using: .utf8)!
         
         // 画像データ
         //guard let data = UIImage(named: "sample")?.pngData()
-        guard let data = UIImage(named: "sample")?.pngData() else {
+        guard let data = UIImage(named: "wheeler")?.pngData() else {
             print("イメージをPNGデータに変換できませんでした。")
             return
         }
@@ -81,7 +84,7 @@ class ViewController: UIViewController {
         // let options = StorageUploadDataRequest.Options(accessLevel: .protected)
         let options = StorageUploadDataRequest.Options(accessLevel: .private)
         
-        Amplify.Storage.uploadData(key: "ExampleKey.png", data: data, options: options) { progress in
+        Amplify.Storage.uploadData(key: "wheeler.jpeg", data: data, options: options) { progress in
                 print("Progress: \(progress)")
         } resultListener: { event in
             switch event {
@@ -110,7 +113,34 @@ class ViewController: UIViewController {
         )
         */
     }
+       
+    @IBAction func downloadFileFromS3(_ sender: Any) {
         
+        let options = StorageDownloadFileRequest.Options(accessLevel: .private)
+        
+        let downloadToFileName = FileManager.default.urls(for: .documentDirectory,
+                                                          in: .userDomainMask)[0]
+            .appendingPathComponent("wheeler.jpeg")
+
+        Amplify.Storage.downloadFile(
+            key: "wheeler.jpeg",
+            local: downloadToFileName,
+            options: options,
+            progressListener: { progress in
+                print("Progress: \(progress)")
+            }, resultListener: { event in
+                switch event {
+                case .success:
+                    print("Completed")
+                case .failure(let storageError):
+                    print("Failed: \(storageError.errorDescription). \(storageError.recoverySuggestion)")
+                }
+            })
+
+        imageView.image = UIImage(named: downloadToFileName.path)
+
+    }
+    
     
 }
 
