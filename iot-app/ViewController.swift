@@ -67,28 +67,32 @@ class ViewController: UIViewController {
     }
     
     @IBAction func uploadDataToS3(_ sender: Any) {
-        let dataString = "My Data"
-        let data = dataString.data(using: .utf8)!
+//        let dataString = "My Data"
+//        let data = dataString.data(using: .utf8)!
         
-        /*
+        // 画像データ
+        //guard let data = UIImage(named: "sample")?.pngData()
+        guard let data = UIImage(named: "sample")?.pngData() else {
+            print("イメージをPNGデータに変換できませんでした。")
+            return
+        }
+
         // access levelを指定
         // let options = StorageUploadDataRequest.Options(accessLevel: .protected)
         let options = StorageUploadDataRequest.Options(accessLevel: .private)
         
-        Amplify.Storage.uploadData(key: "ExampleKey", data: data, options: options) { progress in
+        Amplify.Storage.uploadData(key: "ExampleKey.png", data: data, options: options) { progress in
                 print("Progress: \(progress)")
-            } resultListener: { event in
-                switch event {
-                case .success(let data):
-                    print("Completed: \(data)")
-                case .failure(let storageError):
-                    print("Failed: \(storageError.errorDescription). \(storageError.recoverySuggestion)")
-                }
+        } resultListener: { event in
+            switch event {
+            case .success(let data):
+                print("Completed: \(data)")
+            case .failure(let storageError):
+                print("Failed: \(storageError.errorDescription). \(storageError.recoverySuggestion)")
             }
-
         }
-        */
-        
+    
+        /*
         // public level
         Amplify.Storage.uploadData(
             key: "ExampleKey",
@@ -104,6 +108,7 @@ class ViewController: UIViewController {
                 }
             }
         )
+        */
     }
         
     
