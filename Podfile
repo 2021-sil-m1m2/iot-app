@@ -17,4 +17,5 @@ target 'iot-app' do
   pod 'AmplifyPlugins/AWSCognitoAuthPlugin'
   pod 'AmplifyPlugins/AWSAPIPlugin'
   pod 'AmplifyPlugins/AWSS3StoragePlugin'
+  pod 'SwiftLint'
 end

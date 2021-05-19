@@ -1,0 +1,90 @@
+# 有効にするルール
+only_rules:
+  # 右括弧で閉じ括弧を閉じる場合、間にスペースを含むべきでない
+  - closing_brace
+  # クロージャの終了は開始と同様のインデントを持つべき
+  - closure_end_indentation
+  # クロージャのパラメータは開き括弧と同じ行にあるべき
+  - closure_parameter_position
+  # クロージャ内は各括弧の内側に1つの半角スペースがあるべき
+  - closure_spacing
+  # コレクション内の全要素は垂直方向に揃うべき
+  - collection_alignment
+  # コロンの後ろには1つの半角スペースがあるべき
+  - colon
+  # カンマの後ろには1つの半角スペースがあるべき
+  - comma
+  # コメントアウト//の後は半角スペースがあるべき
+  - comment_spacing
+  # 条件文では次の行でリターンすべき
+  - conditional_returns_on_newline
+  # 条件式を括弧で囲むべきでない
+  - control_statement
+  # importは1度だけすべき
+  - duplicate_imports
+  # countを0と比較するよりisEmptyを使うべき
+  - empty_count
+  # 空の文字列と比較するよりisEmptyを使うべき
+  - empty_string
+  # Void -> より () -> を使うべき
+  - empty_parameters
+  # for文内にif文が1つのみ存在する場合、where句を使うべき
+  - for_where
+  # 強制キャスト(as!)は使うべきでない
+  - force_cast
+  # 関数の引数の数は少なくすべき
+  - function_parameter_count
+  # 識別子名は英数のみを含み、小文字で始まるか、大文字のみを含むべき
+  - identifier_name
+  # letとvarは他のステートメントと空白行で区切るべき
+  - let_var_whitespace
+  # 配列とディクショナリのリテラルの末尾は、開始行と同様のインデントを持つべき
+  - literal_expression_end_indentation
+  # Markは有効な形にすべき
+  - mark
+  # _は十進数で千の区切り文字として使うべき
+  - number_separator
+  # 画像や色はイニシャライザよりリテラルを使って生成すべき
+  - object_literal
+  # {は定義と同じ行で前に1つの半角スペースを置くべき
+  - opening_brace
+  # 演算子を使うときは1つの半角スペースで囲まれるべき
+  - operator_usage_whitespace
+  # 関数の戻り値を使わずに実行する場合、_ = foo()を使うべき
+  - redundant_discardable_let
+  # オプショナル型の変数をnilで初期化するべきでない
+  - redundant_optional_initialization
+  # 関数の定義でVoidを返すべきでない（何も書かない）
+  - redundant_void_return
+  # 戻り値の矢印と型は1つの半角スペースまたは別の行で区切るべき
+  - return_arrow_whitespace
+  # 省略形の演算子を使うべき
+  - shorthand_operator
+  # インポート文はソートされるべき
+  - sorted_imports
+  # elseとcatchは、前の定義の1つの半角スペースの後ろで同じ行にあるべき
+  - statement_position
+  # case文はそれを囲むswitch文と同じインデントにすべき
+  - switch_case_alignment
+  # switch 文の中の case 文は常に改行すべき
+  - switch_case_on_newline
+  # 糖衣構文を使うべき
+  - syntactic_sugar
+  # 行の末尾にセミコロンを付けるべきでない
+  - trailing_semicolon
+  # 型名は英数のみを含み、大文字で始まり、3〜40文字にすべき
+  - type_name
+  # 不要なbreakは避けるべき
+  - unneeded_break_in_switch
+  # クロージャで使われていないパラメータは_に置き換えるべき
+  - unused_closure_parameter
+  # let _ = より != nil を使うべき
+  - unused_optional_binding
+  # 空白行は1行までにすべき
+  - vertical_whitespace
+  # 変数は比較演算子の左側、定数は右側に配置すべき
+  - yoda_condition
+  
+# チェックをするパス
+included:
+  - iot-app
