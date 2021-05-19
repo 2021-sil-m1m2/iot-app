@@ -118,15 +118,23 @@
 		C14781342652C6200003E18D /* iot-app */ = {
 			isa = PBXGroup;
 			children = (
+				C150A0E72654DB76000D1D55 /* ViewControllers */,
 				C14781352652C6200003E18D /* AppDelegate.swift */,
 				C14781372652C6200003E18D /* SceneDelegate.swift */,
-				C14781392652C6200003E18D /* ViewController.swift */,
 				C147813B2652C6200003E18D /* Main.storyboard */,
 				C147813E2652C6230003E18D /* Assets.xcassets */,
 				C14781402652C6230003E18D /* LaunchScreen.storyboard */,
 				C14781432652C6230003E18D /* Info.plist */,
 			);
 			path = "iot-app";
+			sourceTree = "<group>";
+		};
+		C150A0E72654DB76000D1D55 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				C14781392652C6200003E18D /* ViewController.swift */,
+			);
+			path = ViewControllers;
 			sourceTree = "<group>";
 		};
 		CD1529D09F084FEE33B0AC4D /* AmplifyConfig */ = {
@@ -158,6 +166,7 @@
 				C147812F2652C6200003E18D /* Frameworks */,
 				C14781302652C6200003E18D /* Resources */,
 				DA7B92D1ECEF5F15FDC784BD /* [CP] Embed Pods Frameworks */,
+				C150A0E62654D4B2000D1D55 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -225,6 +234,23 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		C150A0E62654D4B2000D1D55 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\n\"${PODS_ROOT}/SwiftLint/swiftlint\"\n";
+		};
 		C8BEE1E64226C32A8CFB849D /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -255,13 +281,9 @@
 			inputFileListPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-iot-app/Pods-iot-app-frameworks-${CONFIGURATION}-input-files.xcfilelist",
 			);
-			inputPaths = (
-			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-iot-app/Pods-iot-app-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
