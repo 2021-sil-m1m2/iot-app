@@ -5,6 +5,8 @@
 //  Created by yokada on 2021/05/18.
 //
 
+import Amplify
+import AmplifyPlugins
 import UIKit
 
 @main
@@ -15,6 +17,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         // initialize Amplify
         _ = Backend.initialize()
+        
         return true
     }
 
