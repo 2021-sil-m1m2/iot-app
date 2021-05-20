@@ -46,7 +46,6 @@ class AuthViewController: UIViewController, UITextFieldDelegate {
         signOutLocally()
     }
     
-    
     func signUp(username: String, password: String, email: String) {
         let userAttributes = [AuthUserAttribute(.email, value: email)]
         let options = AuthSignUpRequest.Options(userAttributes: userAttributes)
