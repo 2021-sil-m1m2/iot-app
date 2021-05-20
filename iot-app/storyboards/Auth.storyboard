@@ -101,6 +101,21 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1vo-eh-qvT">
+                                <rect key="frame" x="123" y="531" width="153" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="ユーザ属性を取得する"/>
+                                <connections>
+                                    <action selector="getUserAttributesButton:" destination="rXJ-3g-TWe" eventType="touchUpInside" id="p9c-re-DPt"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kdY-nb-CmZ">
+                                <rect key="frame" x="299" y="536" width="42" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Ukr-jt-JFZ"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -109,6 +124,7 @@
                     <connections>
                         <outlet property="emailTextField" destination="1EE-74-hes" id="7lO-35-ZaN"/>
                         <outlet property="passwordTextField" destination="owA-Xw-Exf" id="b3u-hO-J1T"/>
+                        <outlet property="usernameLabel" destination="kdY-nb-CmZ" id="R56-sL-qIW"/>
                         <outlet property="usernameTextField" destination="jCN-8x-ccK" id="rX0-k5-LcZ"/>
                         <outlet property="verificationCodeTextField" destination="4c7-8M-drK" id="e7v-Tm-GdT"/>
                     </connections>
@@ -125,7 +141,7 @@
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="j2c-Cq-eQP" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2303" y="217"/>
+            <point key="canvasLocation" x="2333" y="124"/>
         </scene>
     </scenes>
     <resources>

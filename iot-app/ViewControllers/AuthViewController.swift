@@ -15,6 +15,8 @@ class AuthViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var emailTextField: UITextField!
     
+    @IBOutlet weak var usernameLabel: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -44,6 +46,10 @@ class AuthViewController: UIViewController, UITextFieldDelegate {
     
     @IBAction func signOutButton(_ sender: Any) {
         signOutLocally()
+    }
+    
+    @IBAction func getUserAttributesButton(_ sender: Any) {
+        fetchAttributes()
     }
     
     func signUp(username: String, password: String, email: String) {
@@ -106,6 +112,20 @@ class AuthViewController: UIViewController, UITextFieldDelegate {
         // verificationCodeTextField.resignFirstResponder()
         dismissKeyboard()
         return true
+    }
+    
+    func fetchAttributes() {
+        
+        usernameLabel.text = Amplify.Auth.getCurrentUser()?.username ?? "usernameを取得できませんでした"
+        
+        Amplify.Auth.fetchUserAttributes() { result in
+            switch result {
+            case .success(let attributes):
+                print("User attributes - \(attributes)")
+            case .failure(let error):
+                print("Fetching user attributes failed with error \(error)")
+            }
+        }
     }
     
     /*
