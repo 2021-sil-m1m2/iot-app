@@ -23,7 +23,7 @@
 		AFA06DB3A36DCC6868BC51FC /* awsconfiguration.json in Resources */ = {isa = PBXBuildFile; fileRef = 69ECCDE0E5805E7354A00990 /* awsconfiguration.json */; };
 		C14781362652C6200003E18D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C14781352652C6200003E18D /* AppDelegate.swift */; };
 		C14781382652C6200003E18D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C14781372652C6200003E18D /* SceneDelegate.swift */; };
-		C147813A2652C6200003E18D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C14781392652C6200003E18D /* ViewController.swift */; };
+		C147813A2652C6200003E18D /* ThinningOutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C14781392652C6200003E18D /* ThinningOutViewController.swift */; };
 		C147813D2652C6200003E18D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C147813B2652C6200003E18D /* Main.storyboard */; };
 		C147813F2652C6230003E18D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C147813E2652C6230003E18D /* Assets.xcassets */; };
 		C14781422652C6230003E18D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C14781402652C6230003E18D /* LaunchScreen.storyboard */; };
@@ -31,7 +31,7 @@
 		C1478150265414CA0003E18D /* awsconfiguration.json in Resources */ = {isa = PBXBuildFile; fileRef = C147814F265414CA0003E18D /* awsconfiguration.json */; };
 		C1478152265414FD0003E18D /* amplifyconfiguration.json in Resources */ = {isa = PBXBuildFile; fileRef = C1478151265414FD0003E18D /* amplifyconfiguration.json */; };
 		C1E9698026569599001E3D59 /* AuthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1E9697F26569599001E3D59 /* AuthViewController.swift */; };
-		C1E969852656B97E001E3D59 /* Authentication.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C1E969842656B97E001E3D59 /* Authentication.storyboard */; };
+		C1E969852656B97E001E3D59 /* Auth.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C1E969842656B97E001E3D59 /* Auth.storyboard */; };
 		C1E969872656BA18001E3D59 /* ThinningOut.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C1E969862656BA18001E3D59 /* ThinningOut.storyboard */; };
 		C1F7AF782654199000208046 /* generated in Resources */ = {isa = PBXBuildFile; fileRef = C1F7AF772654199000208046 /* generated */; };
 /* End PBXBuildFile section */
@@ -50,7 +50,7 @@
 		C14781322652C6200003E18D /* iot-app.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "iot-app.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C14781352652C6200003E18D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C14781372652C6200003E18D /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		C14781392652C6200003E18D /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		C14781392652C6200003E18D /* ThinningOutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThinningOutViewController.swift; sourceTree = "<group>"; };
 		C147813C2652C6200003E18D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		C147813E2652C6230003E18D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C14781412652C6230003E18D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -59,7 +59,7 @@
 		C147814F265414CA0003E18D /* awsconfiguration.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = awsconfiguration.json; sourceTree = "<group>"; };
 		C1478151265414FD0003E18D /* amplifyconfiguration.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = amplifyconfiguration.json; sourceTree = "<group>"; };
 		C1E9697F26569599001E3D59 /* AuthViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewController.swift; sourceTree = "<group>"; };
-		C1E969842656B97E001E3D59 /* Authentication.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Authentication.storyboard; sourceTree = "<group>"; };
+		C1E969842656B97E001E3D59 /* Auth.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Auth.storyboard; sourceTree = "<group>"; };
 		C1E969862656BA18001E3D59 /* ThinningOut.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ThinningOut.storyboard; sourceTree = "<group>"; };
 		C1F7AF772654199000208046 /* generated */ = {isa = PBXFileReference; lastKnownFileType = folder; name = generated; path = amplify/generated; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -138,7 +138,7 @@
 		C150A0E72654DB76000D1D55 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				C14781392652C6200003E18D /* ViewController.swift */,
+				C14781392652C6200003E18D /* ThinningOutViewController.swift */,
 				C1E9697F26569599001E3D59 /* AuthViewController.swift */,
 			);
 			path = ViewControllers;
@@ -148,7 +148,7 @@
 			isa = PBXGroup;
 			children = (
 				C147813B2652C6200003E18D /* Main.storyboard */,
-				C1E969842656B97E001E3D59 /* Authentication.storyboard */,
+				C1E969842656B97E001E3D59 /* Auth.storyboard */,
 				C1E969862656BA18001E3D59 /* ThinningOut.storyboard */,
 			);
 			path = storyboards;
@@ -241,7 +241,7 @@
 				C1F7AF782654199000208046 /* generated in Resources */,
 				2FEC47E418A9D6ADE3ED3088 /* amplifyconfiguration.json in Resources */,
 				C1478152265414FD0003E18D /* amplifyconfiguration.json in Resources */,
-				C1E969852656B97E001E3D59 /* Authentication.storyboard in Resources */,
+				C1E969852656B97E001E3D59 /* Auth.storyboard in Resources */,
 				194B44120EE569FA1B40F9F1 /* awsconfiguration.json in Resources */,
 				C1478150265414CA0003E18D /* awsconfiguration.json in Resources */,
 				720911BDD77D2709003E249F /* amplifyconfiguration.json in Resources */,
@@ -316,7 +316,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C147813A2652C6200003E18D /* ViewController.swift in Sources */,
+				C147813A2652C6200003E18D /* ThinningOutViewController.swift in Sources */,
 				C14781362652C6200003E18D /* AppDelegate.swift in Sources */,
 				C1E9698026569599001E3D59 /* AuthViewController.swift in Sources */,
 				C14781382652C6200003E18D /* SceneDelegate.swift in Sources */,

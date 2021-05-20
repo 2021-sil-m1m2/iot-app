@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  ThinningOutViewController.swift
 //  iot-app
 //
 //  Created by yokada on 2021/05/18.
@@ -11,59 +11,14 @@ import AWSMobileClient
 import AWSS3
 import UIKit
 
-class ViewController: UIViewController {
+class ThinningOutViewController: UIViewController {
 
     @IBOutlet weak var imageView: UIImageView!
 
     override func viewDidLoad() {
 
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
 
-//        AWSMobileClient.default().initialize { (userstate, error) in
-//
-//            if let userState = userstate {
-//                switch userstate {
-//                case .signedIn :
-//                    DispatchQueue.main.async {
-//                        print("Sign In")
-//                    }
-//
-//                case .signedOut :
-//                    AWSMobileClient.default().showSignIn(navigationController: self.navigationController!, { (userstate, error) in
-//                        if error == nil { // サインイン成功時
-//                            DispatchQueue.main.async {
-//                                print("Sign In")
-//                            }
-//                        }
-//                    })
-//
-//                default:
-//                    AWSMobileClient.default().signOut()
-//                }
-//
-//            } else if let error = error {
-//                print(error.localizedDescription)
-//            }
-//
-//        }
-    }
-
-    @IBAction func signOutButton(_ sender: Any) {
-        AWSMobileClient.default().signOut()
-
-        // サインイン画面を表示
-        AWSMobileClient.default().showSignIn(navigationController: self.navigationController!, { (signInState, error) in
-            
-            // 初期表示画面（GoalView）に遷移する
-            self.navigationController?.popViewController(animated: true)
-            
-            if let signInState = signInState {
-                print("Sign In")
-            } else if let error = error {
-                print("error logging in: \(error.localizedDescription)")
-            }
-        })
     }
     
     @IBAction func uploadDataToS3(_ sender: Any) {

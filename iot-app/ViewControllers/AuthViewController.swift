@@ -8,26 +8,42 @@ import Amplify
 import AmplifyPlugins
 import UIKit
 
-class AuthViewController: UIViewController {
+class AuthViewController: UIViewController, UITextFieldDelegate {
     
     @IBOutlet weak var verificationCodeTextField: UITextField!
+    @IBOutlet weak var usernameTextField: UITextField!
+    @IBOutlet weak var passwordTextField: UITextField!
+    @IBOutlet weak var emailTextField: UITextField!
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        
+        // 画面のどこかがタップされた時にdismissKeyboard関数を呼び出す
+        let tapGR: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard))
+        tapGR.cancelsTouchesInView = false
+        self.view.addGestureRecognizer(tapGR)
+        verificationCodeTextField.delegate = self
+        usernameTextField.delegate = self
+        passwordTextField.delegate = self
+        emailTextField.delegate = self
     }
     
     @IBAction func signUpButton(_ sender: Any) {
-        signUp(username: "u1", password: "testu1", email: "okada.yuka@me.com")
+        signUp(username: usernameTextField.text ?? "", password: passwordTextField.text ?? "", email: emailTextField.text ?? "")
     }
     
     @IBAction func confirmSignUpButton(_ sender: Any) {
-        //confirmSignUp(for: "u1", with: verificationCodeTextField.text)
+        confirmSignUp(for: usernameTextField.text ?? "", with: verificationCodeTextField.text ?? "")
     }
     
     @IBAction func signInButton(_ sender: Any) {
-        signIn(username: "u1", password: "testu1")
+        signIn(username: usernameTextField.text ?? "", password: passwordTextField.text ?? "")
+    }
+    
+    @IBAction func signOutButton(_ sender: Any) {
+        signOutLocally()
     }
     
     
@@ -68,6 +84,29 @@ class AuthViewController: UIViewController {
                 print("Sign in failed \(error)")
             }
         }
+    }
+    
+    func signOutLocally() {
+        Amplify.Auth.signOut() { result in
+            switch result {
+            case .success:
+                print("Successfully signed out")
+            case .failure(let error):
+                print("Sign out failed with error \(error)")
+            }
+        }
+    }
+    
+    // キーボードを閉じる（画面のどこかが押された時に呼び出される）
+    @objc func dismissKeyboard() {
+        self.view.endEditing(true)
+    }
+    
+    // Returnキーが押されたらキーボードを閉じる
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        // verificationCodeTextField.resignFirstResponder()
+        dismissKeyboard()
+        return true
     }
     
     /*
