@@ -24,10 +24,10 @@
             </objects>
             <point key="canvasLocation" x="137.68115942028987" y="123.88392857142857"/>
         </scene>
-        <!--Authentication-->
+        <!--Auth-->
         <scene sceneID="U61-1p-psy">
             <objects>
-                <viewControllerPlaceholder storyboardName="Authentication" id="otY-er-UOm" sceneMemberID="viewController">
+                <viewControllerPlaceholder storyboardName="Auth" id="otY-er-UOm" sceneMemberID="viewController">
                     <navigationItem key="navigationItem" id="fac-mm-SQc"/>
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="296-fJ-yPb" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
