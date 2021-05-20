@@ -20,33 +20,33 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
 
-        AWSMobileClient.default().initialize { (userstate, error) in
-
-            if let userState = userstate {
-                switch userstate {
-                case .signedIn :
-                    DispatchQueue.main.async {
-                        print("Sign In")
-                    }
-
-                case .signedOut :
-                    AWSMobileClient.default().showSignIn(navigationController: self.navigationController!, { (userstate, error) in
-                        if error == nil { // サインイン成功時
-                            DispatchQueue.main.async {
-                                print("Sign In")
-                            }
-                        }
-                    })
-
-                default:
-                    AWSMobileClient.default().signOut()
-                }
-
-            } else if let error = error {
-                print(error.localizedDescription)
-            }
-
-        }
+//        AWSMobileClient.default().initialize { (userstate, error) in
+//
+//            if let userState = userstate {
+//                switch userstate {
+//                case .signedIn :
+//                    DispatchQueue.main.async {
+//                        print("Sign In")
+//                    }
+//
+//                case .signedOut :
+//                    AWSMobileClient.default().showSignIn(navigationController: self.navigationController!, { (userstate, error) in
+//                        if error == nil { // サインイン成功時
+//                            DispatchQueue.main.async {
+//                                print("Sign In")
+//                            }
+//                        }
+//                    })
+//
+//                default:
+//                    AWSMobileClient.default().signOut()
+//                }
+//
+//            } else if let error = error {
+//                print(error.localizedDescription)
+//            }
+//
+//        }
     }
 
     @IBAction func signOutButton(_ sender: Any) {
