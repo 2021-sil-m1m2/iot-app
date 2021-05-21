@@ -15,11 +15,6 @@ class AuthViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var emailTextField: UITextField!
     
-    
-    
-    
-    
-    
     @IBOutlet weak var usernameLabel: UILabel!
     
     override func viewDidLoad() {
