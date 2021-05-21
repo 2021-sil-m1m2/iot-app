@@ -128,7 +128,6 @@ class AuthViewController: UIViewController, UITextFieldDelegate {
         }
     } 
     
-    
     /*
     // MARK: - Navigation
 
