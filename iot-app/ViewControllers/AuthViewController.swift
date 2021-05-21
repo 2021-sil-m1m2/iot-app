@@ -17,6 +17,7 @@ class AuthViewController: UIViewController, UITextFieldDelegate {
     
     @IBOutlet weak var usernameLabel: UILabel!
     
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -30,6 +31,7 @@ class AuthViewController: UIViewController, UITextFieldDelegate {
         usernameTextField.delegate = self
         passwordTextField.delegate = self
         emailTextField.delegate = self
+        
     }
     
     @IBAction func signUpButton(_ sender: Any) {
@@ -115,7 +117,6 @@ class AuthViewController: UIViewController, UITextFieldDelegate {
     }
     
     func fetchAttributes() {
-        
         usernameLabel.text = Amplify.Auth.getCurrentUser()?.username ?? "usernameを取得できませんでした"
         
         Amplify.Auth.fetchUserAttributes() { result in
@@ -126,7 +127,8 @@ class AuthViewController: UIViewController, UITextFieldDelegate {
                 print("Fetching user attributes failed with error \(error)")
             }
         }
-    }
+    } 
+    
     
     /*
     // MARK: - Navigation
