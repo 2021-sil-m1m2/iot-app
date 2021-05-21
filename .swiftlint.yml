@@ -85,6 +85,6 @@ only_rules:
   # 変数は比較演算子の左側、定数は右側に配置すべき
   - yoda_condition
   
-# チェックをするパス
+# Lint対象のパス
 included:
-  - iot-app
+  - iot-app/ViewControllers/

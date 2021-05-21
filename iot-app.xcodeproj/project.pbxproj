@@ -30,6 +30,8 @@
 		C147814E2653F2D10003E18D /* Backend.swift in Sources */ = {isa = PBXBuildFile; fileRef = C147814D2653F2D10003E18D /* Backend.swift */; };
 		C1478150265414CA0003E18D /* awsconfiguration.json in Resources */ = {isa = PBXBuildFile; fileRef = C147814F265414CA0003E18D /* awsconfiguration.json */; };
 		C1478152265414FD0003E18D /* amplifyconfiguration.json in Resources */ = {isa = PBXBuildFile; fileRef = C1478151265414FD0003E18D /* amplifyconfiguration.json */; };
+		C1AD25E226580E3800E4F9AF /* Animation.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C1AD25E126580E3800E4F9AF /* Animation.storyboard */; };
+		C1AD25E426580E6100E4F9AF /* AnimationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1AD25E326580E6100E4F9AF /* AnimationViewController.swift */; };
 		C1E9698026569599001E3D59 /* AuthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1E9697F26569599001E3D59 /* AuthViewController.swift */; };
 		C1E969852656B97E001E3D59 /* Auth.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C1E969842656B97E001E3D59 /* Auth.storyboard */; };
 		C1E969872656BA18001E3D59 /* ThinningOut.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C1E969862656BA18001E3D59 /* ThinningOut.storyboard */; };
@@ -58,6 +60,10 @@
 		C147814D2653F2D10003E18D /* Backend.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Backend.swift; sourceTree = "<group>"; };
 		C147814F265414CA0003E18D /* awsconfiguration.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = awsconfiguration.json; sourceTree = "<group>"; };
 		C1478151265414FD0003E18D /* amplifyconfiguration.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = amplifyconfiguration.json; sourceTree = "<group>"; };
+		C1AD25DE265808A600E4F9AF /* plant.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = plant.json; sourceTree = "<group>"; };
+		C1AD25E126580E3800E4F9AF /* Animation.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Animation.storyboard; sourceTree = "<group>"; };
+		C1AD25E326580E6100E4F9AF /* AnimationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimationViewController.swift; sourceTree = "<group>"; };
+		C1AD25E7265813B900E4F9AF /* 62607-track-your-progress.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "62607-track-your-progress.json"; sourceTree = "<group>"; };
 		C1E9697F26569599001E3D59 /* AuthViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewController.swift; sourceTree = "<group>"; };
 		C1E969842656B97E001E3D59 /* Auth.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Auth.storyboard; sourceTree = "<group>"; };
 		C1E969862656BA18001E3D59 /* ThinningOut.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ThinningOut.storyboard; sourceTree = "<group>"; };
@@ -124,11 +130,13 @@
 		C14781342652C6200003E18D /* iot-app */ = {
 			isa = PBXGroup;
 			children = (
+				C1AD25E7265813B900E4F9AF /* 62607-track-your-progress.json */,
 				C1E969812656B93E001E3D59 /* storyboards */,
 				C150A0E72654DB76000D1D55 /* ViewControllers */,
 				C14781352652C6200003E18D /* AppDelegate.swift */,
 				C14781372652C6200003E18D /* SceneDelegate.swift */,
 				C147813E2652C6230003E18D /* Assets.xcassets */,
+				C1AD25DE265808A600E4F9AF /* plant.json */,
 				C14781402652C6230003E18D /* LaunchScreen.storyboard */,
 				C14781432652C6230003E18D /* Info.plist */,
 			);
@@ -140,6 +148,7 @@
 			children = (
 				C14781392652C6200003E18D /* ThinningOutViewController.swift */,
 				C1E9697F26569599001E3D59 /* AuthViewController.swift */,
+				C1AD25E326580E6100E4F9AF /* AnimationViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -150,6 +159,7 @@
 				C147813B2652C6200003E18D /* Main.storyboard */,
 				C1E969842656B97E001E3D59 /* Auth.storyboard */,
 				C1E969862656BA18001E3D59 /* ThinningOut.storyboard */,
+				C1AD25E126580E3800E4F9AF /* Animation.storyboard */,
 			);
 			path = storyboards;
 			sourceTree = "<group>";
@@ -242,6 +252,7 @@
 				2FEC47E418A9D6ADE3ED3088 /* amplifyconfiguration.json in Resources */,
 				C1478152265414FD0003E18D /* amplifyconfiguration.json in Resources */,
 				C1E969852656B97E001E3D59 /* Auth.storyboard in Resources */,
+				C1AD25E226580E3800E4F9AF /* Animation.storyboard in Resources */,
 				194B44120EE569FA1B40F9F1 /* awsconfiguration.json in Resources */,
 				C1478150265414CA0003E18D /* awsconfiguration.json in Resources */,
 				720911BDD77D2709003E249F /* amplifyconfiguration.json in Resources */,
@@ -318,6 +329,7 @@
 			files = (
 				C147813A2652C6200003E18D /* ThinningOutViewController.swift in Sources */,
 				C14781362652C6200003E18D /* AppDelegate.swift in Sources */,
+				C1AD25E426580E6100E4F9AF /* AnimationViewController.swift in Sources */,
 				C1E9698026569599001E3D59 /* AuthViewController.swift in Sources */,
 				C14781382652C6200003E18D /* SceneDelegate.swift in Sources */,
 				C147814E2653F2D10003E18D /* Backend.swift in Sources */,
@@ -474,6 +486,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
+				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_TEAM = 37L8368F83;
 				INFOPLIST_FILE = "iot-app/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -494,6 +507,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
+				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_TEAM = 37L8368F83;
 				INFOPLIST_FILE = "iot-app/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
