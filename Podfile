@@ -18,4 +18,5 @@ target 'iot-app' do
   pod 'AmplifyPlugins/AWSAPIPlugin'
   pod 'AmplifyPlugins/AWSS3StoragePlugin'
   pod 'SwiftLint'
+  pod 'lottie-ios'
 end

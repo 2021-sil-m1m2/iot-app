@@ -51,6 +51,7 @@ PODS:
     - AWSAuthCore (= 2.24.1)
     - AWSCognitoIdentityProvider (= 2.24.1)
     - AWSCore (= 2.24.1)
+  - lottie-ios (3.2.3)
   - ReachabilitySwift (5.0.0)
   - SQLite.swift (0.12.2):
     - SQLite.swift/standard (= 0.12.2)
@@ -70,6 +71,7 @@ DEPENDENCIES:
   - AWSMobileClient
   - AWSS3
   - AWSUserPoolsSignIn
+  - lottie-ios
   - SwiftLint
 
 SPEC REPOS:
@@ -88,6 +90,7 @@ SPEC REPOS:
     - AWSPluginsCore
     - AWSS3
     - AWSUserPoolsSignIn
+    - lottie-ios
     - ReachabilitySwift
     - SQLite.swift
     - Starscream
@@ -108,11 +111,12 @@ SPEC CHECKSUMS:
   AWSPluginsCore: dcedd6826f38917f6b8bc11f261abb0fc0eb2977
   AWSS3: e5b5a1595e08c52bb321495d7122e1d331134317
   AWSUserPoolsSignIn: 4e23a9c205692ba4d868d550818802febc2f364c
+  lottie-ios: c058aeafa76daa4cf64d773554bccc8385d0150e
   ReachabilitySwift: 985039c6f7b23a1da463388634119492ff86c825
   SQLite.swift: d2b4642190917051ce6bd1d49aab565fe794eea3
   Starscream: 4bb2f9942274833f7b4d296a55504dcfc7edb7b0
   SwiftLint: 99f82d07b837b942dd563c668de129a03fc3fb52
 
-PODFILE CHECKSUM: 085e15184eb7c0caa2eaeb278060a0340aea838b
+PODFILE CHECKSUM: 1bfec0b83ce7e725b6b69458c5bb3f5aee108ee7
 
 COCOAPODS: 1.10.1
