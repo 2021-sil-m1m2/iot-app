@@ -9,6 +9,7 @@ import Lottie
 import UIKit
 
 class AnimationViewController: UIViewController {
+    
     // AnimationViewの宣言
     var animationView = AnimationView()
 
@@ -25,20 +26,26 @@ class AnimationViewController: UIViewController {
     func addAnimationView() {
 
         // アニメーションファイルの指定
-        animationView = AnimationView(name: "29733-growing-plant")
+        animationView = AnimationView(name: "25087-green-hearts")
 
         // アニメーションの位置指定（画面中央）
         animationView.frame = CGRect(x: 0, y: 0, width: view.frame.size.width, height: view.frame.size.height)
 
         // アニメーションのアスペクト比を指定＆ループで開始
         animationView.contentMode = .scaleAspectFit
-        animationView.loopMode = .loop
-        animationView.play()
+//        animationView.loopMode = .loop
+//        animationView.play()
 
         // ViewControllerに配置
         view.addSubview(animationView)
+        
+        // aniationViewを最背面に配置
+        view.sendSubviewToBack(animationView)
     }
 
+    @IBAction func heartButton(_ sender: Any) {
+        animationView.play()
+    }
     /*
     // MARK: - Navigation
 
