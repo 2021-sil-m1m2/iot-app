@@ -25,7 +25,7 @@ class AnimationViewController: UIViewController {
     func addAnimationView() {
 
         // アニメーションファイルの指定
-        animationView = AnimationView(name: "62607-track-your-progress")
+        animationView = AnimationView(name: "29733-growing-plant")
 
         // アニメーションの位置指定（画面中央）
         animationView.frame = CGRect(x: 0, y: 0, width: view.frame.size.width, height: view.frame.size.height)
