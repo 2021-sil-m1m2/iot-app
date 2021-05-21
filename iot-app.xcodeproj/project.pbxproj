@@ -52,10 +52,8 @@
 		C14781412652C6230003E18D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C14781432652C6230003E18D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C147814D2653F2D10003E18D /* Backend.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Backend.swift; sourceTree = "<group>"; };
-		C1AD25DE265808A600E4F9AF /* plant.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = plant.json; sourceTree = "<group>"; };
 		C1AD25E126580E3800E4F9AF /* Animation.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Animation.storyboard; sourceTree = "<group>"; };
 		C1AD25E326580E6100E4F9AF /* AnimationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimationViewController.swift; sourceTree = "<group>"; };
-		C1AD25E7265813B900E4F9AF /* 62607-track-your-progress.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "62607-track-your-progress.json"; sourceTree = "<group>"; };
 		C1E9697F26569599001E3D59 /* AuthViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewController.swift; sourceTree = "<group>"; };
 		C1E969842656B97E001E3D59 /* Auth.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Auth.storyboard; sourceTree = "<group>"; };
 		C1E969862656BA18001E3D59 /* ThinningOut.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ThinningOut.storyboard; sourceTree = "<group>"; };
@@ -122,13 +120,11 @@
 		C14781342652C6200003E18D /* iot-app */ = {
 			isa = PBXGroup;
 			children = (
-				C1AD25E7265813B900E4F9AF /* 62607-track-your-progress.json */,
 				C1E969812656B93E001E3D59 /* storyboards */,
 				C150A0E72654DB76000D1D55 /* ViewControllers */,
 				C14781352652C6200003E18D /* AppDelegate.swift */,
 				C14781372652C6200003E18D /* SceneDelegate.swift */,
 				C147813E2652C6230003E18D /* Assets.xcassets */,
-				C1AD25DE265808A600E4F9AF /* plant.json */,
 				C14781402652C6230003E18D /* LaunchScreen.storyboard */,
 				C14781432652C6230003E18D /* Info.plist */,
 			);
