@@ -13,6 +13,8 @@
 		59A4F9AD9EF5B85FA10A95A1 /* AmplifyModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C480D70593D2306D8BDFF46 /* AmplifyModels.swift */; };
 		6F010160B059B66D32FA7AE2 /* Pods_iot_app.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6981A9689769AE2591ACECE1 /* Pods_iot_app.framework */; };
 		AF8D526856262C209BA3BFD0 /* User+Schema.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1545355C046F7984F0B89C5 /* User+Schema.swift */; };
+		C110460F265BD4EA0009D99C /* lf30_editor_7cjo5dpw.json in Resources */ = {isa = PBXBuildFile; fileRef = C110460E265BD4E90009D99C /* lf30_editor_7cjo5dpw.json */; };
+		C1104611265BD61E0009D99C /* lf30_editor_dag3dkzf.json in Resources */ = {isa = PBXBuildFile; fileRef = C1104610265BD61E0009D99C /* lf30_editor_dag3dkzf.json */; };
 		C1262A82265905CD0025BC1B /* 42372-stroke-of-life.json in Resources */ = {isa = PBXBuildFile; fileRef = C1262A81265905CD0025BC1B /* 42372-stroke-of-life.json */; };
 		C1262A85265906C20025BC1B /* lf30_editor_elmlfpek.json in Resources */ = {isa = PBXBuildFile; fileRef = C1262A84265906C20025BC1B /* lf30_editor_elmlfpek.json */; };
 		C1262A87265907190025BC1B /* lf30_editor_s2ryxstp.json in Resources */ = {isa = PBXBuildFile; fileRef = C1262A86265907190025BC1B /* lf30_editor_s2ryxstp.json */; };
@@ -46,6 +48,9 @@
 		9F54B2B51AD03326FAB195DF /* Post.swift */ = {isa = PBXFileReference; explicitFileType = sourcecode.swift; name = Post.swift; path = amplify/generated/models/Post.swift; sourceTree = "<group>"; };
 		A1545355C046F7984F0B89C5 /* User+Schema.swift */ = {isa = PBXFileReference; explicitFileType = sourcecode.swift; name = "User+Schema.swift"; path = "amplify/generated/models/User+Schema.swift"; sourceTree = "<group>"; };
 		B88629AB7419B69755F3639B /* Post+Schema.swift */ = {isa = PBXFileReference; explicitFileType = sourcecode.swift; name = "Post+Schema.swift"; path = "amplify/generated/models/Post+Schema.swift"; sourceTree = "<group>"; };
+		C110460E265BD4E90009D99C /* lf30_editor_7cjo5dpw.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = lf30_editor_7cjo5dpw.json; path = ../../../Downloads/lf30_editor_7cjo5dpw.json; sourceTree = "<group>"; };
+		C1104610265BD61E0009D99C /* lf30_editor_dag3dkzf.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = lf30_editor_dag3dkzf.json; path = ../../../../../Downloads/lf30_editor_dag3dkzf.json; sourceTree = "<group>"; };
+		C1104612265BD62B0009D99C /* lf30_editor_dag3dkzf.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = lf30_editor_dag3dkzf.json; sourceTree = "<group>"; };
 		C1262A81265905CD0025BC1B /* 42372-stroke-of-life.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = "42372-stroke-of-life.json"; path = "../../../../../Downloads/42372-stroke-of-life.json"; sourceTree = "<group>"; };
 		C1262A83265905D20025BC1B /* 42372-stroke-of-life.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "42372-stroke-of-life.json"; sourceTree = "<group>"; };
 		C1262A84265906C20025BC1B /* lf30_editor_elmlfpek.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = lf30_editor_elmlfpek.json; path = ../../../Downloads/lf30_editor_elmlfpek.json; sourceTree = "<group>"; };
@@ -109,6 +114,7 @@
 		C14781292652C6200003E18D = {
 			isa = PBXGroup;
 			children = (
+				C110460E265BD4E90009D99C /* lf30_editor_7cjo5dpw.json */,
 				C1262A8A26590B4B0025BC1B /* lf30_editor_gi3bcvcg.json */,
 				C1262A88265907980025BC1B /* lf30_editor_aiiuoac8.json */,
 				C1262A86265907190025BC1B /* lf30_editor_s2ryxstp.json */,
@@ -116,6 +122,7 @@
 				C126C5872658521600062E54 /* 25087-green-hearts.json */,
 				C1262A83265905D20025BC1B /* 42372-stroke-of-life.json */,
 				C126C5852658483A00062E54 /* 29733-growing-plant.json */,
+				C1104612265BD62B0009D99C /* lf30_editor_dag3dkzf.json */,
 				C1F7AF772654199000208046 /* generated */,
 				C147814D2653F2D10003E18D /* Backend.swift */,
 				C14781342652C6200003E18D /* iot-app */,
@@ -167,6 +174,7 @@
 				C1E969842656B97E001E3D59 /* Auth.storyboard */,
 				C1E969862656BA18001E3D59 /* ThinningOut.storyboard */,
 				C1AD25E126580E3800E4F9AF /* Animation.storyboard */,
+				C1104610265BD61E0009D99C /* lf30_editor_dag3dkzf.json */,
 			);
 			path = storyboards;
 			sourceTree = "<group>";
@@ -253,6 +261,7 @@
 				C126C5862658483A00062E54 /* 29733-growing-plant.json in Resources */,
 				C1262A8B26590B4C0025BC1B /* lf30_editor_gi3bcvcg.json in Resources */,
 				C1262A82265905CD0025BC1B /* 42372-stroke-of-life.json in Resources */,
+				C110460F265BD4EA0009D99C /* lf30_editor_7cjo5dpw.json in Resources */,
 				C1262A87265907190025BC1B /* lf30_editor_s2ryxstp.json in Resources */,
 				C147813F2652C6230003E18D /* Assets.xcassets in Resources */,
 				C147813D2652C6200003E18D /* Main.storyboard in Resources */,
@@ -262,6 +271,7 @@
 				C1262A85265906C20025BC1B /* lf30_editor_elmlfpek.json in Resources */,
 				C1E969852656B97E001E3D59 /* Auth.storyboard in Resources */,
 				C126C5842658433800062E54 /* amplifyconfiguration.json in Resources */,
+				C1104611265BD61E0009D99C /* lf30_editor_dag3dkzf.json in Resources */,
 				C1262A89265907980025BC1B /* lf30_editor_aiiuoac8.json in Resources */,
 				C1AD25E226580E3800E4F9AF /* Animation.storyboard in Resources */,
 			);
