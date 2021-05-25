@@ -7,14 +7,20 @@
 
 import UIKit
 
-class SignUpViewController: UIViewController {
+class SignUpViewController: UIViewController, UITextFieldDelegate {
 
+    @IBOutlet weak var usernameTextField: UITextField!
+    @IBOutlet weak var emailTextField: UITextField!
+    @IBOutlet weak var passwordTextField: UITextField!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        // アニメーションを描画する
+        functions.addAnimationView(view: view, animation: "26565-plant-animation", x: 0, y: 190, width: view.frame.size.width / 2, height: view.frame.size.height / 2)
+        
         // Do any additional setup after loading the view.
     }
-    
 
     /*
     // MARK: - Navigation

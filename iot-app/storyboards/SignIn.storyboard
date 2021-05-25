@@ -10,7 +10,7 @@
         <!--Sign In View Controller-->
         <scene sceneID="s0d-6b-0kx">
             <objects>
-                <viewController id="Y6W-OH-hqX" customClass="SignInViewController" customModule="iot_app" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="SignIn" modalTransitionStyle="flipHorizontal" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Y6W-OH-hqX" customClass="SignInViewController" customModule="iot_app" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
                         <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -59,7 +59,7 @@
                     <connections>
                         <outlet property="passwordTextField" destination="WC2-EL-mrp" id="Qug-iQ-weF"/>
                         <outlet property="usernameTextField" destination="jFZ-Jy-84M" id="fFt-D7-E5X"/>
-                        <segue destination="SlB-Yy-rwZ" kind="show" identifier="toTab" id="WXI-VN-uB7"/>
+                        <segue destination="SlB-Yy-rwZ" kind="modal" identifier="toTab" modalPresentationStyle="fullScreen" modalTransitionStyle="flipHorizontal" id="WXI-VN-uB7"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -79,7 +79,7 @@
         <!--Tab-->
         <scene sceneID="2dp-Kn-k0w">
             <objects>
-                <viewControllerPlaceholder storyboardName="Tab" id="SlB-Yy-rwZ" sceneMemberID="viewController">
+                <viewControllerPlaceholder storyboardIdentifier="Tab" storyboardName="Tab" id="SlB-Yy-rwZ" sceneMemberID="viewController">
                     <navigationItem key="navigationItem" id="AD2-en-2aI"/>
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Mrw-z3-XeH" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
