@@ -8,7 +8,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Thinning Out View Controller-->
+        <!--Item-->
         <scene sceneID="KSG-W4-ctM">
             <objects>
                 <viewController id="oW6-fr-fqz" customClass="ThinningOutViewController" customModule="iot_app" customModuleProvider="target" sceneMemberID="viewController">
@@ -40,7 +40,9 @@
                         <viewLayoutGuide key="safeArea" id="ULm-GM-cKC"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
+                    <tabBarItem key="tabBarItem" title="Item" id="QhC-qn-GeB"/>
                     <navigationItem key="navigationItem" id="ETa-iW-aQB"/>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="imageView" destination="b97-P3-dzS" id="vQ7-ra-675"/>
                     </connections>

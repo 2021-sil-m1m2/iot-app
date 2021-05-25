@@ -30,6 +30,7 @@
 		C161C392265C2E9F00070469 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C161C391265C2E9F00070469 /* SignUpViewController.swift */; };
 		C161C394265C3D9700070469 /* Tab.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C161C393265C3D9700070469 /* Tab.storyboard */; };
 		C161C396265C48C000070469 /* Profile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C161C395265C48C000070469 /* Profile.storyboard */; };
+		C161C398265D5C5C00070469 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C161C397265D5C5C00070469 /* ProfileViewController.swift */; };
 		C1AD25E226580E3800E4F9AF /* Animation.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C1AD25E126580E3800E4F9AF /* Animation.storyboard */; };
 		C1AD25E426580E6100E4F9AF /* AnimationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1AD25E326580E6100E4F9AF /* AnimationViewController.swift */; };
 		C1E9698026569599001E3D59 /* AuthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1E9697F26569599001E3D59 /* AuthViewController.swift */; };
@@ -66,6 +67,7 @@
 		C161C391265C2E9F00070469 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		C161C393265C3D9700070469 /* Tab.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Tab.storyboard; sourceTree = "<group>"; };
 		C161C395265C48C000070469 /* Profile.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Profile.storyboard; sourceTree = "<group>"; };
+		C161C397265D5C5C00070469 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		C1AD25E126580E3800E4F9AF /* Animation.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Animation.storyboard; sourceTree = "<group>"; };
 		C1AD25E326580E6100E4F9AF /* AnimationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimationViewController.swift; sourceTree = "<group>"; };
 		C1E9697F26569599001E3D59 /* AuthViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewController.swift; sourceTree = "<group>"; };
@@ -153,6 +155,7 @@
 				C1AD25E326580E6100E4F9AF /* AnimationViewController.swift */,
 				C14B9635265C1771000058F7 /* SignInViewController.swift */,
 				C161C391265C2E9F00070469 /* SignUpViewController.swift */,
+				C161C397265D5C5C00070469 /* ProfileViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -352,6 +355,7 @@
 				59A4F9AD9EF5B85FA10A95A1 /* AmplifyModels.swift in Sources */,
 				204942E881C540C6F18CD4A5 /* Post+Schema.swift in Sources */,
 				138511A1EEF9033CBB034615 /* Post.swift in Sources */,
+				C161C398265D5C5C00070469 /* ProfileViewController.swift in Sources */,
 				AF8D526856262C209BA3BFD0 /* User+Schema.swift in Sources */,
 				28BE85DE0878D68BD86384B0 /* User.swift in Sources */,
 			);

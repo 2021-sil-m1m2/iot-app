@@ -44,14 +44,6 @@
                                     <segue destination="0yV-B8-auO" kind="modal" modalPresentationStyle="fullScreen" modalTransitionStyle="flipHorizontal" id="9WI-F5-wyM"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dea-SS-EOb">
-                                <rect key="frame" x="220" y="129" width="46" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
-                                <connections>
-                                    <action selector="signOut:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="xeX-kE-MOt"/>
-                                </connections>
-                            </button>
                             <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="ユーザ名/メールアドレス" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="jFZ-Jy-84M">
                                 <rect key="frame" x="144" y="391" width="197" height="34"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
