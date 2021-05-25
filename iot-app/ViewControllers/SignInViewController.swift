@@ -34,6 +34,13 @@ class SignInViewController: UIViewController, UITextFieldDelegate {
         // ToolBarを隠す
         navigationController?.setToolbarHidden(true, animated: false)
         
+        // 現在のログイン状態を取得する
+        let cognitoUser = Amplify.Auth.getCurrentUser()
+        if cognitoUser != nil {
+            // すでにログイン済みの場合、画面遷移する
+            performSegue(withIdentifier: "toTab", sender: nil)
+        }
+        
         // 画面のどこかがタップされた時にdismissKeyboard関数を呼び出す
         let tapGR: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard))
         tapGR.cancelsTouchesInView = false
@@ -42,21 +49,11 @@ class SignInViewController: UIViewController, UITextFieldDelegate {
         passwordTextField.delegate = self
     }
     
-    @IBAction func signOut(_ sender: Any) {
-        signOutLocally()
-    }
-    
     @IBAction func signIn(_ sender: Any) {
         signIn(username: usernameTextField.text ?? "", password: passwordTextField.text ?? "")
     }
     
-    // 画面遷移する関数
-    func goToTab() {
-        self.performSegue(withIdentifier: "toTab", sender: nil)
-    }
-    
     func signIn(username: String, password: String) {
-        
         Amplify.Auth.signIn(username: username, password: password) { result in
             switch result {
             case .success:
@@ -68,18 +65,6 @@ class SignInViewController: UIViewController, UITextFieldDelegate {
                 }
             case .failure(let error):
                 print("Sign in failed \(error)")
-            }
-        }
-        
-    }
-    
-    func signOutLocally() {
-        Amplify.Auth.signOut() { result in
-            switch result {
-            case .success:
-                print("Successfully signed out")
-            case .failure(let error):
-                print("Sign out failed with error \(error)")
             }
         }
     }
