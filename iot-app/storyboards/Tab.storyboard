@@ -9,7 +9,7 @@
         <!--Tab Bar Controller-->
         <scene sceneID="AnZ-cS-xjH">
             <objects>
-                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="zBr-Oo-mZr" sceneMemberID="viewController">
+                <tabBarController storyboardIdentifier="Tab" automaticallyAdjustsScrollViewInsets="NO" modalTransitionStyle="flipHorizontal" modalPresentationStyle="fullScreen" useStoryboardIdentifierAsRestorationIdentifier="YES" id="zBr-Oo-mZr" sceneMemberID="viewController">
                     <toolbarItems/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="2NO-KR-MGv">
                         <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
@@ -33,12 +33,12 @@
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Jab-2p-pvr" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="795" y="23"/>
+            <point key="canvasLocation" x="793" y="42"/>
         </scene>
-        <!--ThinningOut-->
+        <!--Planter-->
         <scene sceneID="EHU-Cm-e0L">
             <objects>
-                <viewControllerPlaceholder storyboardName="ThinningOut" id="UDi-IV-EwM" sceneMemberID="viewController">
+                <viewControllerPlaceholder storyboardName="Planter" id="UDi-IV-EwM" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Item" id="3jh-Uz-c3s"/>
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BgM-lg-4Xy" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

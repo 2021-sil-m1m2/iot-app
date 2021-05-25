@@ -141,10 +141,10 @@
             </objects>
             <point key="canvasLocation" x="1786.9565217391305" y="123.88392857142857"/>
         </scene>
-        <!--ThinningOut-->
+        <!--Planter-->
         <scene sceneID="bks-JO-tf8">
             <objects>
-                <viewControllerPlaceholder storyboardName="ThinningOut" id="mJl-R6-SnX" sceneMemberID="viewController">
+                <viewControllerPlaceholder storyboardName="Planter" id="mJl-R6-SnX" sceneMemberID="viewController">
                     <navigationItem key="navigationItem" id="FI8-II-T1n"/>
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="j2c-Cq-eQP" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

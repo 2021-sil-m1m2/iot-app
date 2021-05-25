@@ -15,19 +15,16 @@ class SignInViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var usernameTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
     
-    // AnimationViewの宣言
-    var animationView = AnimationView()
-
-    // ログインできたか
-    var logedin = false
+//    // AnimationViewの宣言
+//    var animationView = AnimationView()
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
         
-        // アニメーションの呼び出し
-        addAnimationView()
+        // アニメーションを描画する
+        functions.addAnimationView(view: view, animation: "draw_line", x: 0, y: -190, width: view.frame.size.width, height: view.frame.size.height)
         
         // NavigationBarを隠す
         navigationController?.setNavigationBarHidden(true, animated: false)
@@ -57,7 +54,6 @@ class SignInViewController: UIViewController, UITextFieldDelegate {
         Amplify.Auth.signIn(username: username, password: password) { result in
             switch result {
             case .success:
-                self.logedin = true
                 print("Sign in succeeded")
                 // 同期処理
                 DispatchQueue.main.sync {
@@ -67,28 +63,6 @@ class SignInViewController: UIViewController, UITextFieldDelegate {
                 print("Sign in failed \(error)")
             }
         }
-    }
-    
-    // アニメーションの準備
-    func addAnimationView() {
-
-        // アニメーションファイルの指定
-        animationView = AnimationView(name: "draw_line")
-
-        // アニメーションの位置指定
-        animationView.frame = CGRect(x: 0, y: -190, width: view.frame.size.width, height: view.frame.size.height)
-
-        // アニメーションのアスペクト比を指定＆ループで開始
-        animationView.contentMode = .scaleAspectFit
-//        animationView.loopMode = .loop
-        animationView.loopMode = .autoReverse
-        animationView.play()
-
-        // ViewControllerに配置
-        view.addSubview(animationView)
-        
-        // aniationViewを最背面に配置
-        view.sendSubviewToBack(animationView)
     }
     
     // キーボードを閉じる（画面のどこかが押された時に呼び出される）

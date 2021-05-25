@@ -11,7 +11,7 @@
         <!--Item-->
         <scene sceneID="KSG-W4-ctM">
             <objects>
-                <viewController id="oW6-fr-fqz" customClass="ThinningOutViewController" customModule="iot_app" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="Planter" useStoryboardIdentifierAsRestorationIdentifier="YES" id="oW6-fr-fqz" customClass="PlanterViewController" customModule="iot_app" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="SPx-La-ski">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

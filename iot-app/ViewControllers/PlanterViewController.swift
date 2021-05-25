@@ -1,5 +1,5 @@
 //
-//  ThinningOutViewController.swift
+//  PlanterViewController.swift
 //  iot-app
 //
 //  Created by yokada on 2021/05/18.
@@ -11,7 +11,7 @@ import AWSMobileClient
 import AWSS3
 import UIKit
 
-class ThinningOutViewController: UIViewController {
+class PlanterViewController: UIViewController {
 
     @IBOutlet weak var imageView: UIImageView!
 

@@ -53,6 +53,11 @@
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" red="0.51686841250000004" green="0.7340008616" blue="0.65601772069999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
+                    <connections>
+                        <outlet property="emailTextField" destination="P4H-9m-QkM" id="gid-L1-uzz"/>
+                        <outlet property="passwordTextField" destination="cFt-cV-uhT" id="7km-vv-GUQ"/>
+                        <outlet property="usernameTextField" destination="Eed-E9-2Cl" id="nKO-7s-sYs"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
