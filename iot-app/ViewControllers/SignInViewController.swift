@@ -50,6 +50,11 @@ class SignInViewController: UIViewController, UITextFieldDelegate {
         signIn(username: usernameTextField.text ?? "", password: passwordTextField.text ?? "")
     }
     
+    // 画面遷移する関数
+    func goToTab() {
+        self.performSegue(withIdentifier: "toTab", sender: nil)
+    }
+    
     func signIn(username: String, password: String) {
         
         Amplify.Auth.signIn(username: username, password: password) { result in
@@ -57,6 +62,10 @@ class SignInViewController: UIViewController, UITextFieldDelegate {
             case .success:
                 self.logedin = true
                 print("Sign in succeeded")
+                // 同期処理
+                DispatchQueue.main.sync {
+                    self.performSegue(withIdentifier: "toTab", sender: nil)
+                }
             case .failure(let error):
                 print("Sign in failed \(error)")
             }
