@@ -1,64 +1,48 @@
 //
-//  SignInViewController.swift
+//  ConfirmViewController.swift
 //  iot-app
 //
-//  Created by yokada on 2021/05/25.
+//  Created by yokada on 2021/05/26.
 //
 
 import Amplify
 import AmplifyPlugins
-import Lottie
 import UIKit
 
-class SignInViewController: UIViewController, UITextFieldDelegate {
+class ConfirmViewController: UIViewController, UITextFieldDelegate {
 
-    @IBOutlet weak var usernameTextField: UITextField!
-    @IBOutlet weak var passwordTextField: UITextField!
+    @IBOutlet weak var confirmTextField: UITextField!
     
-//    // AnimationViewの宣言
-//    var animationView = AnimationView()
+    var username: String = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
-        
-        // アニメーションを描画する
-        functions.addAnimationView(view: view, animation: "draw_line", x: 0, y: -190, width: view.frame.size.width, height: view.frame.size.height)
-        
-        // NavigationBarを隠す
-        navigationController?.setNavigationBarHidden(true, animated: false)
-        
-        // 現在のログイン状態を取得する
-        let cognitoUser = Amplify.Auth.getCurrentUser()
-        if cognitoUser != nil {
-            // すでにログイン済みの場合、画面遷移する
-            performSegue(withIdentifier: "toTab", sender: nil)
-        }
-        
         // 画面のどこかがタップされた時にdismissKeyboard関数を呼び出す
         let tapGR: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard))
         tapGR.cancelsTouchesInView = false
         self.view.addGestureRecognizer(tapGR)
-        usernameTextField.delegate = self
-        passwordTextField.delegate = self
+        confirmTextField.delegate = self
+        print("-------------username")
+        print(username)
+        // Do any additional setup after loading the view.
     }
     
-    @IBAction func signIn(_ sender: Any) {
-        signIn(username: usernameTextField.text ?? "", password: passwordTextField.text ?? "")
+    @IBAction func confirmCode(_ sender: Any) {
+        confirmSignUp(for: username, with: confirmTextField.text ?? "")
     }
     
-    func signIn(username: String, password: String) {
-        Amplify.Auth.signIn(username: username, password: password) { result in
+    func confirmSignUp(for username: String, with confirmationCode: String) {
+        Amplify.Auth.confirmSignUp(for: username, confirmationCode: confirmationCode) { result in
             switch result {
             case .success:
-                print("Sign in succeeded")
+                print("Confirm signUp succeeded")
                 // 同期処理
                 DispatchQueue.main.sync {
                     self.performSegue(withIdentifier: "toTab", sender: nil)
                 }
             case .failure(let error):
-                print("Sign in failed \(error)")
+                print("An error occurred while confirming sign up \(error)")
             }
         }
     }
@@ -73,7 +57,7 @@ class SignInViewController: UIViewController, UITextFieldDelegate {
         dismissKeyboard()
         return true
     }
-    
+
     /*
     // MARK: - Navigation
 
@@ -85,4 +69,3 @@ class SignInViewController: UIViewController, UITextFieldDelegate {
     */
 
 }
-
