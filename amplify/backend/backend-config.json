@@ -1,6 +1,6 @@
 {
   "auth": {
-    "iotappa40a2944": {
+    "iotappe52f6abc": {
       "service": "Cognito",
       "providerPlugin": "awscloudformation",
       "dependsOn": [],

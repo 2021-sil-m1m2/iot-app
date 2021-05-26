@@ -12,8 +12,10 @@ import UIKit
 
 class SignInViewController: UIViewController, UITextFieldDelegate {
 
-    @IBOutlet weak var usernameTextField: UITextField!
+    @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
+    
+    @IBOutlet weak var errorLabel: UILabel!
     
 //    // AnimationViewの宣言
 //    var animationView = AnimationView()
@@ -40,25 +42,35 @@ class SignInViewController: UIViewController, UITextFieldDelegate {
         let tapGR: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard))
         tapGR.cancelsTouchesInView = false
         self.view.addGestureRecognizer(tapGR)
-        usernameTextField.delegate = self
+        emailTextField.delegate = self
         passwordTextField.delegate = self
     }
     
     @IBAction func signIn(_ sender: Any) {
-        signIn(username: usernameTextField.text ?? "", password: passwordTextField.text ?? "")
+        signIn(email: emailTextField.text ?? "", password: passwordTextField.text ?? "")
     }
     
-    func signIn(username: String, password: String) {
-        Amplify.Auth.signIn(username: username, password: password) { result in
+    func signIn(email: String, password: String) {
+        Amplify.Auth.signIn(username: email, password: password) { result in
             switch result {
             case .success:
                 print("Sign in succeeded")
-                // 同期処理
                 DispatchQueue.main.sync {
                     self.performSegue(withIdentifier: "toTab", sender: nil)
                 }
             case .failure(let error):
                 print("Sign in failed \(error)")
+                DispatchQueue.main.sync {
+                    print("エラー内容 \(error.errorDescription)")
+                    switch "\(error.errorDescription)" {
+                    case "User does not exist.":
+                        self.errorLabel.text = "登録されていないメールアドレスです。\nアカウント作成をしてください。"
+                    case "Incorrect username or password.":
+                        self.errorLabel.text = "メールアドレスかパスワードが間違っています。"
+                    default:
+                        self.errorLabel.text = "不明のエラーです。"
+                    }
+                }
             }
         }
     }

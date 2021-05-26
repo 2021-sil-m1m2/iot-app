@@ -25,18 +25,10 @@
                                     <segue destination="A2Q-6s-efq" kind="modal" modalPresentationStyle="fullScreen" modalTransitionStyle="flipHorizontal" id="xsL-rE-HDc"/>
                                 </connections>
                             </button>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="ユーザ名" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="Eed-E9-2Cl">
-                                <rect key="frame" x="145" y="204" width="197" height="34"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.97254901959999995" green="0.97254901959999995" blue="0.97254901959999995" alpha="0.28867607870000001" colorSpace="custom" customColorSpace="sRGB"/>
-                                <color key="textColor" red="0.51686841250000004" green="0.7340008616" blue="0.65601772069999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" spellCheckingType="no" returnKeyType="done" textContentType="username"/>
-                            </textField>
                             <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="パスワード" textAlignment="natural" clearsOnBeginEditing="YES" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="cFt-cV-uhT">
                                 <rect key="frame" x="145" y="336" width="197" height="34"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.97254901959999995" green="0.97254901959999995" blue="0.97254901959999995" alpha="0.28867607870000001" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" red="0.51686841250000004" green="0.7340008616" blue="0.65601772069999997" alpha="0.13880890094681292" colorSpace="custom" customColorSpace="sRGB"/>
                                 <color key="textColor" red="0.51686841250000004" green="0.7340008616" blue="0.65601772069999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" returnKeyType="done" secureTextEntry="YES" smartDashesType="no" smartInsertDeleteType="no" smartQuotesType="no" textContentType="password"/>
@@ -44,13 +36,20 @@
                             <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="メールアドレス" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="P4H-9m-QkM">
                                 <rect key="frame" x="145" y="270" width="197" height="34"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.97254901959999995" green="0.97254901959999995" blue="0.97254901959999995" alpha="0.28867607870000001" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" red="0.51686841250000004" green="0.7340008616" blue="0.65601772069999997" alpha="0.13880890094681292" colorSpace="custom" customColorSpace="sRGB"/>
                                 <color key="textColor" red="0.51686841250000004" green="0.7340008616" blue="0.65601772069999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" spellCheckingType="no" returnKeyType="done" textContentType="email"/>
                             </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pAn-FF-0yh">
+                                <rect key="frame" x="145" y="385" width="197" height="34"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                                <color key="textColor" red="0.92941176469999998" green="0.2819145857" blue="0.24454663030000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iNe-SB-REo">
-                                <rect key="frame" x="149" y="407" width="92" height="30"/>
+                                <rect key="frame" x="149" y="459" width="92" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="サインアップ">
                                     <color key="titleColor" red="0.51686841250000004" green="0.7340008616" blue="0.65601772069999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -65,14 +64,14 @@
                     </view>
                     <connections>
                         <outlet property="emailTextField" destination="P4H-9m-QkM" id="gid-L1-uzz"/>
+                        <outlet property="errorLabel" destination="pAn-FF-0yh" id="LN3-LM-Edv"/>
                         <outlet property="passwordTextField" destination="cFt-cV-uhT" id="7km-vv-GUQ"/>
-                        <outlet property="usernameTextField" destination="Eed-E9-2Cl" id="nKO-7s-sYs"/>
                         <segue destination="cZn-MH-Q2q" kind="presentation" identifier="toConfirm" modalPresentationStyle="fullScreen" modalTransitionStyle="coverVertical" id="jSo-yv-t0n"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="139" y="60"/>
+            <point key="canvasLocation" x="138.46153846153845" y="59.715639810426538"/>
         </scene>
         <!--SignIn-->
         <scene sceneID="4Hd-xZ-YGL">
