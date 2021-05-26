@@ -114,6 +114,10 @@ Parameters:
   
             
         
+  usernameAttributes:
+    Type: CommaDelimitedList
+      
+        
   userPoolGroupList:
     Type: CommaDelimitedList
       
@@ -144,7 +148,7 @@ Resources:
   # Created to allow the UserPool SMS Config to publish via the Simple Notification Service during MFA Process
     Type: AWS::IAM::Role
     Properties:
-      RoleName: !If [ShouldNotCreateEnvResources, 'iotappa40a2944_sns-role', !Join ['',[ 'sns', 'a40a2944', !Select [3, !Split ['-', !Ref 'AWS::StackName']], '-', !Ref env]]]
+      RoleName: !If [ShouldNotCreateEnvResources, 'iotappe52f6abc_sns-role', !Join ['',[ 'sns', 'e52f6abc', !Select [3, !Split ['-', !Ref 'AWS::StackName']], '-', !Ref env]]]
       AssumeRolePolicyDocument:
         Version: "2012-10-17"
         Statement:
@@ -156,10 +160,10 @@ Resources:
               - "sts:AssumeRole"
             Condition:
               StringEquals:
-                sts:ExternalId: iotappa40a2944_role_external_id
+                sts:ExternalId: iotappe52f6abc_role_external_id
       Policies:
         -
-          PolicyName: iotappa40a2944-sns-policy
+          PolicyName: iotappe52f6abc-sns-policy
           PolicyDocument:
             Version: "2012-10-17"
             Statement:
@@ -205,12 +209,14 @@ Resources:
           RequireSymbols: false
           RequireUppercase: false
       
+      UsernameAttributes: !Ref usernameAttributes
+      
       MfaConfiguration: !Ref mfaConfiguration
       SmsVerificationMessage: !Ref smsVerificationMessage
       SmsAuthenticationMessage: !Ref smsAuthenticationMessage
       SmsConfiguration:
         SnsCallerArn: !GetAtt SNSRole.Arn
-        ExternalId: iotappa40a2944_role_external_id
+        ExternalId: iotappe52f6abc_role_external_id
     
   
   UserPoolClientWeb:
@@ -218,7 +224,7 @@ Resources:
   # Depends on UserPool for ID reference
     Type: "AWS::Cognito::UserPoolClient"
     Properties:
-      ClientName: iotappa40a2944_app_clientWeb
+      ClientName: iotappe52f6abc_app_clientWeb
       
       RefreshTokenValidity: !Ref userpoolClientRefreshTokenValidity
       UserPoolId: !Ref UserPool
@@ -228,7 +234,7 @@ Resources:
   # Depends on UserPool for ID reference
     Type: "AWS::Cognito::UserPoolClient"
     Properties:
-      ClientName: iotappa40a2944_app_client
+      ClientName: iotappe52f6abc_app_client
       
       GenerateSecret: !Ref userpoolClientGenerateSecret
       RefreshTokenValidity: !Ref userpoolClientRefreshTokenValidity
@@ -239,7 +245,7 @@ Resources:
   # Created to execute Lambda which gets userpool app client config values
     Type: 'AWS::IAM::Role'
     Properties:
-      RoleName: !If [ShouldNotCreateEnvResources, !Ref userpoolClientLambdaRole, !Join ['',['upClientLambdaRole', 'a40a2944', !Select [3, !Split ['-', !Ref 'AWS::StackName']], '-', !Ref env]]]
+      RoleName: !If [ShouldNotCreateEnvResources, !Ref userpoolClientLambdaRole, !Join ['',['upClientLambdaRole', 'e52f6abc', !Select [3, !Split ['-', !Ref 'AWS::StackName']], '-', !Ref env]]]
       AssumeRolePolicyDocument:
         Version: '2012-10-17'
         Statement:
@@ -293,7 +299,7 @@ Resources:
   # Marked as depending on UserPoolClientRole for easier to understand CFN sequencing
     Type: 'AWS::IAM::Policy'
     Properties:
-      PolicyName: iotappa40a2944_userpoolclient_lambda_iam_policy
+      PolicyName: iotappe52f6abc_userpoolclient_lambda_iam_policy
       Roles:
         - !Ref UserPoolClientRole
       PolicyDocument:
@@ -310,7 +316,7 @@ Resources:
   # Marked as depending on UserPoolClientLambdaPolicy for easier to understand CFN sequencing
     Type: 'AWS::IAM::Policy'
     Properties:
-      PolicyName: iotappa40a2944_userpoolclient_lambda_log_policy
+      PolicyName: iotappe52f6abc_userpoolclient_lambda_log_policy
       Roles:
         - !Ref UserPoolClientRole
       PolicyDocument:
@@ -350,7 +356,7 @@ Resources:
   # Always created
     Type: AWS::Cognito::IdentityPool
     Properties:
-      IdentityPoolName: !If [ShouldNotCreateEnvResources, 'iotappa40a2944_identitypool_a40a2944', !Join ['',['iotappa40a2944_identitypool_a40a2944', '__', !Ref env]]]
+      IdentityPoolName: !If [ShouldNotCreateEnvResources, 'iotappe52f6abc_identitypool_e52f6abc', !Join ['',['iotappe52f6abc_identitypool_e52f6abc', '__', !Ref env]]]
       
       CognitoIdentityProviders:
         - ClientId:  !Ref UserPoolClient

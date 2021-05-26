@@ -11,9 +11,10 @@ import UIKit
 
 class SignUpViewController: UIViewController, UITextFieldDelegate {
 
-    @IBOutlet weak var usernameTextField: UITextField!
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
+    
+    @IBOutlet weak var errorLabel: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,7 +26,6 @@ class SignUpViewController: UIViewController, UITextFieldDelegate {
         let tapGR: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard))
         tapGR.cancelsTouchesInView = false
         self.view.addGestureRecognizer(tapGR)
-        usernameTextField.delegate = self
         emailTextField.delegate = self
         passwordTextField.delegate = self
 
@@ -33,21 +33,19 @@ class SignUpViewController: UIViewController, UITextFieldDelegate {
     }
 
     @IBAction func signUp(_ sender: Any) {
-        signUp(username: usernameTextField.text ?? "", password: passwordTextField.text ?? "", email: emailTextField.text ?? "")
+        signUp(email: emailTextField.text ?? "", password: passwordTextField.text ?? "")
     }
     
     // performSegue実行時に呼ばれる
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "toConfirm" {
             let confirmViewController = segue.destination as? ConfirmViewController
-            confirmViewController?.username = usernameTextField.text ?? ""
+            confirmViewController?.username = emailTextField.text ?? ""
         }
     }
-    
-    func signUp(username: String, password: String, email: String) {
-        let userAttributes = [AuthUserAttribute(.email, value: email)]
-        let options = AuthSignUpRequest.Options(userAttributes: userAttributes)
-        Amplify.Auth.signUp(username: username, password: password, options: options) { result in
+
+    func signUp(email: String, password: String) {
+        Amplify.Auth.signUp(username: email, password: password) { result in
             switch result {
             case .success(let signUpResult):
                 if case let .confirmUser(deliveryDetails, _) = signUpResult.nextStep {
@@ -64,7 +62,19 @@ class SignUpViewController: UIViewController, UITextFieldDelegate {
                     }
                 }
             case .failure(let error):
-                print("An error occurred while registering a user \(error)")
+                DispatchQueue.main.sync {
+                    print("エラー内容 \(error.recoverySuggestion)")
+                    switch "\(error.recoverySuggestion)" {
+                    case "Make sure that a valid password is passed for signUp":
+                        self.errorLabel.text = "パスワードを入力してください。"
+                    case "Make sure that the parameters passed are valid":
+                        self.errorLabel.text = "正しいメールアドレスとパスワード（英数字８文字以上）を入力してください。"
+                    case "Invoke the api with a different username":
+                        self.errorLabel.text = "登録済みのメールアドレスです。\nログインしてください。"
+                    default:
+                        self.errorLabel.text = "不明のエラーです。"
+                    }
+                }
             }
         }
     }

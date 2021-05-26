@@ -44,7 +44,7 @@
                                     <segue destination="0yV-B8-auO" kind="modal" modalPresentationStyle="fullScreen" modalTransitionStyle="flipHorizontal" id="9WI-F5-wyM"/>
                                 </connections>
                             </button>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="ユーザ名/メールアドレス" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="jFZ-Jy-84M">
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="メールアドレス" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="jFZ-Jy-84M">
                                 <rect key="frame" x="144" y="391" width="197" height="34"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.97254901959999995" green="0.97254901959999995" blue="0.97254901959999995" alpha="0.28867607870000001" colorSpace="custom" customColorSpace="sRGB"/>
@@ -52,19 +52,27 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" spellCheckingType="no" returnKeyType="done" textContentType="email"/>
                             </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pEr-CH-M9G">
+                                <rect key="frame" x="133" y="519" width="235" height="55"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                                <color key="textColor" red="0.92941176469999998" green="0.28191458571243977" blue="0.24454663032786692" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" red="0.51686841250000004" green="0.7340008616" blue="0.65601772069999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
                     <connections>
+                        <outlet property="emailTextField" destination="jFZ-Jy-84M" id="rGi-iD-E07"/>
+                        <outlet property="errorLabel" destination="pEr-CH-M9G" id="z8F-V5-ufc"/>
                         <outlet property="passwordTextField" destination="WC2-EL-mrp" id="Qug-iQ-weF"/>
-                        <outlet property="usernameTextField" destination="jFZ-Jy-84M" id="fFt-D7-E5X"/>
                         <segue destination="SlB-Yy-rwZ" kind="modal" identifier="toTab" modalPresentationStyle="fullScreen" modalTransitionStyle="flipHorizontal" id="WXI-VN-uB7"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="137.68115942028987" y="62.946428571428569"/>
+            <point key="canvasLocation" x="135.38461538461539" y="62.559241706161131"/>
         </scene>
         <!--SignUp-->
         <scene sceneID="Ui3-8V-g4R">
