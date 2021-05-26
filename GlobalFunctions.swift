@@ -15,23 +15,19 @@ class functions: NSObject{
 
         // AnimationViewの宣言
         var animationView = AnimationView()
-        
         // アニメーションファイルの指定
         animationView = AnimationView(name: animation)
-
         // アニメーションの位置指定
         animationView.frame = CGRect(x: x, y: y, width: width, height: height)
-
         // アニメーションのアスペクト比を指定＆ループで開始
         animationView.contentMode = .scaleAspectFit
 //        animationView.loopMode = .loop
         animationView.loopMode = .autoReverse
         animationView.play()
-
         // ViewControllerに配置
         view.addSubview(animationView)
-        
         // aniationViewを最背面に配置
         view.sendSubviewToBack(animationView)
+        
     }
 }
