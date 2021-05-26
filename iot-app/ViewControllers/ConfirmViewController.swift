@@ -32,6 +32,10 @@ class ConfirmViewController: UIViewController, UITextFieldDelegate {
         confirmSignUp(for: username, with: confirmTextField.text ?? "")
     }
     
+    @IBAction func resendCode(_ sender: Any) {
+//        resendCode()
+    }
+    
     func confirmSignUp(for username: String, with confirmationCode: String) {
         Amplify.Auth.confirmSignUp(for: username, confirmationCode: confirmationCode) { result in
             switch result {
@@ -46,6 +50,17 @@ class ConfirmViewController: UIViewController, UITextFieldDelegate {
             }
         }
     }
+    
+//    func resendCode() {
+//        Amplify.Auth.resendConfirmationCode(for: .email) { result in
+//            switch result {
+//            case .success(let deliveryDetails):
+//                print("Resend code send to - \(deliveryDetails)")
+//            case .failure(let error):
+//                print("Resend code failed with error \(error)")
+//            }
+//        }
+//    }
     
     // キーボードを閉じる（画面のどこかが押された時に呼び出される）
     @objc func dismissKeyboard() {

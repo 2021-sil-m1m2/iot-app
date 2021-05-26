@@ -17,9 +17,6 @@ class SignInViewController: UIViewController, UITextFieldDelegate {
     
     @IBOutlet weak var errorLabel: UILabel!
     
-//    // AnimationViewの宣言
-//    var animationView = AnimationView()
-    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -46,8 +43,20 @@ class SignInViewController: UIViewController, UITextFieldDelegate {
         passwordTextField.delegate = self
     }
     
+    // performSegue実行時に呼ばれる
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "toConfirm" {
+            let confirmViewController = segue.destination as? ConfirmViewController
+            confirmViewController?.username = emailTextField.text ?? ""
+        }
+    }
+    
     @IBAction func signIn(_ sender: Any) {
         signIn(email: emailTextField.text ?? "", password: passwordTextField.text ?? "")
+    }
+    
+    @IBAction func resetPassword(_ sender: Any) {
+        performSegue(withIdentifier: "toReset", sender: nil)
     }
     
     func signIn(email: String, password: String) {

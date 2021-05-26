@@ -10,7 +10,7 @@
         <!--Sign In View Controller-->
         <scene sceneID="s0d-6b-0kx">
             <objects>
-                <viewController storyboardIdentifier="SignIn" modalTransitionStyle="flipHorizontal" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Y6W-OH-hqX" customClass="SignInViewController" customModule="iot_app" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="SignIn" modalTransitionStyle="flipHorizontal" modalPresentationStyle="fullScreen" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Y6W-OH-hqX" customClass="SignInViewController" customModule="iot_app" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
                         <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -59,6 +59,16 @@
                                 <color key="textColor" red="0.92941176469999998" green="0.28191458571243977" blue="0.24454663032786692" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MQp-NR-8uu">
+                                <rect key="frame" x="126" y="671" width="138" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="パスワードの再設定">
+                                    <color key="titleColor" red="0.97254901959999995" green="0.97254901959999995" blue="0.97254901959999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="resetPassword:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="frc-f3-zdM"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" red="0.51686841250000004" green="0.7340008616" blue="0.65601772069999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -68,6 +78,7 @@
                         <outlet property="errorLabel" destination="pEr-CH-M9G" id="z8F-V5-ufc"/>
                         <outlet property="passwordTextField" destination="WC2-EL-mrp" id="Qug-iQ-weF"/>
                         <segue destination="SlB-Yy-rwZ" kind="modal" identifier="toTab" modalPresentationStyle="fullScreen" modalTransitionStyle="flipHorizontal" id="WXI-VN-uB7"/>
+                        <segue destination="eVv-Ed-kcC" kind="show" identifier="toReset" id="brV-Pz-1m6"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -83,6 +94,16 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8Gq-1m-1zk" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="694" y="121"/>
+        </scene>
+        <!--ResetPassword-->
+        <scene sceneID="cOY-i2-QBc">
+            <objects>
+                <viewControllerPlaceholder storyboardName="ResetPassword" id="eVv-Ed-kcC" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="Iqe-YX-SrA"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="b9K-dw-qmx" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="669" y="185"/>
         </scene>
         <!--Tab-->
         <scene sceneID="2dp-Kn-k0w">
