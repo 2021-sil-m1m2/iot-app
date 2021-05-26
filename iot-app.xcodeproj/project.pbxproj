@@ -36,6 +36,8 @@
 		C1813517265D8D7E00A3623C /* plant-2.json in Resources */ = {isa = PBXBuildFile; fileRef = C1813516265D8D7E00A3623C /* plant-2.json */; };
 		C1813519265DBAD800A3623C /* Confirm.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C1813518265DBAD800A3623C /* Confirm.storyboard */; };
 		C181351B265DBAE700A3623C /* ConfirmViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C181351A265DBAE700A3623C /* ConfirmViewController.swift */; };
+		C1AA179D265E78A200BBC6E3 /* ResetPassword.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C1AA179C265E78A200BBC6E3 /* ResetPassword.storyboard */; };
+		C1AA179F265E78B400BBC6E3 /* ResetPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1AA179E265E78B400BBC6E3 /* ResetPasswordViewController.swift */; };
 		C1AD25E226580E3800E4F9AF /* Animation.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C1AD25E126580E3800E4F9AF /* Animation.storyboard */; };
 		C1AD25E426580E6100E4F9AF /* AnimationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1AD25E326580E6100E4F9AF /* AnimationViewController.swift */; };
 		C1E9698026569599001E3D59 /* AuthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1E9697F26569599001E3D59 /* AuthViewController.swift */; };
@@ -78,6 +80,8 @@
 		C1813516265D8D7E00A3623C /* plant-2.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "plant-2.json"; sourceTree = "<group>"; };
 		C1813518265DBAD800A3623C /* Confirm.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Confirm.storyboard; sourceTree = "<group>"; };
 		C181351A265DBAE700A3623C /* ConfirmViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfirmViewController.swift; sourceTree = "<group>"; };
+		C1AA179C265E78A200BBC6E3 /* ResetPassword.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ResetPassword.storyboard; sourceTree = "<group>"; };
+		C1AA179E265E78B400BBC6E3 /* ResetPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResetPasswordViewController.swift; sourceTree = "<group>"; };
 		C1AD25E126580E3800E4F9AF /* Animation.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Animation.storyboard; sourceTree = "<group>"; };
 		C1AD25E326580E6100E4F9AF /* AnimationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimationViewController.swift; sourceTree = "<group>"; };
 		C1E9697F26569599001E3D59 /* AuthViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewController.swift; sourceTree = "<group>"; };
@@ -168,6 +172,7 @@
 				C161C391265C2E9F00070469 /* SignUpViewController.swift */,
 				C161C397265D5C5C00070469 /* ProfileViewController.swift */,
 				C181351A265DBAE700A3623C /* ConfirmViewController.swift */,
+				C1AA179E265E78B400BBC6E3 /* ResetPasswordViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -194,6 +199,7 @@
 				C161C393265C3D9700070469 /* Tab.storyboard */,
 				C161C395265C48C000070469 /* Profile.storyboard */,
 				C1813518265DBAD800A3623C /* Confirm.storyboard */,
+				C1AA179C265E78A200BBC6E3 /* ResetPassword.storyboard */,
 			);
 			path = storyboards;
 			sourceTree = "<group>";
@@ -278,6 +284,7 @@
 				C126C5832658433800062E54 /* awsconfiguration.json in Resources */,
 				C1813515265D8D4000A3623C /* plant.json in Resources */,
 				C1813517265D8D7E00A3623C /* plant-2.json in Resources */,
+				C1AA179D265E78A200BBC6E3 /* ResetPassword.storyboard in Resources */,
 				C14781422652C6230003E18D /* LaunchScreen.storyboard in Resources */,
 				C161C390265C2E7F00070469 /* SignUp.storyboard in Resources */,
 				C1104614265C0F2C0009D99C /* SignIn.storyboard in Resources */,
@@ -370,6 +377,7 @@
 				C14B9636265C1771000058F7 /* SignInViewController.swift in Sources */,
 				C14781382652C6200003E18D /* SceneDelegate.swift in Sources */,
 				C147814E2653F2D10003E18D /* Backend.swift in Sources */,
+				C1AA179F265E78B400BBC6E3 /* ResetPasswordViewController.swift in Sources */,
 				C161C392265C2E9F00070469 /* SignUpViewController.swift in Sources */,
 				59A4F9AD9EF5B85FA10A95A1 /* AmplifyModels.swift in Sources */,
 				C161C39A265D648500070469 /* GlobalFunctions.swift in Sources */,
