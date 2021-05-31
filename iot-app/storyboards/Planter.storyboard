@@ -8,7 +8,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Item-->
+        <!--プランター-->
         <scene sceneID="KSG-W4-ctM">
             <objects>
                 <viewController storyboardIdentifier="Planter" useStoryboardIdentifierAsRestorationIdentifier="YES" id="oW6-fr-fqz" customClass="PlanterViewController" customModule="iot_app" customModuleProvider="target" sceneMemberID="viewController">
@@ -40,7 +40,9 @@
                         <viewLayoutGuide key="safeArea" id="ULm-GM-cKC"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item" id="QhC-qn-GeB"/>
+                    <tabBarItem key="tabBarItem" title="プランター" image="leaf.fill" catalog="system" id="QhC-qn-GeB">
+                        <color key="badgeColor" red="0.51686841250000004" green="0.7340008616" blue="0.65601772069999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </tabBarItem>
                     <navigationItem key="navigationItem" id="ETa-iW-aQB"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
@@ -53,6 +55,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="leaf.fill" catalog="system" width="128" height="106"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
