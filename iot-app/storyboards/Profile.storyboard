@@ -25,6 +25,14 @@
                                     <segue destination="J1w-Pm-xyz" kind="modal" modalPresentationStyle="fullScreen" modalTransitionStyle="flipHorizontal" id="Dee-Od-EMj"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="14h-Cm-S0C">
+                                <rect key="frame" x="129" y="611" width="156" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Notificationに遷移する"/>
+                                <connections>
+                                    <segue destination="KdR-EU-m9a" kind="show" id="2D0-hJ-bDC"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -47,6 +55,16 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6OJ-4d-oiX" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="651" y="42"/>
+        </scene>
+        <!--Notification-->
+        <scene sceneID="pLR-dN-SjJ">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Notification" id="KdR-EU-m9a" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="owN-p8-ASn"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="K7P-hQ-57q" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="639" y="134"/>
         </scene>
     </scenes>
     <resources>

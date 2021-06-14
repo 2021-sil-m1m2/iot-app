@@ -19,4 +19,6 @@ target 'iot-app' do
   pod 'AmplifyPlugins/AWSS3StoragePlugin'
   pod 'SwiftLint'
   pod 'lottie-ios'
+  pod 'Firebase/Analytics'
+  pod 'Firebase/Messaging'
 end

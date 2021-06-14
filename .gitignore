@@ -108,3 +108,9 @@ amplify-build-config.json
 amplify-gradle-config.json
 amplifytools.xcconfig
 .secret-*
+
+# Fireebase
+GoogleService-Info.plist
+
+# Certificates
+iot-app.entitlements
