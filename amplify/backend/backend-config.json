@@ -31,10 +31,5 @@
       "providerPlugin": "awscloudformation"
     }
   },
-  "analytics": {
-    "iotapp": {
-      "service": "Pinpoint",
-      "providerPlugin": "awscloudformation"
-    }
-  }
+  "analytics": {}
 }
