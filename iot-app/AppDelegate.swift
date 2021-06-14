@@ -5,9 +5,9 @@
 //  Created by yokada on 2021/05/18.
 //
 
-import Amplify
-import AmplifyPlugins
+import Firebase
 import UIKit
+import UserNotifications
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -17,6 +17,27 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         // initialize Amplify
         _ = Backend.initialize()
+        
+        FirebaseApp.configure()
+        
+        // 通知に必要なのはここからしたの処理
+        if #available (iOS 10.0, *) {
+            // For iOS 10 display notification (sent via APNS)
+            UNUserNotificationCenter.current().delegate = self
+
+            let authOptions: UNAuthorizationOptions = [.alert, .badge, .sound]
+            UNUserNotificationCenter.current().requestAuthorization(
+                options: authOptions,
+                completionHandler: {_, _ in })
+        } else {
+            let settings: UIUserNotificationSettings =
+                UIUserNotificationSettings(types: [.alert, .badge, .sound], categories: nil)
+            application.registerUserNotificationSettings(settings)
+        }
+
+        print("呼び出される直前")
+        
+        application.registerForRemoteNotifications()
         
         return true
     }
@@ -35,4 +56,60 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Use this method to release any resources that were specific to the discarded scenes, as they will not return.
     }
 
+    func application(_ application: UIApplication, didReceiveRemoteNotification userInfo: [AnyHashable: Any]) {
+        // Print message ID.
+        if let messageID = userInfo["gcm.message_id"] {
+           print("Message ID: \(messageID)")
+        }
+
+        // Print full message.
+        print(userInfo)
+   }
+
+   func application(_ application: UIApplication, didReceiveRemoteNotification userInfo: [AnyHashable: Any],
+                    fetchCompletionHandler completionHandler: @escaping (UIBackgroundFetchResult) -> Void) {
+        // Print message ID.
+        if let messageID = userInfo["gcm.message_id"] {
+           print("Message ID: \(messageID)")
+        }
+
+        // Print full message.
+        print(userInfo)
+
+        completionHandler(UIBackgroundFetchResult.newData)
+   }
+}
+
+@available(iOS 10, *)
+extension AppDelegate : UNUserNotificationCenterDelegate {
+   func userNotificationCenter(_ center: UNUserNotificationCenter,
+                               willPresent notification: UNNotification,
+                               withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void) {
+        let userInfo = notification.request.content.userInfo
+
+        if let messageID = userInfo["gcm.message_id"] {
+           print("Message ID: \(messageID)")
+        }
+
+        print(userInfo)
+
+        completionHandler([])
+   }
+
+    // 通知がタップされたときに呼び出される
+    func userNotificationCenter(_ center: UNUserNotificationCenter,
+                               didReceive response: UNNotificationResponse,
+                               withCompletionHandler completionHandler: @escaping () -> Void) {
+        let userInfo = response.notification.request.content.userInfo
+        if let messageID = userInfo["gcm.message_id"] {
+           print("Message ID: \(messageID)")
+        }
+
+        print(userInfo)
+
+        completionHandler()
+
+        print("+++++++++++++")
+        print(userInfo["title"])
+    }
 }

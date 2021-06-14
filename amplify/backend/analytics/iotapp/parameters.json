@@ -1,0 +1,21 @@
+{
+    "appName": "iotapp",
+    "roleName": "pinpointLambdaRole0414995c",
+    "cloudformationPolicyName": "cloudformationPolicy0414995c",
+    "cloudWatchPolicyName": "cloudWatchPolicy0414995c",
+    "pinpointPolicyName": "pinpointPolicy0414995c",
+    "authPolicyName": "pinpoint_amplify_0414995c",
+    "unauthPolicyName": "pinpoint_amplify_0414995c",
+    "authRoleName": {
+        "Ref": "AuthRoleName"
+    },
+    "unauthRoleName": {
+        "Ref": "UnauthRoleName"
+    },
+    "authRoleArn": {
+        "Fn::GetAtt": [
+            "AuthRole",
+            "Arn"
+        ]
+    }
+}

@@ -1,6 +1,6 @@
 {
     "identityPoolName": "iotappe52f6abc_identitypool_e52f6abc",
-    "allowUnauthenticatedIdentities": false,
+    "allowUnauthenticatedIdentities": true,
     "resourceNameTruncated": "iotappe52f6abc",
     "userPoolName": "iotappe52f6abc_userpool_e52f6abc",
     "autoVerifiedAttributes": [
