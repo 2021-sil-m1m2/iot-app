@@ -9,14 +9,26 @@ import Amplify
 import AmplifyPlugins
 import UIKit
 
-class ResetPasswordViewController: UIViewController {
+class ResetPasswordViewController: UIViewController, UITextFieldDelegate {
     
     @IBOutlet weak var confirmTextField: UITextField!
     @IBOutlet weak var emailTextField: UITextField!
+    @IBOutlet weak var newpasswordTextField: UITextField!
+    @IBOutlet weak var showPasswordButton: UIButton!
+    
+    var iconClick = true
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        // 画面のどこかがタップされた時にdismissKeyboard関数を呼び出す
+        let tapGR: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard))
+        tapGR.cancelsTouchesInView = false
+        self.view.addGestureRecognizer(tapGR)
+        confirmTextField.delegate = self
+        emailTextField.delegate = self
+        newpasswordTextField.delegate = self
+        
         // Do any additional setup after loading the view.
     }
     
@@ -25,7 +37,8 @@ class ResetPasswordViewController: UIViewController {
     }
     
     @IBAction func confirmResetPassword(_ sender: Any) {
-        confirmResetPassword(username: emailTextField.text ?? "", newPassword: "password3", confirmationCode: confirmTextField.text ?? "")
+        confirmResetPassword(username: emailTextField.text ?? "", newPassword: newpasswordTextField.text ?? "", confirmationCode: confirmTextField.text ?? "")
+        performSegue(withIdentifier: "toSignin", sender: nil)
     }
     
     func resetPassword(username: String) {
@@ -80,6 +93,27 @@ class ResetPasswordViewController: UIViewController {
                 print("Confirm sign in failed \(error)")
             }
         }
+    }
+    
+    @IBAction func showPassword(_ sender: Any) {
+        if(iconClick == true) {
+            newpasswordTextField.isSecureTextEntry = false
+            showPasswordButton.setImage(UIImage(named: "hide"), for: .normal)
+        } else {
+            newpasswordTextField.isSecureTextEntry = true
+            showPasswordButton.setImage(UIImage(named: "show"), for: .normal)
+        }
+        iconClick = !iconClick
+    }
+    // キーボードを閉じる（画面のどこかが押された時に呼び出される）
+    @objc func dismissKeyboard() {
+        self.view.endEditing(true)
+    }
+    
+    // Returnキーが押されたらキーボードを閉じる
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        dismissKeyboard()
+        return true
     }
     
     /*

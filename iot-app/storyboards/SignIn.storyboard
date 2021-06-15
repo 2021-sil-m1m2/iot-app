@@ -15,7 +15,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="パスワード" textAlignment="natural" clearsOnBeginEditing="YES" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="WC2-EL-mrp">
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="パスワード" textAlignment="natural" clearsOnBeginEditing="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="WC2-EL-mrp">
                                 <rect key="frame" x="145" y="452" width="197" height="34"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.97254901959999995" green="0.97254901959999995" blue="0.97254901959999995" alpha="0.28867607870000001" colorSpace="custom" customColorSpace="sRGB"/>
@@ -44,7 +44,7 @@
                                     <segue destination="0yV-B8-auO" kind="modal" modalPresentationStyle="fullScreen" modalTransitionStyle="flipHorizontal" id="9WI-F5-wyM"/>
                                 </connections>
                             </button>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="メールアドレス" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="jFZ-Jy-84M">
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="メールアドレス" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="jFZ-Jy-84M">
                                 <rect key="frame" x="144" y="391" width="197" height="34"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.97254901959999995" green="0.97254901959999995" blue="0.97254901959999995" alpha="0.28867607870000001" colorSpace="custom" customColorSpace="sRGB"/>
@@ -69,6 +69,14 @@
                                     <action selector="resetPassword:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="frc-f3-zdM"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ksv-EV-D98">
+                                <rect key="frame" x="303" y="461" width="26" height="17"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" image="show"/>
+                                <connections>
+                                    <action selector="showPassword:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="tl9-NH-eFq"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" red="0.51686841250000004" green="0.7340008616" blue="0.65601772069999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -77,8 +85,9 @@
                         <outlet property="emailTextField" destination="jFZ-Jy-84M" id="rGi-iD-E07"/>
                         <outlet property="errorLabel" destination="pEr-CH-M9G" id="z8F-V5-ufc"/>
                         <outlet property="passwordTextField" destination="WC2-EL-mrp" id="Qug-iQ-weF"/>
+                        <outlet property="showPasswordButton" destination="ksv-EV-D98" id="pWn-3z-HA8"/>
                         <segue destination="SlB-Yy-rwZ" kind="modal" identifier="toTab" modalPresentationStyle="fullScreen" modalTransitionStyle="flipHorizontal" id="WXI-VN-uB7"/>
-                        <segue destination="eVv-Ed-kcC" kind="show" identifier="toReset" id="brV-Pz-1m6"/>
+                        <segue destination="eVv-Ed-kcC" kind="presentation" identifier="toReset" modalPresentationStyle="fullScreen" modalTransitionStyle="crossDissolve" id="brV-Pz-1m6"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -103,7 +112,7 @@
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="b9K-dw-qmx" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="669" y="185"/>
+            <point key="canvasLocation" x="712" y="-16"/>
         </scene>
         <!--Tab-->
         <scene sceneID="2dp-Kn-k0w">
@@ -116,4 +125,7 @@
             <point key="canvasLocation" x="711" y="46"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="show" width="827" height="436"/>
+    </resources>
 </document>
