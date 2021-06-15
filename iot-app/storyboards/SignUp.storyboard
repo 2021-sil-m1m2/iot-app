@@ -25,7 +25,7 @@
                                     <segue destination="A2Q-6s-efq" kind="modal" modalPresentationStyle="fullScreen" modalTransitionStyle="flipHorizontal" id="xsL-rE-HDc"/>
                                 </connections>
                             </button>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="パスワード" textAlignment="natural" clearsOnBeginEditing="YES" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="cFt-cV-uhT">
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="パスワード" textAlignment="natural" clearsOnBeginEditing="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="cFt-cV-uhT">
                                 <rect key="frame" x="145" y="336" width="197" height="34"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.51686841250000004" green="0.7340008616" blue="0.65601772069999997" alpha="0.13880890094681292" colorSpace="custom" customColorSpace="sRGB"/>
@@ -58,6 +58,14 @@
                                     <action selector="signUp:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="DkR-Jh-YSh"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="P8E-We-HRi">
+                                <rect key="frame" x="307" y="345" width="26" height="17"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" image="show"/>
+                                <connections>
+                                    <action selector="showPassword:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="HRG-in-TNZ"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" red="0.97254901959999995" green="0.97254901959999995" blue="0.97254901959999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -66,6 +74,7 @@
                         <outlet property="emailTextField" destination="P4H-9m-QkM" id="gid-L1-uzz"/>
                         <outlet property="errorLabel" destination="pAn-FF-0yh" id="LN3-LM-Edv"/>
                         <outlet property="passwordTextField" destination="cFt-cV-uhT" id="7km-vv-GUQ"/>
+                        <outlet property="showPasswordButton" destination="P8E-We-HRi" id="Eek-7g-HbN"/>
                         <segue destination="cZn-MH-Q2q" kind="presentation" identifier="toConfirm" modalPresentationStyle="fullScreen" modalTransitionStyle="coverVertical" id="jSo-yv-t0n"/>
                     </connections>
                 </viewController>
@@ -94,4 +103,7 @@
             <point key="canvasLocation" x="715" y="43"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="show" width="827" height="436"/>
+    </resources>
 </document>

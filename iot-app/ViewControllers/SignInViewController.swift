@@ -97,8 +97,6 @@ class SignInViewController: UIViewController, UITextFieldDelegate {
         iconClick = !iconClick
     }
     
-    
-    
     // キーボードを閉じる（画面のどこかが押された時に呼び出される）
     @objc func dismissKeyboard() {
         self.view.endEditing(true)
