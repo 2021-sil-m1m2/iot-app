@@ -14,8 +14,10 @@ class SignInViewController: UIViewController, UITextFieldDelegate {
 
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
-    
+    @IBOutlet weak var showPasswordButton: UIButton!
     @IBOutlet weak var errorLabel: UILabel!
+    
+    var iconClick = true
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -83,6 +85,19 @@ class SignInViewController: UIViewController, UITextFieldDelegate {
             }
         }
     }
+    
+    @IBAction func showPassword(_ sender: Any) {
+        if(iconClick == true) {
+            passwordTextField.isSecureTextEntry = false
+            showPasswordButton.setImage(UIImage(named: "hide"), for: .normal)
+        } else {
+            passwordTextField.isSecureTextEntry = true
+            showPasswordButton.setImage(UIImage(named: "show"), for: .normal)
+        }
+        iconClick = !iconClick
+    }
+    
+    
     
     // キーボードを閉じる（画面のどこかが押された時に呼び出される）
     @objc func dismissKeyboard() {

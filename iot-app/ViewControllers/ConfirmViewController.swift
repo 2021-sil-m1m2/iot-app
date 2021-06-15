@@ -23,6 +23,7 @@ class ConfirmViewController: UIViewController, UITextFieldDelegate {
         tapGR.cancelsTouchesInView = false
         self.view.addGestureRecognizer(tapGR)
         confirmTextField.delegate = self
+        
         print("-------------username")
         print(username)
         // Do any additional setup after loading the view.
