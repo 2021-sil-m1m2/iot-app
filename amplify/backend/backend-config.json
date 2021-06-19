@@ -1,12 +1,4 @@
 {
-  "auth": {
-    "iotappe52f6abc": {
-      "service": "Cognito",
-      "providerPlugin": "awscloudformation",
-      "dependsOn": [],
-      "customAuth": false
-    }
-  },
   "api": {
     "iotapp": {
       "service": "AppSync",
@@ -24,12 +16,5 @@
         }
       }
     }
-  },
-  "storage": {
-    "s33fc13847": {
-      "service": "S3",
-      "providerPlugin": "awscloudformation"
-    }
-  },
-  "analytics": {}
+  }
 }

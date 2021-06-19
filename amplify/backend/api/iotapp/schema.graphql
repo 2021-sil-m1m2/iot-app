@@ -1,15 +1,20 @@
-type User @model {
+type Record @model @key(name: "byPlanter", fields: ["planterID"]) {
   id: ID!
-  name: String!
-  planterID: String!
-  posts: [Post] @connection(keyName: "byUser", fields: ["id"])
+  date: String
+  planterID: ID!
+  planter: Planter @connection(fields: ["planterID"])
+  temperature: Int
+  humidity: Int
+  weight: Int
 }
 
-type Post @model @key(name: "byUser", fields: ["userID"]) {
+type Planter @model @key(name: "byUser", fields: ["userID"]) {
   id: ID!
   userID: ID!
   user: User @connection(fields: ["userID"])
-  title: String
-  tags: String
-  content: String
+}
+
+type User @model {
+  id: ID!
+  name: String!
 }

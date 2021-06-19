@@ -8,11 +8,25 @@
 
 /* Begin PBXBuildFile section */
 		138511A1EEF9033CBB034615 /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F54B2B51AD03326FAB195DF /* Post.swift */; };
+		1CF2983551A0AE76F64BE010 /* awsconfiguration.json in Resources */ = {isa = PBXBuildFile; fileRef = C126C5812658433800062E54 /* awsconfiguration.json */; };
 		204942E881C540C6F18CD4A5 /* Post+Schema.swift in Sources */ = {isa = PBXBuildFile; fileRef = B88629AB7419B69755F3639B /* Post+Schema.swift */; };
+		26E46ECB87FAB2C357623D54 /* awsconfiguration.json in Resources */ = {isa = PBXBuildFile; fileRef = C126C5812658433800062E54 /* awsconfiguration.json */; };
 		28BE85DE0878D68BD86384B0 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9285BBF4B5AAD7A13E99D794 /* User.swift */; };
+		2BF89DABA065B3C47FCE5DDD /* User+Schema.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1545355C046F7984F0B89C5 /* User+Schema.swift */; };
+		2DDC8FA31922E019C1B97AC7 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9285BBF4B5AAD7A13E99D794 /* User.swift */; };
+		2FF5BBD19C82924AF33C3C4A /* Record.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A1833BA1B7C6C52CD9D2BB7 /* Record.swift */; };
+		3B03A00972A9CAE3A93ED8C6 /* amplifyconfiguration.json in Resources */ = {isa = PBXBuildFile; fileRef = C126C5822658433800062E54 /* amplifyconfiguration.json */; };
+		4859B0EE522BE13D4B8A0D44 /* Record.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A1833BA1B7C6C52CD9D2BB7 /* Record.swift */; };
+		4F851B35AFEB90703FFD94A6 /* Record+Schema.swift in Sources */ = {isa = PBXBuildFile; fileRef = B480F8BB6E83E6012420AB4E /* Record+Schema.swift */; };
+		57155220F7617BB732C13BE8 /* Planter+Schema.swift in Sources */ = {isa = PBXBuildFile; fileRef = 968CC50E9C25220B75AF7629 /* Planter+Schema.swift */; };
 		59A4F9AD9EF5B85FA10A95A1 /* AmplifyModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C480D70593D2306D8BDFF46 /* AmplifyModels.swift */; };
 		6F010160B059B66D32FA7AE2 /* Pods_iot_app.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6981A9689769AE2591ACECE1 /* Pods_iot_app.framework */; };
+		8FED549F057B43AFC9C81D9E /* Planter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42EEB0F9F8F46AA523DD9D55 /* Planter.swift */; };
+		9BFFC8C778B0F388146D8417 /* Planter+Schema.swift in Sources */ = {isa = PBXBuildFile; fileRef = 968CC50E9C25220B75AF7629 /* Planter+Schema.swift */; };
+		A48D387581EF0B995B50E893 /* Record+Schema.swift in Sources */ = {isa = PBXBuildFile; fileRef = B480F8BB6E83E6012420AB4E /* Record+Schema.swift */; };
+		A67398E3ADF7F632B13A2348 /* amplifyconfiguration.json in Resources */ = {isa = PBXBuildFile; fileRef = C126C5822658433800062E54 /* amplifyconfiguration.json */; };
 		AF8D526856262C209BA3BFD0 /* User+Schema.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1545355C046F7984F0B89C5 /* User+Schema.swift */; };
+		B275DADF0FFEA6671F54D673 /* User+Schema.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1545355C046F7984F0B89C5 /* User+Schema.swift */; };
 		C1104614265C0F2C0009D99C /* SignIn.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C1104613265C0F2C0009D99C /* SignIn.storyboard */; };
 		C1104618265C0FFF0009D99C /* Constraints.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1104617265C0FFF0009D99C /* Constraints.swift */; };
 		C126C5832658433800062E54 /* awsconfiguration.json in Resources */ = {isa = PBXBuildFile; fileRef = C126C5812658433800062E54 /* awsconfiguration.json */; };
@@ -40,23 +54,31 @@
 		C1AA179F265E78B400BBC6E3 /* ResetPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1AA179E265E78B400BBC6E3 /* ResetPasswordViewController.swift */; };
 		C1AD25E226580E3800E4F9AF /* Animation.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C1AD25E126580E3800E4F9AF /* Animation.storyboard */; };
 		C1AD25E426580E6100E4F9AF /* AnimationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1AD25E326580E6100E4F9AF /* AnimationViewController.swift */; };
+		C1C18739267A253900361B10 /* amplify in Resources */ = {isa = PBXBuildFile; fileRef = C1C18738267A253900361B10 /* amplify */; };
 		C1D1AC6B26652791000B9D60 /* Notification.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C1D1AC6A26652791000B9D60 /* Notification.storyboard */; };
 		C1D1AC6D266527A9000B9D60 /* NotificationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1D1AC6C266527A9000B9D60 /* NotificationViewController.swift */; };
 		C1D1AC6F26655C6C000B9D60 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = C1D1AC6E26655C6C000B9D60 /* GoogleService-Info.plist */; };
 		C1E9698026569599001E3D59 /* AuthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1E9697F26569599001E3D59 /* AuthViewController.swift */; };
 		C1E969852656B97E001E3D59 /* Auth.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C1E969842656B97E001E3D59 /* Auth.storyboard */; };
 		C1E969872656BA18001E3D59 /* Planter.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C1E969862656BA18001E3D59 /* Planter.storyboard */; };
-		C1F7AF782654199000208046 /* generated in Resources */ = {isa = PBXBuildFile; fileRef = C1F7AF772654199000208046 /* generated */; };
+		CEE488ED523696EC273C766B /* AmplifyModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C480D70593D2306D8BDFF46 /* AmplifyModels.swift */; };
+		FAF9DA9DCFDA4244F105151B /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9285BBF4B5AAD7A13E99D794 /* User.swift */; };
+		FB3507FEC96500D704F2C33D /* AmplifyModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C480D70593D2306D8BDFF46 /* AmplifyModels.swift */; };
+		FD3B7A2F44452715C09508EB /* Planter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42EEB0F9F8F46AA523DD9D55 /* Planter.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1A1833BA1B7C6C52CD9D2BB7 /* Record.swift */ = {isa = PBXFileReference; explicitFileType = sourcecode.swift; name = Record.swift; path = amplify/generated/models/Record.swift; sourceTree = "<group>"; };
 		2A04224097416CE66DA1CAE8 /* Pods-iot-app.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iot-app.release.xcconfig"; path = "Target Support Files/Pods-iot-app/Pods-iot-app.release.xcconfig"; sourceTree = "<group>"; };
 		2ED55E2BD5D336D93ABC0430 /* Pods-iot-app.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iot-app.debug.xcconfig"; path = "Target Support Files/Pods-iot-app/Pods-iot-app.debug.xcconfig"; sourceTree = "<group>"; };
 		3C480D70593D2306D8BDFF46 /* AmplifyModels.swift */ = {isa = PBXFileReference; explicitFileType = sourcecode.swift; name = AmplifyModels.swift; path = amplify/generated/models/AmplifyModels.swift; sourceTree = "<group>"; };
+		42EEB0F9F8F46AA523DD9D55 /* Planter.swift */ = {isa = PBXFileReference; explicitFileType = sourcecode.swift; name = Planter.swift; path = amplify/generated/models/Planter.swift; sourceTree = "<group>"; };
 		6981A9689769AE2591ACECE1 /* Pods_iot_app.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_iot_app.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9285BBF4B5AAD7A13E99D794 /* User.swift */ = {isa = PBXFileReference; explicitFileType = sourcecode.swift; name = User.swift; path = amplify/generated/models/User.swift; sourceTree = "<group>"; };
+		968CC50E9C25220B75AF7629 /* Planter+Schema.swift */ = {isa = PBXFileReference; explicitFileType = sourcecode.swift; name = "Planter+Schema.swift"; path = "amplify/generated/models/Planter+Schema.swift"; sourceTree = "<group>"; };
 		9F54B2B51AD03326FAB195DF /* Post.swift */ = {isa = PBXFileReference; explicitFileType = sourcecode.swift; name = Post.swift; path = amplify/generated/models/Post.swift; sourceTree = "<group>"; };
 		A1545355C046F7984F0B89C5 /* User+Schema.swift */ = {isa = PBXFileReference; explicitFileType = sourcecode.swift; name = "User+Schema.swift"; path = "amplify/generated/models/User+Schema.swift"; sourceTree = "<group>"; };
+		B480F8BB6E83E6012420AB4E /* Record+Schema.swift */ = {isa = PBXFileReference; explicitFileType = sourcecode.swift; name = "Record+Schema.swift"; path = "amplify/generated/models/Record+Schema.swift"; sourceTree = "<group>"; };
 		B88629AB7419B69755F3639B /* Post+Schema.swift */ = {isa = PBXFileReference; explicitFileType = sourcecode.swift; name = "Post+Schema.swift"; path = "amplify/generated/models/Post+Schema.swift"; sourceTree = "<group>"; };
 		C1104613265C0F2C0009D99C /* SignIn.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SignIn.storyboard; sourceTree = "<group>"; };
 		C1104617265C0FFF0009D99C /* Constraints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constraints.swift; sourceTree = "<group>"; };
@@ -87,6 +109,7 @@
 		C1AA179E265E78B400BBC6E3 /* ResetPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResetPasswordViewController.swift; sourceTree = "<group>"; };
 		C1AD25E126580E3800E4F9AF /* Animation.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Animation.storyboard; sourceTree = "<group>"; };
 		C1AD25E326580E6100E4F9AF /* AnimationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimationViewController.swift; sourceTree = "<group>"; };
+		C1C18738267A253900361B10 /* amplify */ = {isa = PBXFileReference; lastKnownFileType = folder; path = amplify; sourceTree = "<group>"; };
 		C1D1AC6A26652791000B9D60 /* Notification.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Notification.storyboard; sourceTree = "<group>"; };
 		C1D1AC6C266527A9000B9D60 /* NotificationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationViewController.swift; sourceTree = "<group>"; };
 		C1D1AC6E26655C6C000B9D60 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
@@ -94,7 +117,6 @@
 		C1E9697F26569599001E3D59 /* AuthViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewController.swift; sourceTree = "<group>"; };
 		C1E969842656B97E001E3D59 /* Auth.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Auth.storyboard; sourceTree = "<group>"; };
 		C1E969862656BA18001E3D59 /* Planter.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Planter.storyboard; sourceTree = "<group>"; };
-		C1F7AF772654199000208046 /* generated */ = {isa = PBXFileReference; lastKnownFileType = folder; name = generated; path = amplify/generated; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -126,6 +148,10 @@
 				9F54B2B51AD03326FAB195DF /* Post.swift */,
 				A1545355C046F7984F0B89C5 /* User+Schema.swift */,
 				9285BBF4B5AAD7A13E99D794 /* User.swift */,
+				968CC50E9C25220B75AF7629 /* Planter+Schema.swift */,
+				42EEB0F9F8F46AA523DD9D55 /* Planter.swift */,
+				B480F8BB6E83E6012420AB4E /* Record+Schema.swift */,
+				1A1833BA1B7C6C52CD9D2BB7 /* Record.swift */,
 			);
 			name = AmplifyModels;
 			sourceTree = "<group>";
@@ -133,9 +159,9 @@
 		C14781292652C6200003E18D = {
 			isa = PBXGroup;
 			children = (
+				C1C18738267A253900361B10 /* amplify */,
 				C1D1AC6E26655C6C000B9D60 /* GoogleService-Info.plist */,
 				C161C38E265C213B00070469 /* animations */,
-				C1F7AF772654199000208046 /* generated */,
 				C147814D2653F2D10003E18D /* Backend.swift */,
 				C161C399265D648500070469 /* GlobalFunctions.swift */,
 				C1104617265C0FFF0009D99C /* Constraints.swift */,
@@ -297,12 +323,12 @@
 				C1813517265D8D7E00A3623C /* plant-2.json in Resources */,
 				C1AA179D265E78A200BBC6E3 /* ResetPassword.storyboard in Resources */,
 				C14781422652C6230003E18D /* LaunchScreen.storyboard in Resources */,
+				C1C18739267A253900361B10 /* amplify in Resources */,
 				C161C390265C2E7F00070469 /* SignUp.storyboard in Resources */,
 				C1104614265C0F2C0009D99C /* SignIn.storyboard in Resources */,
 				C147813F2652C6230003E18D /* Assets.xcassets in Resources */,
 				C147813D2652C6200003E18D /* Main.storyboard in Resources */,
 				C1E969872656BA18001E3D59 /* Planter.storyboard in Resources */,
-				C1F7AF782654199000208046 /* generated in Resources */,
 				C161C38D265C1A0700070469 /* draw_line.json in Resources */,
 				C161C394265C3D9700070469 /* Tab.storyboard in Resources */,
 				C1813519265DBAD800A3623C /* Confirm.storyboard in Resources */,
@@ -312,6 +338,10 @@
 				C1D1AC6F26655C6C000B9D60 /* GoogleService-Info.plist in Resources */,
 				C1AD25E226580E3800E4F9AF /* Animation.storyboard in Resources */,
 				C1D1AC6B26652791000B9D60 /* Notification.storyboard in Resources */,
+				1CF2983551A0AE76F64BE010 /* awsconfiguration.json in Resources */,
+				3B03A00972A9CAE3A93ED8C6 /* amplifyconfiguration.json in Resources */,
+				26E46ECB87FAB2C357623D54 /* awsconfiguration.json in Resources */,
+				A67398E3ADF7F632B13A2348 /* amplifyconfiguration.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -365,9 +395,13 @@
 			inputFileListPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-iot-app/Pods-iot-app-frameworks-${CONFIGURATION}-input-files.xcfilelist",
 			);
+			inputPaths = (
+			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-iot-app/Pods-iot-app-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -400,6 +434,20 @@
 				C161C398265D5C5C00070469 /* ProfileViewController.swift in Sources */,
 				AF8D526856262C209BA3BFD0 /* User+Schema.swift in Sources */,
 				28BE85DE0878D68BD86384B0 /* User.swift in Sources */,
+				CEE488ED523696EC273C766B /* AmplifyModels.swift in Sources */,
+				9BFFC8C778B0F388146D8417 /* Planter+Schema.swift in Sources */,
+				8FED549F057B43AFC9C81D9E /* Planter.swift in Sources */,
+				4F851B35AFEB90703FFD94A6 /* Record+Schema.swift in Sources */,
+				2FF5BBD19C82924AF33C3C4A /* Record.swift in Sources */,
+				B275DADF0FFEA6671F54D673 /* User+Schema.swift in Sources */,
+				FAF9DA9DCFDA4244F105151B /* User.swift in Sources */,
+				FB3507FEC96500D704F2C33D /* AmplifyModels.swift in Sources */,
+				57155220F7617BB732C13BE8 /* Planter+Schema.swift in Sources */,
+				FD3B7A2F44452715C09508EB /* Planter.swift in Sources */,
+				A48D387581EF0B995B50E893 /* Record+Schema.swift in Sources */,
+				4859B0EE522BE13D4B8A0D44 /* Record.swift in Sources */,
+				2BF89DABA065B3C47FCE5DDD /* User+Schema.swift in Sources */,
+				2DDC8FA31922E019C1B97AC7 /* User.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
