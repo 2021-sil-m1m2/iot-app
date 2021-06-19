@@ -14,11 +14,16 @@ import UIKit
 class PlanterViewController: UIViewController {
 
     @IBOutlet weak var imageView: UIImageView!
-
+    @IBOutlet weak var clientidLabel: UILabel!
+    @IBOutlet weak var temperatureLabel: UILabel!
+    @IBOutlet weak var humidityLabel: UILabel!
+    @IBOutlet weak var weightLabel: UILabel!
+    
     override func viewDidLoad() {
 
         super.viewDidLoad()
-
+        
+        
     }
     
     @IBAction func uploadDataToS3(_ sender: Any) {

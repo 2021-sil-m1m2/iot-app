@@ -1,4 +1,136 @@
 # this is an auto generated file. This will be overwritten
+mutation CreateRecord(
+  $input: CreateRecordInput!
+  $condition: ModelRecordConditionInput
+) {
+  createRecord(input: $input, condition: $condition) {
+    id
+    date
+    planterID
+    planter {
+      id
+      userID
+      user {
+        id
+        name
+        createdAt
+        updatedAt
+      }
+      createdAt
+      updatedAt
+    }
+    temperature
+    humidity
+    weight
+    createdAt
+    updatedAt
+  }
+}
+mutation UpdateRecord(
+  $input: UpdateRecordInput!
+  $condition: ModelRecordConditionInput
+) {
+  updateRecord(input: $input, condition: $condition) {
+    id
+    date
+    planterID
+    planter {
+      id
+      userID
+      user {
+        id
+        name
+        createdAt
+        updatedAt
+      }
+      createdAt
+      updatedAt
+    }
+    temperature
+    humidity
+    weight
+    createdAt
+    updatedAt
+  }
+}
+mutation DeleteRecord(
+  $input: DeleteRecordInput!
+  $condition: ModelRecordConditionInput
+) {
+  deleteRecord(input: $input, condition: $condition) {
+    id
+    date
+    planterID
+    planter {
+      id
+      userID
+      user {
+        id
+        name
+        createdAt
+        updatedAt
+      }
+      createdAt
+      updatedAt
+    }
+    temperature
+    humidity
+    weight
+    createdAt
+    updatedAt
+  }
+}
+mutation CreatePlanter(
+  $input: CreatePlanterInput!
+  $condition: ModelPlanterConditionInput
+) {
+  createPlanter(input: $input, condition: $condition) {
+    id
+    userID
+    user {
+      id
+      name
+      createdAt
+      updatedAt
+    }
+    createdAt
+    updatedAt
+  }
+}
+mutation UpdatePlanter(
+  $input: UpdatePlanterInput!
+  $condition: ModelPlanterConditionInput
+) {
+  updatePlanter(input: $input, condition: $condition) {
+    id
+    userID
+    user {
+      id
+      name
+      createdAt
+      updatedAt
+    }
+    createdAt
+    updatedAt
+  }
+}
+mutation DeletePlanter(
+  $input: DeletePlanterInput!
+  $condition: ModelPlanterConditionInput
+) {
+  deletePlanter(input: $input, condition: $condition) {
+    id
+    userID
+    user {
+      id
+      name
+      createdAt
+      updatedAt
+    }
+    createdAt
+    updatedAt
+  }
+}
 mutation CreateUser(
   $input: CreateUserInput!
   $condition: ModelUserConditionInput
@@ -6,19 +138,6 @@ mutation CreateUser(
   createUser(input: $input, condition: $condition) {
     id
     name
-    planterID
-    posts {
-      items {
-        id
-        userID
-        title
-        tags
-        content
-        createdAt
-        updatedAt
-      }
-      nextToken
-    }
     createdAt
     updatedAt
   }
@@ -30,19 +149,6 @@ mutation UpdateUser(
   updateUser(input: $input, condition: $condition) {
     id
     name
-    planterID
-    posts {
-      items {
-        id
-        userID
-        title
-        tags
-        content
-        createdAt
-        updatedAt
-      }
-      nextToken
-    }
     createdAt
     updatedAt
   }
@@ -54,91 +160,6 @@ mutation DeleteUser(
   deleteUser(input: $input, condition: $condition) {
     id
     name
-    planterID
-    posts {
-      items {
-        id
-        userID
-        title
-        tags
-        content
-        createdAt
-        updatedAt
-      }
-      nextToken
-    }
-    createdAt
-    updatedAt
-  }
-}
-mutation CreatePost(
-  $input: CreatePostInput!
-  $condition: ModelPostConditionInput
-) {
-  createPost(input: $input, condition: $condition) {
-    id
-    userID
-    user {
-      id
-      name
-      planterID
-      posts {
-        nextToken
-      }
-      createdAt
-      updatedAt
-    }
-    title
-    tags
-    content
-    createdAt
-    updatedAt
-  }
-}
-mutation UpdatePost(
-  $input: UpdatePostInput!
-  $condition: ModelPostConditionInput
-) {
-  updatePost(input: $input, condition: $condition) {
-    id
-    userID
-    user {
-      id
-      name
-      planterID
-      posts {
-        nextToken
-      }
-      createdAt
-      updatedAt
-    }
-    title
-    tags
-    content
-    createdAt
-    updatedAt
-  }
-}
-mutation DeletePost(
-  $input: DeletePostInput!
-  $condition: ModelPostConditionInput
-) {
-  deletePost(input: $input, condition: $condition) {
-    id
-    userID
-    user {
-      id
-      name
-      planterID
-      posts {
-        nextToken
-      }
-      createdAt
-      updatedAt
-    }
-    title
-    tags
-    content
     createdAt
     updatedAt
   }
