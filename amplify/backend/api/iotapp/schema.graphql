@@ -1,20 +1,39 @@
-type Record @model @key(name: "byPlanter", fields: ["planterID"]) {
-  id: ID!
-  date: String
-  planterID: ID!
-  planter: Planter @connection(fields: ["planterID"])
-  temperature: Int
-  humidity: Int
-  weight: Int
+type Record
+  @model
+  @key(name: "byPlanter", fields: ["planterID"])
+  @searchable {
+    id: ID!
+    date: String
+    planterID: ID!
+    planter: Planter @connection(fields: ["planterID"])
+    temperature: Float
+    humidity: Float
+    weight: Float
 }
 
-type Planter @model @key(name: "byUser", fields: ["userID"]) {
-  id: ID!
-  userID: ID!
-  user: User @connection(fields: ["userID"])
+type Planter
+  @model
+  @key(name: "byUser", fields: ["userID"])
+  @searchable {
+    id: ID!
+    userID: ID!
+    user: User @connection(fields: ["userID"])
 }
 
-type User @model {
-  id: ID!
-  name: String!
+type User
+  @model
+  @searchable {
+    id: ID!
+    name: String!
+}
+
+type Current
+  @model
+  @searchable {
+    id: ID!
+    date: String
+    planterID: ID!
+    temperature: Int
+    humidity: Int
+    weight: Int
 }

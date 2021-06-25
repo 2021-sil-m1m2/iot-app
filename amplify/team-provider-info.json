@@ -10,6 +10,11 @@
       "StackName": "amplify-iotapp-dev-223506",
       "StackId": "arn:aws:cloudformation:ap-northeast-1:426296560234:stack/amplify-iotapp-dev-223506/abd47560-cea7-11eb-9683-0640a6f9100d",
       "AmplifyAppId": "d3m3mn0tcmtsnm"
+    },
+    "categories": {
+      "auth": {
+        "iotappb0a524af": {}
+      }
     }
   }
 }

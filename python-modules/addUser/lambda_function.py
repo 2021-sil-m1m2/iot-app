@@ -10,8 +10,8 @@ def lambda_handler(event, context):
       Item = {
         "id": str(uuid.uuid4()),
 #        "username": event['userName'],
-        "username": event['request']['userAttributes']['email'],
-        "planterID": "Not set"
+        "username": event['request']['userAttributes']['email']
+#        "planterID": "Not set"
       }
     )
     
