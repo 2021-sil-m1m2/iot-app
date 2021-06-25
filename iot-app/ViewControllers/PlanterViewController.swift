@@ -18,12 +18,33 @@ class PlanterViewController: UIViewController {
     @IBOutlet weak var temperatureLabel: UILabel!
     @IBOutlet weak var humidityLabel: UILabel!
     @IBOutlet weak var weightLabel: UILabel!
+    @IBOutlet weak var searchRecordButton: UIButton!
     
     override func viewDidLoad() {
 
         super.viewDidLoad()
         
-        
+    }
+    @IBAction func searchRecord(_ sender: Any) {
+        listTodos()
+    }
+    
+    func listTodos() {
+        let todo = Record.keys
+        let predicate = todo.id == "e1a88e87-301d-4b44-abf2-85c7967ae48"
+        Amplify.API.query(request: .paginatedList(Record.self, where: predicate, limit: 1000)) { event in
+            switch event {
+            case .success(let result):
+                switch result {
+                case .success(let todos):
+                    print("Successfully retrieved list of todos: \(todo)")
+                case .failure(let error):
+                    print("Got failed result with \(error.errorDescription)")
+                }
+            case .failure(let error):
+                print("Got failed event with error \(error)")
+            }
+        }
     }
     
     @IBAction func uploadDataToS3(_ sender: Any) {
@@ -39,6 +60,7 @@ class PlanterViewController: UIViewController {
 
         // access levelを指定
         // let options = StorageUploadDataRequest.Options(accessLevel: .protected)
+        /*
         let options = StorageUploadDataRequest.Options(accessLevel: .private)
         
         Amplify.Storage.uploadData(key: "wheeler.jpeg", data: data, options: options) { progress in
@@ -51,8 +73,8 @@ class PlanterViewController: UIViewController {
                 print("Failed: \(storageError.errorDescription). \(storageError.recoverySuggestion)")
             }
         }
-    
-        /*
+        */
+        
         // public level
         Amplify.Storage.uploadData(
             key: "ExampleKey",
@@ -68,7 +90,7 @@ class PlanterViewController: UIViewController {
                 }
             }
         )
-        */
+        
     }
        
     @IBAction func downloadFileFromS3(_ sender: Any) {

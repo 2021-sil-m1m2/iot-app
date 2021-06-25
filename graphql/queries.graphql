@@ -106,3 +106,150 @@ query ListUsers(
     nextToken
   }
 }
+query GetCurrent($id: ID!) {
+  getCurrent(id: $id) {
+    id
+    date
+    planterID
+    temperature
+    humidity
+    weight
+    createdAt
+    updatedAt
+  }
+}
+query ListCurrents(
+  $filter: ModelCurrentFilterInput
+  $limit: Int
+  $nextToken: String
+) {
+  listCurrents(filter: $filter, limit: $limit, nextToken: $nextToken) {
+    items {
+      id
+      date
+      planterID
+      temperature
+      humidity
+      weight
+      createdAt
+      updatedAt
+    }
+    nextToken
+  }
+}
+query SearchRecords(
+  $filter: SearchableRecordFilterInput
+  $sort: SearchableRecordSortInput
+  $limit: Int
+  $nextToken: String
+  $from: Int
+) {
+  searchRecords(
+    filter: $filter
+    sort: $sort
+    limit: $limit
+    nextToken: $nextToken
+    from: $from
+  ) {
+    items {
+      id
+      date
+      planterID
+      planter {
+        id
+        userID
+        createdAt
+        updatedAt
+      }
+      temperature
+      humidity
+      weight
+      createdAt
+      updatedAt
+    }
+    nextToken
+    total
+  }
+}
+query SearchPlanters(
+  $filter: SearchablePlanterFilterInput
+  $sort: SearchablePlanterSortInput
+  $limit: Int
+  $nextToken: String
+  $from: Int
+) {
+  searchPlanters(
+    filter: $filter
+    sort: $sort
+    limit: $limit
+    nextToken: $nextToken
+    from: $from
+  ) {
+    items {
+      id
+      userID
+      user {
+        id
+        name
+        createdAt
+        updatedAt
+      }
+      createdAt
+      updatedAt
+    }
+    nextToken
+    total
+  }
+}
+query SearchUsers(
+  $filter: SearchableUserFilterInput
+  $sort: SearchableUserSortInput
+  $limit: Int
+  $nextToken: String
+  $from: Int
+) {
+  searchUsers(
+    filter: $filter
+    sort: $sort
+    limit: $limit
+    nextToken: $nextToken
+    from: $from
+  ) {
+    items {
+      id
+      name
+      createdAt
+      updatedAt
+    }
+    nextToken
+    total
+  }
+}
+query SearchCurrents(
+  $filter: SearchableCurrentFilterInput
+  $sort: SearchableCurrentSortInput
+  $limit: Int
+  $nextToken: String
+  $from: Int
+) {
+  searchCurrents(
+    filter: $filter
+    sort: $sort
+    limit: $limit
+    nextToken: $nextToken
+    from: $from
+  ) {
+    items {
+      id
+      date
+      planterID
+      temperature
+      humidity
+      weight
+      createdAt
+      updatedAt
+    }
+    nextToken
+    total
+  }
+}

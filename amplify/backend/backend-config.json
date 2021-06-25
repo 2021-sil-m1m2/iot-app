@@ -16,5 +16,19 @@
         }
       }
     }
+  },
+  "auth": {
+    "iotappb0a524af": {
+      "service": "Cognito",
+      "providerPlugin": "awscloudformation",
+      "dependsOn": [],
+      "customAuth": false
+    }
+  },
+  "storage": {
+    "s3808736b3": {
+      "service": "S3",
+      "providerPlugin": "awscloudformation"
+    }
   }
 }

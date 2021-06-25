@@ -137,3 +137,39 @@ subscription OnDeleteUser {
     updatedAt
   }
 }
+subscription OnCreateCurrent {
+  onCreateCurrent {
+    id
+    date
+    planterID
+    temperature
+    humidity
+    weight
+    createdAt
+    updatedAt
+  }
+}
+subscription OnUpdateCurrent {
+  onUpdateCurrent {
+    id
+    date
+    planterID
+    temperature
+    humidity
+    weight
+    createdAt
+    updatedAt
+  }
+}
+subscription OnDeleteCurrent {
+  onDeleteCurrent {
+    id
+    date
+    planterID
+    temperature
+    humidity
+    weight
+    createdAt
+    updatedAt
+  }
+}
