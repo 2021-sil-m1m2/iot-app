@@ -1,6 +1,6 @@
 # this is an auto generated file. This will be overwritten
-query GetRecord($id: ID!) {
-  getRecord(id: $id) {
+query GetRecord($id: ID!, $planterID: ID!) {
+  getRecord(id: $id, planterID: $planterID) {
     id
     date
     planterID
@@ -24,11 +24,21 @@ query GetRecord($id: ID!) {
   }
 }
 query ListRecords(
+  $id: ID
+  $planterID: ModelIDKeyConditionInput
   $filter: ModelRecordFilterInput
   $limit: Int
   $nextToken: String
+  $sortDirection: ModelSortDirection
 ) {
-  listRecords(filter: $filter, limit: $limit, nextToken: $nextToken) {
+  listRecords(
+    id: $id
+    planterID: $planterID
+    filter: $filter
+    limit: $limit
+    nextToken: $nextToken
+    sortDirection: $sortDirection
+  ) {
     items {
       id
       date
@@ -48,8 +58,8 @@ query ListRecords(
     nextToken
   }
 }
-query GetPlanter($id: ID!) {
-  getPlanter(id: $id) {
+query GetPlanter($id: ID!, $userID: ID!) {
+  getPlanter(id: $id, userID: $userID) {
     id
     userID
     user {
@@ -63,11 +73,21 @@ query GetPlanter($id: ID!) {
   }
 }
 query ListPlanters(
+  $id: ID
+  $userID: ModelIDKeyConditionInput
   $filter: ModelPlanterFilterInput
   $limit: Int
   $nextToken: String
+  $sortDirection: ModelSortDirection
 ) {
-  listPlanters(filter: $filter, limit: $limit, nextToken: $nextToken) {
+  listPlanters(
+    id: $id
+    userID: $userID
+    filter: $filter
+    limit: $limit
+    nextToken: $nextToken
+    sortDirection: $sortDirection
+  ) {
     items {
       id
       userID
@@ -106,8 +126,8 @@ query ListUsers(
     nextToken
   }
 }
-query GetCurrent($id: ID!) {
-  getCurrent(id: $id) {
+query GetCurrent($id: ID!, $planterID: ID!) {
+  getCurrent(id: $id, planterID: $planterID) {
     id
     date
     planterID
@@ -119,11 +139,21 @@ query GetCurrent($id: ID!) {
   }
 }
 query ListCurrents(
+  $id: ID
+  $planterID: ModelIDKeyConditionInput
   $filter: ModelCurrentFilterInput
   $limit: Int
   $nextToken: String
+  $sortDirection: ModelSortDirection
 ) {
-  listCurrents(filter: $filter, limit: $limit, nextToken: $nextToken) {
+  listCurrents(
+    id: $id
+    planterID: $planterID
+    filter: $filter
+    limit: $limit
+    nextToken: $nextToken
+    sortDirection: $sortDirection
+  ) {
     items {
       id
       date

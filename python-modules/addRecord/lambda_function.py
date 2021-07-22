@@ -11,7 +11,7 @@ def float_to_decimal(obj):
 def lambda_handler(event, context):
     dynamoDB = boto3.resource("dynamodb")
     # DynamoDBのテーブル名
-    table = dynamoDB.Table("Record-ci4prgfbfrbh3ars35zuitriqu-dev")
+    table = dynamoDB.Table("Record-ldswo6e5sjauzkl2qqrwplwvui-dev")
     
     table.put_item(
       Item = {

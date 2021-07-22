@@ -4,14 +4,14 @@ import Foundation
 
 public struct Current: Model {
   public let id: String
-  public var date: String?
+  public var date: String
   public var planterID: String
   public var temperature: Int?
   public var humidity: Int?
   public var weight: Int?
   
   public init(id: String = UUID().uuidString,
-      date: String? = nil,
+      date: String,
       planterID: String,
       temperature: Int? = nil,
       humidity: Int? = nil,

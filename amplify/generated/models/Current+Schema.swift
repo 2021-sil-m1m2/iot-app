@@ -23,7 +23,7 @@ extension Current {
     
     model.fields(
       .id(),
-      .field(current.date, is: .optional, ofType: .string),
+      .field(current.date, is: .required, ofType: .string),
       .field(current.planterID, is: .required, ofType: .string),
       .field(current.temperature, is: .optional, ofType: .int),
       .field(current.humidity, is: .optional, ofType: .int),

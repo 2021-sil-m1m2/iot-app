@@ -24,12 +24,12 @@ extension Record {
     
     model.fields(
       .id(),
-      .field(record.date, is: .optional, ofType: .string),
+      .field(record.date, is: .required, ofType: .string),
       .field(record.planterID, is: .required, ofType: .string),
       .hasOne(record.planter, is: .optional, ofType: Planter.self, associatedWith: Planter.keys.id, targetName: "planterID"),
-      .field(record.temperature, is: .optional, ofType: .int),
-      .field(record.humidity, is: .optional, ofType: .int),
-      .field(record.weight, is: .optional, ofType: .int)
+      .field(record.temperature, is: .optional, ofType: .double),
+      .field(record.humidity, is: .optional, ofType: .double),
+      .field(record.weight, is: .optional, ofType: .double)
     )
     }
 }
