@@ -31,7 +31,7 @@ only_rules:
   # for文内にif文が1つのみ存在する場合、where句を使うべき
   - for_where
   # 強制キャスト(as!)は使うべきでない
-  - force_cast
+  #- force_cast
   # 関数の引数の数は少なくすべき
   - function_parameter_count
   # 識別子名は英数のみを含み、小文字で始まるか、大文字のみを含むべき

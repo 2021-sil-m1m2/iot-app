@@ -20,6 +20,7 @@
                     <connections>
                         <segue destination="UDi-IV-EwM" kind="relationship" relationship="viewControllers" id="3l8-iq-C3q"/>
                         <segue destination="MLG-BM-yne" kind="relationship" relationship="viewControllers" id="MpF-Cx-vDG"/>
+                        <segue destination="8r2-q2-I4n" kind="relationship" relationship="viewControllers" id="EgR-iG-Sii"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7Uz-YC-Pnt" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -45,6 +46,17 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BgM-lg-4Xy" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="797" y="171"/>
+        </scene>
+        <!--Graph-->
+        <scene sceneID="ipF-eg-f5b">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Graph" id="8r2-q2-I4n" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Item" id="1c3-lR-iCb"/>
+                    <navigationItem key="navigationItem" id="BMK-3F-lew"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="kkY-Bl-VfF" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="758" y="235"/>
         </scene>
     </scenes>
 </document>

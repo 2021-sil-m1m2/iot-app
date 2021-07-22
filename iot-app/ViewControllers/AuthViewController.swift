@@ -86,6 +86,7 @@ class AuthViewController: UIViewController, UITextFieldDelegate {
             switch result {
             case .success:
                 print("Sign in succeeded")
+                
             case .failure(let error):
                 print("Sign in failed \(error)")
             }

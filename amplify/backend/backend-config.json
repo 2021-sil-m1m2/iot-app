@@ -9,7 +9,7 @@
             "authenticationType": "API_KEY",
             "apiKeyConfig": {
               "apiKeyExpirationDays": 7,
-              "description": "iotapp's API key"
+              "description": "IoT app's API key"
             }
           },
           "additionalAuthenticationProviders": []
@@ -18,17 +18,11 @@
     }
   },
   "auth": {
-    "iotappb0a524af": {
+    "iotapp220df598": {
       "service": "Cognito",
       "providerPlugin": "awscloudformation",
       "dependsOn": [],
       "customAuth": false
-    }
-  },
-  "storage": {
-    "s3808736b3": {
-      "service": "S3",
-      "providerPlugin": "awscloudformation"
     }
   }
 }

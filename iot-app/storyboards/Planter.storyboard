@@ -92,12 +92,20 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uLU-PB-V6K">
-                                <rect key="frame" x="192" y="477" width="31" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cSF-8i-oQs">
+                                <rect key="frame" x="192" y="433" width="31" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="検索"/>
                                 <connections>
-                                    <action selector="searchRecord:" destination="oW6-fr-fqz" eventType="touchUpInside" id="M0N-ta-Kea"/>
+                                    <action selector="queryRecord:" destination="oW6-fr-fqz" eventType="touchUpInside" id="RoV-JH-hvY"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xOY-5b-xKg">
+                                <rect key="frame" x="137" y="503" width="140" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="records[]を表示する"/>
+                                <connections>
+                                    <action selector="showRecords:" destination="oW6-fr-fqz" eventType="touchUpInside" id="O6V-dd-M3P"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -113,7 +121,6 @@
                         <outlet property="clientidLabel" destination="2FF-dD-wBQ" id="BOO-g1-hPJ"/>
                         <outlet property="humidityLabel" destination="qzL-Fk-H4W" id="eiz-OW-0IF"/>
                         <outlet property="imageView" destination="b97-P3-dzS" id="vQ7-ra-675"/>
-                        <outlet property="searchRecordButton" destination="uLU-PB-V6K" id="hwJ-HX-Qe3"/>
                         <outlet property="temperatureLabel" destination="QJy-jF-apR" id="Kub-HM-sFs"/>
                         <outlet property="weightLabel" destination="b5E-B3-34Q" id="rpT-uY-V6y"/>
                     </connections>

@@ -1,19 +1,19 @@
 {
   "dev": {
     "awscloudformation": {
-      "AuthRoleName": "amplify-iotapp-dev-223506-authRole",
-      "UnauthRoleArn": "arn:aws:iam::426296560234:role/amplify-iotapp-dev-223506-unauthRole",
-      "AuthRoleArn": "arn:aws:iam::426296560234:role/amplify-iotapp-dev-223506-authRole",
+      "AuthRoleName": "amplify-iotapp-dev-223051-authRole",
+      "UnauthRoleArn": "arn:aws:iam::426296560234:role/amplify-iotapp-dev-223051-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::426296560234:role/amplify-iotapp-dev-223051-authRole",
       "Region": "ap-northeast-1",
-      "DeploymentBucketName": "amplify-iotapp-dev-223506-deployment",
-      "UnauthRoleName": "amplify-iotapp-dev-223506-unauthRole",
-      "StackName": "amplify-iotapp-dev-223506",
-      "StackId": "arn:aws:cloudformation:ap-northeast-1:426296560234:stack/amplify-iotapp-dev-223506/abd47560-cea7-11eb-9683-0640a6f9100d",
-      "AmplifyAppId": "d3m3mn0tcmtsnm"
+      "DeploymentBucketName": "amplify-iotapp-dev-223051-deployment",
+      "UnauthRoleName": "amplify-iotapp-dev-223051-unauthRole",
+      "StackName": "amplify-iotapp-dev-223051",
+      "StackId": "arn:aws:cloudformation:ap-northeast-1:426296560234:stack/amplify-iotapp-dev-223051/0e3bf380-eaf1-11eb-9358-066c9de695cb",
+      "AmplifyAppId": "d2ub07yy7wotrr"
     },
     "categories": {
       "auth": {
-        "iotappb0a524af": {}
+        "iotapp220df598": {}
       }
     }
   }
