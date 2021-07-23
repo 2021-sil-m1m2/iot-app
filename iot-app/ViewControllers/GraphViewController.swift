@@ -26,8 +26,73 @@ class GraphViewController: UIViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        
+        // planterIDに一致するレコードを取得し、ソートする
+        listRecords()
     }
     
+    func listRecords() {
+        // DynamoDB内のデータを検索する
+        let record = Record.keys
+        let predicate = record.planterID == "test_planter"
+            //&& todo.description == "todo description"
+            Amplify.API.query(request: .paginatedList(Record.self, where: predicate, limit: 1000)) { event in
+                switch event {
+                case .success(let result):
+                    switch result {
+                    case .success(let records):
+                        print("Successfully retrieved list of records: \(records)")
+                        self.records.append(contentsOf: records)
+                        self.sortRecords()
+                    case .failure(let error):
+                        print("Got failed result with \(error.errorDescription)")
+                    }
+                case .failure(let error):
+                    print("Got failed event with error \(error)")
+                }
+            }
+        
+    }
+
+    func sortRecords() {
+        print("配列recordsを表示します")
+        for record in records{
+            print("\(record)\n")
+        }
+        
+        self.records.sort {
+            $0.date < $1.date
+        }
+        
+        print("ソート後の配列recordsを表示します")
+        for record in records{
+            print("\(record)\n")
+        }
+    }
+    
+    func drawGraph() {
+        let rect = CGRect(x:40, y: 180, width: 300, height: 200)
+        let chartView = LineChartView(frame: rect)
+        var dataSets = [LineChartDataSet]()
+
+        let entries = yAxisValues.enumerated().map{ ChartDataEntry(x: Double($0.offset), y: $0.element) }
+        let dataSet = LineChartDataSet(entries: entries, label: "label")
+        dataSets.append(dataSet)
+        chartView.data = LineChartData(dataSets: dataSets as [IChartDataSet])
+
+        let formatter = ChartFormatter()
+        chartView.xAxis.valueFormatter = formatter
+        
+        // 凡例を表示しない
+        chartView.legend.enabled = false
+        
+//        //labelCountはChartDataEntryと同じ数だけ入れます。
+//        chartView.xAxis.labelCount = 12
+//        //granularityは1.0で固定
+//        chartView.xAxis.granularity = 1.0
+
+        self.view.addSubview(chartView)
+    }
     
     @IBAction func formatDate(_ sender: Any) {
         let dateFormatter = DateFormatter()
@@ -80,85 +145,14 @@ class GraphViewController: UIViewController {
         print("格納が完了しました")
         print(xAxisValues)
         print(yAxisValues)
-    }
-    
-    @IBAction func drawGraph_temperature(_ sender: Any) {
         
-        let rect = CGRect(x:40, y: 180, width: 300, height: 200)
-        let chartView = LineChartView(frame: rect)
-        var dataSets = [LineChartDataSet]()
-
-        let entries = yAxisValues.enumerated().map{ ChartDataEntry(x: Double($0.offset), y: $0.element) }
-        let dataSet = LineChartDataSet(entries: entries, label: "label")
-        dataSets.append(dataSet)
-        chartView.data = LineChartData(dataSets: dataSets as [IChartDataSet])
-
-        let formatter = ChartFormatter()
-        chartView.xAxis.valueFormatter = formatter
-        //labelCountはChartDataEntryと同じ数だけ入れます。
-        chartView.xAxis.labelCount = 12
-        //granularityは1.0で固定
-        chartView.xAxis.granularity = 1.0
-
-        self.view.addSubview(chartView)
+        drawGraph()
     }
-    
+ 
     @IBAction func drawGraph_humidity(_ sender: Any) {
-        // 折れ線グラフ
-        let humidityView = LineChartView(frame: CGRect(x: 40, y: 430, width: 300, height: 200))
-        let entry2 = [
-            BarChartDataEntry(x: 110, y: 130),
-            BarChartDataEntry(x: 110, y: 120),
-            BarChartDataEntry(x: 130, y: 140),
-            BarChartDataEntry(x: 130, y: 110),
-            BarChartDataEntry(x: 150, y: 130)
-        ]
-        
-        let set2 = LineChartDataSet(entries: entry2, label: "humidity")
-    
-        humidityView.data = LineChartData(dataSet: set2)
-        view.addSubview(humidityView)
-    }
-    
-    @IBAction func listRecords(_ sender: Any) {
-        // DynamoDB内のデータを検索する
-        let record = Record.keys
-        let predicate = record.planterID == "test_planter"
-            //&& todo.description == "todo description"
-            Amplify.API.query(request: .paginatedList(Record.self, where: predicate, limit: 1000)) { event in
-                switch event {
-                case .success(let result):
-                    switch result {
-                    case .success(let records):
-                        print("Successfully retrieved list of records: \(records)")
-                        self.records.append(contentsOf: records)
-                    case .failure(let error):
-                        print("Got failed result with \(error.errorDescription)")
-                    }
-                case .failure(let error):
-                    print("Got failed event with error \(error)")
-                }
-            }
-    }
-    
-    @IBAction func sortRecords(_ sender: Any) {
-        print("配列recordsを表示します")
-        for record in records{
-            print("\(record)\n")
-        }
-        
-        self.records.sort {
-            $0.date < $1.date
-        }
-        
-        print("ソート後の配列recordsを表示します")
-        for record in records{
-            print("\(record)\n")
-        }
-        
 
     }
-
+ 
 }
 
 class ChartFormatter: NSObject, IAxisValueFormatter {
