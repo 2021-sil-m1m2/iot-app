@@ -96,11 +96,6 @@ class GraphViewController: UIViewController {
         
         //x軸のラベルを下側に表示する
         chartView.xAxis.labelPosition = .bottom
-        
-//        //labelCountはChartDataEntryと同じ数だけ入れます。
-//        chartView.xAxis.labelCount = 12
-//        //granularityは1.0で固定
-//        chartView.xAxis.granularity = 1.0
 
         self.view.addSubview(chartView)
     }
@@ -142,16 +137,18 @@ class GraphViewController: UIViewController {
         let comps = calendar.dateComponents([.year, .month, .day, .hour, .minute, .second], from: current)
         let condition = calendar.date(from: DateComponents(year: comps.year, month: comps.month, day: comps.day, hour: nil, minute: nil, second: nil))!
         
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "yyyy-MM-dd HH:mm:ss.SSSSSS"
+        
+        print("比較")
+        print(current)
+        print(condition)
+        print(records[0].date)
+        print(dateFormatter.date(from: records[0].date))
+        
         for record in records{
-            let dateFormatter = DateFormatter()
-            dateFormatter.dateFormat = "yyyy-MM-dd HH:mm:ss.SSSSSS"
-            var date = dateFormatter.date(from: record.date)!
 
-            print("比較")
-            print(current)
-            print(condition)
-            print(record.date)
-            print(date)
+            var date = dateFormatter.date(from: record.date)!
             
             if calendar.isDate(date, inSameDayAs: condition){
                 xAxisValues.append(record.date)
