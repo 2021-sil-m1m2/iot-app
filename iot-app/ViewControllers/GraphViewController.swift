@@ -93,7 +93,10 @@ class GraphViewController: UIViewController {
         dataSet.circleColors = [UIColor.Pallet.green]
         dataSet.fillColor = UIColor.Pallet.green
         dataSet.circleRadius = 4.0
-
+        
+        //x軸のラベルを下側に表示する
+        chartView.xAxis.labelPosition = .bottom
+        
 //        //labelCountはChartDataEntryと同じ数だけ入れます。
 //        chartView.xAxis.labelCount = 12
 //        //granularityは1.0で固定
@@ -131,12 +134,12 @@ class GraphViewController: UIViewController {
         // dateでのフィルター
         print("6月26日のデータのみを表示します")
         var calendar = Calendar(identifier: .gregorian)
-        calendar.timeZone = TimeZone(identifier: "Asia/Tokyo")!
+        calendar.timeZone = TimeZone(identifier: "Etc/GMT")!
         calendar.locale = .current
         
         // 現在の日時を設定する
-        let date = Date()
-        let comps = calendar.dateComponents([.year, .month, .day, .hour, .minute, .second], from: date)
+        let current = Date()
+        let comps = calendar.dateComponents([.year, .month, .day, .hour, .minute, .second], from: current)
         let condition = calendar.date(from: DateComponents(year: comps.year, month: comps.month, day: comps.day, hour: nil, minute: nil, second: nil))!
         
         for record in records{
@@ -144,6 +147,12 @@ class GraphViewController: UIViewController {
             dateFormatter.dateFormat = "yyyy-MM-dd HH:mm:ss.SSSSSS"
             var date = dateFormatter.date(from: record.date)!
 
+            print("比較")
+            print(current)
+            print(condition)
+            print(record.date)
+            print(date)
+            
             if calendar.isDate(date, inSameDayAs: condition){
                 xAxisValues.append(record.date)
                 yAxisValues.append(record.temperature!)
