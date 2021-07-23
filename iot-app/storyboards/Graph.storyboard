@@ -25,11 +25,76 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jni-II-mmd">
-                                <rect key="frame" x="49" y="134" width="46" height="30"/>
+                                <rect key="frame" x="110" y="96" width="46" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="ソート"/>
                                 <connections>
                                     <action selector="sortRecords:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="YH6-Ng-uqI"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hse-qP-eLc">
+                                <rect key="frame" x="242" y="153" width="123" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="グラフを描画する"/>
+                                <connections>
+                                    <action selector="drawGraph_temperature:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="SL9-93-4tX"/>
+                                    <action selector="sortRecords:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="8as-1k-KZS"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZTF-5f-sZ8">
+                                <rect key="frame" x="146" y="388" width="123" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="グラフを描画する"/>
+                                <connections>
+                                    <action selector="drawGraph_humidity:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="Flh-Iz-wme"/>
+                                    <action selector="drawGraph_temperature:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="Rzc-k2-ydz"/>
+                                    <action selector="sortRecords:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="FFf-RP-ZN4"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wzF-ct-itW">
+                                <rect key="frame" x="173" y="619" width="123" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="グラフを描画する"/>
+                                <connections>
+                                    <action selector="drawGraph_temperature:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="Oib-mD-FDf"/>
+                                    <action selector="sortRecords:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="Pd6-yd-y79"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="気温" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eXd-ig-ctu">
+                                <rect key="frame" x="86" y="157" width="35" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="湿度" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ap4-hf-EHX">
+                                <rect key="frame" x="86" y="392" width="35" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="土壌湿度" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Lmu-1y-L71">
+                                <rect key="frame" x="86" y="624" width="70" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Z2E-Y6-hen">
+                                <rect key="frame" x="188" y="96" width="92" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="フォーマット"/>
+                                <connections>
+                                    <action selector="formatDate:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="0Ez-im-CYO"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pLh-LX-vGh">
+                                <rect key="frame" x="173" y="152" width="31" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="当日"/>
+                                <connections>
+                                    <action selector="dayGraph:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="fTm-Vj-FQP"/>
                                 </connections>
                             </button>
                         </subviews>

@@ -13,37 +13,99 @@ import AWSMobileClient
 import AWSS3
 import AWSAppSync
 
+var xAxisValues = [String]()
+var yAxisValues = [Double]()
+
 class GraphViewController: UIViewController {
     var records: [Record] = []
+    
+    var chart: CombinedChartView!
+    var lineDataSet: LineChartDataSet!
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+    }
+    
+    
+    @IBAction func formatDate(_ sender: Any) {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "yyyy-MM-dd HH:mm:ss.SSSSSS"
+        var date = dateFormatter.date(from: records[1].date)
+        print(date)
+        let timeInerval = date?.timeIntervalSince1970
+        var datemilli = convertToMilli(timeIntervalSince1970: timeInerval!)
+        print(datemilli)
+        var datedate = convertMilliToDate(milliseconds: Int64(datemilli))
+        print(datedate)
+    }
+    
+    func convertToMilli(timeIntervalSince1970: TimeInterval) -> Int64 {
+        return Int64(timeIntervalSince1970 * 1000)
+    }
+    
+    func convertMilliToDate(milliseconds: Int64) -> Date {
+        return Date(timeIntervalSince1970: (TimeInterval(milliseconds) / 1000))
+    }
+    
+    @IBAction func dayGraph(_ sender: Any) {
         
-        var rect = view.bounds
-        rect.origin.y += 20
-        rect.size.height -= 20
-//        var barChartView = BarChartView(frame: rect)
-        //グラフのサイズ設定、座標設定
+        // 一度空にする
+        xAxisValues = []
+        yAxisValues = []
+        
+        // dateでのフィルター
+        print("6月26日のデータのみを表示します")
+        var calendar = Calendar(identifier: .gregorian)
+        calendar.timeZone = TimeZone(identifier: "Asia/Tokyo")!
+        calendar.locale = .current
+        
+        // 現在の日時を設定する
+        let date = Date()
+        let comps = calendar.dateComponents([.year, .month, .day, .hour, .minute, .second], from: date)
+        let condition = calendar.date(from: DateComponents(year: comps.year, month: comps.month, day: comps.day, hour: nil, minute: nil, second: nil))!
+        
+        for record in records{
+            let dateFormatter = DateFormatter()
+            dateFormatter.dateFormat = "yyyy-MM-dd HH:mm:ss.SSSSSS"
+            var date = dateFormatter.date(from: record.date)!
+
+            if calendar.isDate(date, inSameDayAs: condition){
+                xAxisValues.append(record.date)
+                yAxisValues.append(record.temperature!)
+            }
+        }
+        
+        print("格納が完了しました")
+        print(xAxisValues)
+        print(yAxisValues)
+    }
+    
+    @IBAction func drawGraph_temperature(_ sender: Any) {
+        
+        let rect = CGRect(x:40, y: 180, width: 300, height: 200)
+        let chartView = LineChartView(frame: rect)
+        var dataSets = [LineChartDataSet]()
+
+        let entries = yAxisValues.enumerated().map{ ChartDataEntry(x: Double($0.offset), y: $0.element) }
+        let dataSet = LineChartDataSet(entries: entries, label: "label")
+        dataSets.append(dataSet)
+        chartView.data = LineChartData(dataSets: dataSets as [IChartDataSet])
+
+        let formatter = ChartFormatter()
+        chartView.xAxis.valueFormatter = formatter
+        //labelCountはChartDataEntryと同じ数だけ入れます。
+        chartView.xAxis.labelCount = 12
+        //granularityは1.0で固定
+        chartView.xAxis.granularity = 1.0
+
+        self.view.addSubview(chartView)
+    }
+    
+    @IBAction func drawGraph_humidity(_ sender: Any) {
         // 折れ線グラフ
-        let temperatureView = LineChartView(frame: CGRect(x: 40, y: 180, width: 300, height: 250))
-//        let humiditiesView = LineChartView(frame: CGRect(x: 40, y: 530, width: 300, height: 250))
-        // 棒グラフ
-//        var barChartView = BarChartView(frame: CGRect(x: 40, y: 180, width: 300, height: 250))
-        
-        // グラフに複数の軸を設定する
-//        barChartView.rightAxis.axisMaximum = 400
-//        barChartView.leftAxis.axisMaximum = 40
-        
-        let entry = [
-            BarChartDataEntry(x: 50, y: 130),
-            BarChartDataEntry(x: 100, y: 120),
-            BarChartDataEntry(x: 150, y: 140),
-            BarChartDataEntry(x: 200, y: 110),
-            BarChartDataEntry(x: 250, y: 150)
-        ]
-        
+        let humidityView = LineChartView(frame: CGRect(x: 40, y: 430, width: 300, height: 200))
         let entry2 = [
             BarChartDataEntry(x: 110, y: 130),
             BarChartDataEntry(x: 110, y: 120),
@@ -52,16 +114,10 @@ class GraphViewController: UIViewController {
             BarChartDataEntry(x: 150, y: 130)
         ]
         
-        let set = LineChartDataSet(entries: entry, label: "Data")
-        let set2 = LineChartDataSet(entries: entry2, label: "Data2")
-        
-//        let lineChartData = LineChartData(dataSets: [set, set2])
-//        temperatureView.data = LineChartData(dataSets: lineChartData as! [IChartDataSet])
-        
-        temperatureView.data = LineChartData(dataSet: set)
-//        temperatureView.data = LineChartData(dataSet: set2)
-        view.addSubview(temperatureView)
+        let set2 = LineChartDataSet(entries: entry2, label: "humidity")
     
+        humidityView.data = LineChartData(dataSet: set2)
+        view.addSubview(humidityView)
     }
     
     @IBAction func listRecords(_ sender: Any) {
@@ -99,16 +155,18 @@ class GraphViewController: UIViewController {
         for record in records{
             print("\(record)\n")
         }
-    }
-    
-    /*
-    // MARK: - Navigation
+        
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
     }
-    */
+
+}
+
+class ChartFormatter: NSObject, IAxisValueFormatter {
+
+    func stringForValue(_ value: Double, axis: AxisBase?) -> String {
+        //granularityを１.０、labelCountを１２にしているおかげで引数のvalueは1.0, 2.0, 3.0・・・１１.０となります。
+        let index = Int(value)
+        return xAxisValues[index]
+    }
 
 }
