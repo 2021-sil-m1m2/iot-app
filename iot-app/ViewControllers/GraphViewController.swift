@@ -86,6 +86,14 @@ class GraphViewController: UIViewController {
         // 凡例を表示しない
         chartView.legend.enabled = false
         
+        // グラフの線の色を設定する
+        dataSet.colors = [UIColor.Pallet.green]
+    
+        // プロットの色と大きさを設定する
+        dataSet.circleColors = [UIColor.Pallet.green]
+        dataSet.fillColor = UIColor.Pallet.green
+        dataSet.circleRadius = 4.0
+
 //        //labelCountはChartDataEntryと同じ数だけ入れます。
 //        chartView.xAxis.labelCount = 12
 //        //granularityは1.0で固定
