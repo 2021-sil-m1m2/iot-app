@@ -71,6 +71,10 @@ class GraphViewController: UIViewController {
     }
     
     func drawGraph() {
+        print("drawGraph内です")
+        print(xAxisValues)
+        print(yAxisValues)
+    
         let rect = CGRect(x:40, y: 180, width: 300, height: 200)
         let chartView = LineChartView(frame: rect)
         var dataSets = [LineChartDataSet]()
@@ -82,6 +86,9 @@ class GraphViewController: UIViewController {
 
         let formatter = ChartFormatter()
         chartView.xAxis.valueFormatter = formatter
+        
+        //labelCountはChartDataEntryと同じ数だけ入れます。
+        chartView.xAxis.labelCount = 4
         
         // 凡例を表示しない
         chartView.legend.enabled = false
@@ -139,19 +146,29 @@ class GraphViewController: UIViewController {
         
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "yyyy-MM-dd HH:mm:ss.SSSSSS"
+        dateFormatter.locale = Locale(identifier: "ja_JP")
+        dateFormatter.timeZone = TimeZone(identifier: "Etc/GMT")
         
-        print("比較")
-        print(current)
-        print(condition)
-        print(records[0].date)
-        print(dateFormatter.date(from: records[0].date))
+//        print("比較")
+//        print(current)
+//        print(condition)
+//        print(records)
+//        print(records[0].date)
+//        let recordDate = dateFormatter.date(from: records[0].date)
+//        print(recordDate)
+//
+//        dateFormatter.dateFormat = DateFormatter.dateFormat(fromTemplate: "dMMM", options: 0, locale: Locale(identifier: "ja_JP"))
+//        print(dateFormatter.string(from: recordDate!)) // 2017年8月12日
+//
+//        dateFormatter.dateFormat = "yyyy-MM-dd HH:mm:ss.SSSSSS"
         
         for record in records{
-
-            var date = dateFormatter.date(from: record.date)!
+            dateFormatter.dateFormat = DateFormatter.dateFormat(fromTemplate: "yyyy-MM-dd HH:mm:ss.SSSSSS", options: 0, locale: Locale(identifier: "ja_JP"))
+            var date = dateFormatter.date(from: record.date)
             
-            if calendar.isDate(date, inSameDayAs: condition){
-                xAxisValues.append(record.date)
+            if calendar.isDate(date!, inSameDayAs: condition){
+                dateFormatter.dateFormat = DateFormatter.dateFormat(fromTemplate: "HH:mm", options: 0, locale: Locale(identifier: "ja_JP"))
+                xAxisValues.append(dateFormatter.string(from: date!))
                 yAxisValues.append(record.temperature!)
             }
         }
