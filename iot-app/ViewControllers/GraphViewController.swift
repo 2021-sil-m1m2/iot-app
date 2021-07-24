@@ -87,8 +87,11 @@ class GraphViewController: UIViewController {
         let formatter = ChartFormatter()
         chartView.xAxis.valueFormatter = formatter
         
-        //labelCountはChartDataEntryと同じ数だけ入れます。
+        //x軸ラベルの表示数を設定する
         chartView.xAxis.labelCount = 4
+        
+        // x右軸を表示しない
+        chartView.rightAxis.enabled = false
         
         // 凡例を表示しない
         chartView.legend.enabled = false
