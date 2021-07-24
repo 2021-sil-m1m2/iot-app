@@ -106,6 +106,10 @@ class GraphViewController: UIViewController {
         //x軸のラベルを下側に表示する
         chartView.xAxis.labelPosition = .bottom
 
+        //軸ラベルのフォントサイズを設定する
+        chartView.xAxis.labelFont = UIFont.systemFont(ofSize: 7)
+        chartView.leftAxis.labelFont = UIFont.systemFont(ofSize: 7)
+        
         self.view.addSubview(chartView)
     }
     
