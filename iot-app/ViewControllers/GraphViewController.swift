@@ -22,6 +22,8 @@ class GraphViewController: UIViewController {
     var chart: CombinedChartView!
     var lineDataSet: LineChartDataSet!
     
+    @IBOutlet weak var dateLabel: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -71,9 +73,6 @@ class GraphViewController: UIViewController {
     }
     
     func drawGraph() {
-        print("drawGraph内です")
-        print(xAxisValues)
-        print(yAxisValues)
     
         let rect = CGRect(x:40, y: 180, width: 300, height: 200)
         let chartView = LineChartView(frame: rect)
@@ -88,7 +87,7 @@ class GraphViewController: UIViewController {
         chartView.xAxis.valueFormatter = formatter
         
         //x軸ラベルの表示数を設定する
-        chartView.xAxis.labelCount = 4
+        chartView.xAxis.labelCount = 7
         
         // x右軸を表示しない
         chartView.rightAxis.enabled = false
@@ -179,6 +178,10 @@ class GraphViewController: UIViewController {
         print("格納が完了しました")
         print(xAxisValues)
         print(yAxisValues)
+        
+        // dateLabelに日付を表示する
+        dateFormatter.dateFormat = DateFormatter.dateFormat(fromTemplate: "yMMdd", options: 0, locale: Locale(identifier: "ja_JP"))
+        dateLabel.text = dateFormatter.string(from: current)
         
         drawGraph()
     }
