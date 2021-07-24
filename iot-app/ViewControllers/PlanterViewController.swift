@@ -11,6 +11,7 @@ import AWSMobileClient
 import AWSS3
 import UIKit
 import AWSAppSync
+import AWSPluginsCore
 
 class PlanterViewController: UIViewController {
 
@@ -62,6 +63,10 @@ class PlanterViewController: UIViewController {
         }
         */
     
+//        let condition: SearchableIDFilterInput = SearchableIDFilterInput.init(eq: "test_planter")
+//        let filter: SearchableRecordFilterInput = SearchableRecordFilterInput.init(planterId: condition)
+//        print(SearchRecordsQuery(filter: filter))
+        
         // これ惜しい気がする
 //        let searchIDFilter = SearchableIDFilterInput.init(eq: "test_planter")
 //        let searchRecordFilter = SearchableRecordFilterInput.init(planterId: searchIDFilter)
@@ -101,27 +106,40 @@ class PlanterViewController: UIViewController {
 //            }
 //
 //        }
+//
+//        let filter: [String: Any] = [
+//            "planterID": [
+//                "matchPhrase": "test_planter"
+//            ]
+//        ]
+//        Amplify.API.query(request: .search(Record.self,
+//                                           filter: filter,
+//                                           limit: 1000,
+//                                           sort: QuerySortBy.ascending(Record.keys.id)))
+        
+
     }
     
     @IBAction func queryRecord(_ sender: Any) {
-        // DynamoDB内のデータを検索する
-        let record = Record.keys
-        let predicate = record.planterID == "test_planter"
-            //&& todo.description == "todo description"
-            Amplify.API.query(request: .paginatedList(Record.self, where: predicate, limit: 1000)) { event in
-                switch event {
-                case .success(let result):
-                    switch result {
-                    case .success(let records):
-                        print("Successfully retrieved list of records: \(records)")
-                        self.records.append(contentsOf: records)
-                    case .failure(let error):
-                        print("Got failed result with \(error.errorDescription)")
-                    }
-                case .failure(let error):
-                    print("Got failed event with error \(error)")
-                }
-            }
+//        // DynamoDB内のデータを検索する
+//        let record = Record.keys
+//        let predicate = record.planterID == "test_planter"
+//            //&& todo.description == "todo description"
+//            Amplify.API.query(request: .paginatedList(Record.self, where: predicate, limit: 1000)) { event in
+//                switch event {
+//                case .success(let result):
+//                    switch result {
+//                    case .success(let records):
+//                        print("Successfully retrieved list of records: \(records)")
+//                        self.records.append(contentsOf: records)
+//                    case .failure(let error):
+//                        print("Got failed result with \(error.errorDescription)")
+//                    }
+//                case .failure(let error):
+//                    print("Got failed event with error \(error)")
+//                }
+//            }
+        listRecords()
     }
     
     @IBAction func showRecords(_ sender: Any) {
@@ -215,3 +233,70 @@ class PlanterViewController: UIViewController {
     }
     
 }
+
+//struct AppSyncSearchResponse<Element: Model>: Codable {
+//    let items: [Element]
+//    let nextToken: String?
+//    let total: Int?
+//}
+//
+//extension GraphQLRequest {
+//    static func search<M: Model>(_ modelType: M.Type,
+//                                 filter: [String: Any]? = nil,
+//                                 from: Int? = nil,
+//                                 limit: Int? = nil,
+//                                 nextToken: String? = nil,
+//                                 sort: QuerySortBy? = nil) -> GraphQLRequest<AppSyncSearchResponse<M>> {
+//        let name = modelType.modelName
+//        let documentName = "search" + name + "s"
+//        var variables = [String: Any]()
+//        if let filter = filter {
+//            variables.updateValue(filter, forKey: "filter")
+//        }
+//        if let from = from {
+//            variables.updateValue(from, forKey: "from")
+//        }
+//        if let limit = limit {
+//            variables.updateValue(limit, forKey: "limit")
+//        }
+//        if let nextToken = nextToken {
+//            variables.updateValue(nextToken, forKey: "nextToken")
+//        }
+//        if let sort = sort {
+//            switch sort {
+//            case .ascending(let field):
+//                let sort = [
+//                    "direction": "asc",
+//                    "field": field.stringValue
+//                ]
+//                variables.updateValue(sort, forKey: "sort")
+//            case .descending(let field):
+//                let sort = [
+//                    "direction": "desc",
+//                    "field": field.stringValue
+//                ]
+//                variables.updateValue(sort, forKey: "sort")
+//            }
+//        }
+//        let graphQLFields = modelType.schema.sortedFields.filter { field in
+//            !field.hasAssociation || field.isAssociationOwner
+//        }.map { (field) -> String in
+//            field.name
+//        }.joined(separator: "\n      ")
+//        let document = """
+//        query \(documentName)($filter: Searchable\(name)FilterInput, $from: Int, $limit: Int, $nextToken: String, $sort: Searchable\(name)SortInput) {
+//          \(documentName)(filter: $filter, from: $from, limit: $limit, nextToken: $nextToken, sort: $sort) {
+//            items {
+//              \(graphQLFields)
+//            }
+//            nextToken
+//            total
+//          }
+//        }
+//        """
+//        return GraphQLRequest<AppSyncSearchResponse<M>>(document: document,
+//                                                        variables: variables.isEmpty != false ? variables : nil,
+//                                                        responseType: AppSyncSearchResponse<M>.self,
+//                                                        decodePath: documentName)
+//    }
+//}

@@ -19,8 +19,8 @@
                     </tabBar>
                     <connections>
                         <segue destination="UDi-IV-EwM" kind="relationship" relationship="viewControllers" id="3l8-iq-C3q"/>
-                        <segue destination="MLG-BM-yne" kind="relationship" relationship="viewControllers" id="MpF-Cx-vDG"/>
                         <segue destination="8r2-q2-I4n" kind="relationship" relationship="viewControllers" id="EgR-iG-Sii"/>
+                        <segue destination="MLG-BM-yne" kind="relationship" relationship="viewControllers" id="MpF-Cx-vDG"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7Uz-YC-Pnt" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
