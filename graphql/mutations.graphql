@@ -21,7 +21,7 @@ mutation CreateRecord(
     }
     temperature
     humidity
-    weight
+    moisture
     createdAt
     updatedAt
   }
@@ -48,7 +48,7 @@ mutation UpdateRecord(
     }
     temperature
     humidity
-    weight
+    moisture
     createdAt
     updatedAt
   }
@@ -75,7 +75,7 @@ mutation DeleteRecord(
     }
     temperature
     humidity
-    weight
+    moisture
     createdAt
     updatedAt
   }

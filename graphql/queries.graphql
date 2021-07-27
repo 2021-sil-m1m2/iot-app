@@ -18,7 +18,7 @@ query GetRecord($id: ID!, $planterID: ID!) {
     }
     temperature
     humidity
-    weight
+    moisture
     createdAt
     updatedAt
   }
@@ -51,7 +51,7 @@ query ListRecords(
       }
       temperature
       humidity
-      weight
+      moisture
       createdAt
       updatedAt
     }
@@ -193,7 +193,7 @@ query SearchRecords(
       }
       temperature
       humidity
-      weight
+      moisture
       createdAt
       updatedAt
     }

@@ -87,7 +87,7 @@ class GraphViewController: UIViewController {
         chartView.xAxis.valueFormatter = formatter
         
         //x軸ラベルの表示数を設定する
-        chartView.xAxis.labelCount = 7
+        chartView.xAxis.labelCount = xAxisValues.count - 1
         
         // x右軸を表示しない
         chartView.rightAxis.enabled = false
@@ -113,24 +113,7 @@ class GraphViewController: UIViewController {
         self.view.addSubview(chartView)
     }
     
-    @IBAction func formatDate(_ sender: Any) {
-        let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "yyyy-MM-dd HH:mm:ss.SSSSSS"
-        var date = dateFormatter.date(from: records[1].date)
-        print(date)
-        let timeInerval = date?.timeIntervalSince1970
-        var datemilli = convertToMilli(timeIntervalSince1970: timeInerval!)
-        print(datemilli)
-        var datedate = convertMilliToDate(milliseconds: Int64(datemilli))
-        print(datedate)
-    }
-    
-    func convertToMilli(timeIntervalSince1970: TimeInterval) -> Int64 {
-        return Int64(timeIntervalSince1970 * 1000)
-    }
-    
-    func convertMilliToDate(milliseconds: Int64) -> Date {
-        return Date(timeIntervalSince1970: (TimeInterval(milliseconds) / 1000))
+    @IBAction func weekGraph(_ sender: Any) {
     }
     
     @IBAction func dayGraph(_ sender: Any) {
@@ -140,38 +123,38 @@ class GraphViewController: UIViewController {
         yAxisValues = []
         
         // dateでのフィルター
-        print("6月26日のデータのみを表示します")
+        print("本日のデータのみを表示します")
         var calendar = Calendar(identifier: .gregorian)
-        calendar.timeZone = TimeZone(identifier: "Etc/GMT")!
-        calendar.locale = .current
+        calendar.timeZone = TimeZone(identifier: "GMT")!
+        calendar.locale = Locale(identifier: "ja_JP")
         
         // 現在の日時を設定する
-        let current = Date()
-        let comps = calendar.dateComponents([.year, .month, .day, .hour, .minute, .second], from: current)
+        print("日時を表示します")
+        let dateFormatter = DateFormatter()
+        var current = Date()
+        print(current)
+        dateFormatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
+        dateFormatter.timeZone = TimeZone(identifier: "Asia/Tokyo")
+        var currentstring = dateFormatter.string(from: current)
+        print(currentstring)
+        dateFormatter.calendar = Calendar(identifier: .gregorian)
+        dateFormatter.timeZone = TimeZone(identifier: "Etc/GMT")
+        var currentdate = dateFormatter.date(from: currentstring)
+        print(currentdate)
+        
+        var comps = calendar.dateComponents([.year, .month, .day, .hour, .minute, .second], from: currentdate!)
+        
+//        comps.timeZone = TimeZone(identifier: "Etc/GMT")
+//        print(comps)
+        
         let condition = calendar.date(from: DateComponents(year: comps.year, month: comps.month, day: comps.day, hour: nil, minute: nil, second: nil))!
         
-        let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "yyyy-MM-dd HH:mm:ss.SSSSSS"
-        dateFormatter.locale = Locale(identifier: "ja_JP")
-        dateFormatter.timeZone = TimeZone(identifier: "Etc/GMT")
-        
-//        print("比較")
-//        print(current)
-//        print(condition)
-//        print(records)
-//        print(records[0].date)
-//        let recordDate = dateFormatter.date(from: records[0].date)
-//        print(recordDate)
-//
-//        dateFormatter.dateFormat = DateFormatter.dateFormat(fromTemplate: "dMMM", options: 0, locale: Locale(identifier: "ja_JP"))
-//        print(dateFormatter.string(from: recordDate!)) // 2017年8月12日
-//
-//        dateFormatter.dateFormat = "yyyy-MM-dd HH:mm:ss.SSSSSS"
+        print(condition)
         
         for record in records{
-            dateFormatter.dateFormat = DateFormatter.dateFormat(fromTemplate: "yyyy-MM-dd HH:mm:ss.SSSSSS", options: 0, locale: Locale(identifier: "ja_JP"))
-            var date = dateFormatter.date(from: record.date)
-            
+            dateFormatter.dateFormat = DateFormatter.dateFormat(fromTemplate: "yyyy-MM-dd HH:mm:ss", options: 0, locale: Locale(identifier: "ja_JP"))
+            let date = dateFormatter.date(from: record.date)
+            print(date)
             if calendar.isDate(date!, inSameDayAs: condition){
                 dateFormatter.dateFormat = DateFormatter.dateFormat(fromTemplate: "HH:mm", options: 0, locale: Locale(identifier: "ja_JP"))
                 xAxisValues.append(dateFormatter.string(from: date!))
@@ -191,7 +174,6 @@ class GraphViewController: UIViewController {
     }
  
     @IBAction func drawGraph_humidity(_ sender: Any) {
-
     }
  
 }

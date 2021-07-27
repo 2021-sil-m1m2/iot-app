@@ -1,8 +1,8 @@
 {
-    "identityPoolName": "iotapp220df598_identitypool_220df598",
+    "identityPoolName": "iotappb039f21e_identitypool_b039f21e",
     "allowUnauthenticatedIdentities": false,
-    "resourceNameTruncated": "iotapp220df598",
-    "userPoolName": "iotapp220df598_userpool_220df598",
+    "resourceNameTruncated": "iotappb039f21e",
+    "userPoolName": "iotappb039f21e_userpool_b039f21e",
     "autoVerifiedAttributes": [
         "email"
     ],
@@ -28,10 +28,10 @@
     "userpoolClientReadAttributes": [
         "email"
     ],
-    "userpoolClientLambdaRole": "iotapp220df598_userpoolclient_lambda_role",
+    "userpoolClientLambdaRole": "iotappb039f21e_userpoolclient_lambda_role",
     "userpoolClientSetAttributes": false,
-    "sharedId": "220df598",
-    "resourceName": "iotapp220df598",
+    "sharedId": "b039f21e",
+    "resourceName": "iotappb039f21e",
     "authSelections": "identityPoolAndUserPool",
     "authRoleArn": {
         "Fn::GetAtt": [

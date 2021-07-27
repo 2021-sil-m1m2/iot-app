@@ -9,7 +9,7 @@ type Record
     planter: Planter @connection(fields: ["planterID"])
     temperature: Float
     humidity: Float
-    weight: Float
+    moisture: Float
 }
 type Planter
   @model
