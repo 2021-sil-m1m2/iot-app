@@ -23,7 +23,7 @@ only_rules:
   # importは1度だけすべき
   - duplicate_imports
   # countを0と比較するよりisEmptyを使うべき
-  - empty_count
+#  - empty_count
   # 空の文字列と比較するよりisEmptyを使うべき
   - empty_string
   # Void -> より () -> を使うべき

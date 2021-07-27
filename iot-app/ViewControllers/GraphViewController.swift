@@ -114,49 +114,108 @@ class GraphViewController: UIViewController {
     }
     
     @IBAction func weekGraph(_ sender: Any) {
+        // 一度空にする
+        xAxisValues = []
+        yAxisValues = []
+        
+        // dateでのフィルター（当日から-6日まで遡って平均値を算出する）
+        var calendar = Calendar(identifier: .gregorian)
+        calendar.timeZone = TimeZone(identifier: "Etc/GMT")!
+        calendar.locale = Locale(identifier: "ja_JP")
+        
+        // currentに現在の日時を設定する
+        print("日時を表示します")
+        let dateFormatter = DateFormatter()
+        var current = Date()
+        dateFormatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
+        var currentstring = dateFormatter.string(from: current)
+        dateFormatter.timeZone = TimeZone(identifier: "Etc/GMT")
+        var currentdate = dateFormatter.date(from: currentstring)
+        var comps = calendar.dateComponents([.year, .month, .day, .hour, .minute, .second], from: currentdate!)
+        var condition = calendar.date(from: DateComponents(year: comps.year, month: comps.month, day: comps.day, hour: nil, minute: nil, second: nil))!
+        
+        // conditionsに7日分の日程を格納する
+        var conditions = [Date]()
+        var index: Int = 0
+        while index < 7 {
+            conditions.append(condition)
+            condition = Calendar.current.date(byAdding: .day, value: -1, to: condition)!
+            index += 1
+        }
+        
+        // conditionsをソートする
+        conditions.sort {
+            $0 < $1
+        }
+        print(conditions)
+        
+        // xAxisにconditionsを格納する
+        for condition in conditions {
+            dateFormatter.dateFormat = "dd日"
+            xAxisValues.append(dateFormatter.string(from: condition))
+        }
+        print(xAxisValues)
+        
+        // conditionsに格納された各日程の平均値を求める
+//        var averages = [Double]()
+        var sum: Double = 0
+        var count: Double = 0
+        var average: Double = 0
+        for condition in conditions {
+            sum = 0
+            count = 0
+            average = 0
+            for record in records {
+                dateFormatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
+                let date = dateFormatter.date(from: record.date)
+                if calendar.isDate(date!, inSameDayAs: condition){
+                    sum += record.temperature!
+                    count += 1
+                }
+            }
+            if count == 0 {
+                average = 0
+            } else {
+                average = sum/count
+            }
+            yAxisValues.append(average)
+        }
+        print("格納が完了しました")
+        print(xAxisValues)
+        print(yAxisValues)
+        
+        drawGraph()
     }
     
     @IBAction func dayGraph(_ sender: Any) {
-        
         // 一度空にする
         xAxisValues = []
         yAxisValues = []
         
         // dateでのフィルター
-        print("本日のデータのみを表示します")
         var calendar = Calendar(identifier: .gregorian)
-        calendar.timeZone = TimeZone(identifier: "GMT")!
+        calendar.timeZone = TimeZone(identifier: "Etc/GMT")!
         calendar.locale = Locale(identifier: "ja_JP")
         
-        // 現在の日時を設定する
+        // currentに現在の日時を設定する
         print("日時を表示します")
         let dateFormatter = DateFormatter()
         var current = Date()
-        print(current)
         dateFormatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
-        dateFormatter.timeZone = TimeZone(identifier: "Asia/Tokyo")
         var currentstring = dateFormatter.string(from: current)
-        print(currentstring)
-        dateFormatter.calendar = Calendar(identifier: .gregorian)
         dateFormatter.timeZone = TimeZone(identifier: "Etc/GMT")
         var currentdate = dateFormatter.date(from: currentstring)
-        print(currentdate)
-        
         var comps = calendar.dateComponents([.year, .month, .day, .hour, .minute, .second], from: currentdate!)
-        
-//        comps.timeZone = TimeZone(identifier: "Etc/GMT")
-//        print(comps)
-        
         let condition = calendar.date(from: DateComponents(year: comps.year, month: comps.month, day: comps.day, hour: nil, minute: nil, second: nil))!
-        
+        print("condition")
         print(condition)
         
         for record in records{
-            dateFormatter.dateFormat = DateFormatter.dateFormat(fromTemplate: "yyyy-MM-dd HH:mm:ss", options: 0, locale: Locale(identifier: "ja_JP"))
+            dateFormatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
             let date = dateFormatter.date(from: record.date)
             print(date)
             if calendar.isDate(date!, inSameDayAs: condition){
-                dateFormatter.dateFormat = DateFormatter.dateFormat(fromTemplate: "HH:mm", options: 0, locale: Locale(identifier: "ja_JP"))
+                dateFormatter.dateFormat = "HH:mm"
                 xAxisValues.append(dateFormatter.string(from: date!))
                 yAxisValues.append(record.temperature!)
             }
@@ -167,7 +226,7 @@ class GraphViewController: UIViewController {
         print(yAxisValues)
         
         // dateLabelに日付を表示する
-        dateFormatter.dateFormat = DateFormatter.dateFormat(fromTemplate: "yMMdd", options: 0, locale: Locale(identifier: "ja_JP"))
+        dateFormatter.dateFormat = "yMMdd"
         dateLabel.text = dateFormatter.string(from: current)
         
         drawGraph()
