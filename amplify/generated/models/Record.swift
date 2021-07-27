@@ -9,7 +9,7 @@ public struct Record: Model {
   public var planter: Planter?
   public var temperature: Double?
   public var humidity: Double?
-  public var weight: Double?
+  public var moisture: Double?
   
   public init(id: String = UUID().uuidString,
       date: String,
@@ -17,13 +17,13 @@ public struct Record: Model {
       planter: Planter? = nil,
       temperature: Double? = nil,
       humidity: Double? = nil,
-      weight: Double? = nil) {
+      moisture: Double? = nil) {
       self.id = id
       self.date = date
       self.planterID = planterID
       self.planter = planter
       self.temperature = temperature
       self.humidity = humidity
-      self.weight = weight
+      self.moisture = moisture
   }
 }

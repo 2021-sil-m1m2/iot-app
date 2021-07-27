@@ -25,32 +25,32 @@ PODS:
     - AWSCore (~> 2.24.0)
     - ReachabilitySwift (= 5.0.0)
     - SQLite.swift (~> 0.12.2)
-  - AWSAuthCore (2.24.3):
-    - AWSCore (= 2.24.3)
-  - AWSAuthUI (2.24.3):
-    - AWSAuthCore (= 2.24.3)
-    - AWSCore (= 2.24.3)
-  - AWSCognitoIdentityProvider (2.24.3):
-    - AWSCognitoIdentityProviderASF (= 2.24.3)
-    - AWSCore (= 2.24.3)
-  - AWSCognitoIdentityProviderASF (2.24.3)
-  - AWSCore (2.24.3)
-  - AWSDynamoDB (2.24.3):
-    - AWSCore (= 2.24.3)
-  - AWSMobileClient (2.24.3):
-    - AWSAuthCore (= 2.24.3)
-    - AWSCognitoIdentityProvider (= 2.24.3)
-    - AWSCognitoIdentityProviderASF (= 2.24.3)
-    - AWSCore (= 2.24.3)
+  - AWSAuthCore (2.24.4):
+    - AWSCore (= 2.24.4)
+  - AWSAuthUI (2.24.4):
+    - AWSAuthCore (= 2.24.4)
+    - AWSCore (= 2.24.4)
+  - AWSCognitoIdentityProvider (2.24.4):
+    - AWSCognitoIdentityProviderASF (= 2.24.4)
+    - AWSCore (= 2.24.4)
+  - AWSCognitoIdentityProviderASF (2.24.4)
+  - AWSCore (2.24.4)
+  - AWSDynamoDB (2.24.4):
+    - AWSCore (= 2.24.4)
+  - AWSMobileClient (2.24.4):
+    - AWSAuthCore (= 2.24.4)
+    - AWSCognitoIdentityProvider (= 2.24.4)
+    - AWSCognitoIdentityProviderASF (= 2.24.4)
+    - AWSCore (= 2.24.4)
   - AWSPluginsCore (1.12.0):
     - Amplify (= 1.12.0)
     - AWSCore (~> 2.24.0)
-  - AWSS3 (2.24.3):
-    - AWSCore (= 2.24.3)
-  - AWSUserPoolsSignIn (2.24.3):
-    - AWSAuthCore (= 2.24.3)
-    - AWSCognitoIdentityProvider (= 2.24.3)
-    - AWSCore (= 2.24.3)
+  - AWSS3 (2.24.4):
+    - AWSCore (= 2.24.4)
+  - AWSUserPoolsSignIn (2.24.4):
+    - AWSAuthCore (= 2.24.4)
+    - AWSCognitoIdentityProvider (= 2.24.4)
+    - AWSCore (= 2.24.4)
   - Charts (3.6.0):
     - Charts/Core (= 3.6.0)
   - Charts/Core (3.6.0)
@@ -210,16 +210,16 @@ SPEC CHECKSUMS:
   AmplifyPlugins: 77415f53580b454673f19331653e0511313f9e00
   AppSyncRealTimeClient: 2b4482b1770a3e5cf64f9714a6d198550017b5a2
   AWSAppSync: 4d8c599e29c7a07b0ebd8f4b8fb51a27b88d6ee5
-  AWSAuthCore: be26dde8246bb9b90a053a9392e9989149ac87d4
-  AWSAuthUI: ba936db0987f5c30c4e79539457bd03d14afe91b
-  AWSCognitoIdentityProvider: 35a4d391d10add6293b2e1c9f3ccdb2237ddf8a1
-  AWSCognitoIdentityProviderASF: 48ccaa2ad4ecfba86549cb2023583aa073e2dd56
-  AWSCore: 759cbae2795ec192546187338bd21066c6b9ec0a
-  AWSDynamoDB: e8772fd7fe6362e64f0aba70d0c29c149295c1bc
-  AWSMobileClient: a16718e842ae5cedc2b68a49f9bdd2e007a159c3
+  AWSAuthCore: 208b14f036d66b839d828e516cc5c718f511a6dd
+  AWSAuthUI: b6d163c05b7a0721e35b31818764e9549248961c
+  AWSCognitoIdentityProvider: f85025540fc944ed6060736ea6ed8519b7684e67
+  AWSCognitoIdentityProviderASF: bf64d310e6100af4434fb192a17cccf344901149
+  AWSCore: 31ae3b5c184d22af33d0f6dbf0245c7100763097
+  AWSDynamoDB: f68b7f405ceba71a38f2fbdaccd5c150bae4dc19
+  AWSMobileClient: 1aafa6f159b5ce23253e46f34ea779932b7e097e
   AWSPluginsCore: f84365d3194cde865d405b10f20df865bb56a630
-  AWSS3: a44799bfd359be5810c253c1f8f7a51a9dce9e68
-  AWSUserPoolsSignIn: 2e8208b2bc260c043ef3c4d7daf83358ac123c3c
+  AWSS3: 0f71b9524fb0095a02c51edb8e3c5c7c00ae950c
+  AWSUserPoolsSignIn: 6553d4789e39b88db74f4bb744b57a8f5b141b17
   Charts: b1e3a1f5a1c9ba5394438ca3b91bd8c9076310af
   Firebase: 54cdc8bc9c9b3de54f43dab86e62f5a76b47034f
   FirebaseAnalytics: 4751d6a49598a2b58da678cc07df696bcd809ab9

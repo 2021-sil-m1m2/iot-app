@@ -18,7 +18,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // initialize Amplify
         _ = Backend.initialize()
         
-        FirebaseApp.configure()
+//        FirebaseApp.configure()
         
         // 通知に必要なのはここからしたの処理
         if #available (iOS 10.0, *) {

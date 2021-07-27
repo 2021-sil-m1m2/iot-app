@@ -18,7 +18,7 @@ subscription OnCreateRecord {
     }
     temperature
     humidity
-    weight
+    moisture
     createdAt
     updatedAt
   }
@@ -42,7 +42,7 @@ subscription OnUpdateRecord {
     }
     temperature
     humidity
-    weight
+    moisture
     createdAt
     updatedAt
   }
@@ -66,7 +66,7 @@ subscription OnDeleteRecord {
     }
     temperature
     humidity
-    weight
+    moisture
     createdAt
     updatedAt
   }

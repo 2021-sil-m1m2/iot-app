@@ -5,8 +5,8 @@ import AWSAppSync
 public struct CreateRecordInput: GraphQLMapConvertible {
   public var graphQLMap: GraphQLMap
 
-  public init(id: GraphQLID? = nil, date: String, planterId: GraphQLID, temperature: Double? = nil, humidity: Double? = nil, weight: Double? = nil) {
-    graphQLMap = ["id": id, "date": date, "planterID": planterId, "temperature": temperature, "humidity": humidity, "weight": weight]
+  public init(id: GraphQLID? = nil, date: String, planterId: GraphQLID, temperature: Double? = nil, humidity: Double? = nil, moisture: Double? = nil) {
+    graphQLMap = ["id": id, "date": date, "planterID": planterId, "temperature": temperature, "humidity": humidity, "moisture": moisture]
   }
 
   public var id: GraphQLID? {
@@ -54,12 +54,12 @@ public struct CreateRecordInput: GraphQLMapConvertible {
     }
   }
 
-  public var weight: Double? {
+  public var moisture: Double? {
     get {
-      return graphQLMap["weight"] as! Double?
+      return graphQLMap["moisture"] as! Double?
     }
     set {
-      graphQLMap.updateValue(newValue, forKey: "weight")
+      graphQLMap.updateValue(newValue, forKey: "moisture")
     }
   }
 }
@@ -67,8 +67,8 @@ public struct CreateRecordInput: GraphQLMapConvertible {
 public struct ModelRecordConditionInput: GraphQLMapConvertible {
   public var graphQLMap: GraphQLMap
 
-  public init(date: ModelStringInput? = nil, temperature: ModelFloatInput? = nil, humidity: ModelFloatInput? = nil, weight: ModelFloatInput? = nil, and: [ModelRecordConditionInput?]? = nil, or: [ModelRecordConditionInput?]? = nil, not: ModelRecordConditionInput? = nil) {
-    graphQLMap = ["date": date, "temperature": temperature, "humidity": humidity, "weight": weight, "and": and, "or": or, "not": not]
+  public init(date: ModelStringInput? = nil, temperature: ModelFloatInput? = nil, humidity: ModelFloatInput? = nil, moisture: ModelFloatInput? = nil, and: [ModelRecordConditionInput?]? = nil, or: [ModelRecordConditionInput?]? = nil, not: ModelRecordConditionInput? = nil) {
+    graphQLMap = ["date": date, "temperature": temperature, "humidity": humidity, "moisture": moisture, "and": and, "or": or, "not": not]
   }
 
   public var date: ModelStringInput? {
@@ -98,12 +98,12 @@ public struct ModelRecordConditionInput: GraphQLMapConvertible {
     }
   }
 
-  public var weight: ModelFloatInput? {
+  public var moisture: ModelFloatInput? {
     get {
-      return graphQLMap["weight"] as! ModelFloatInput?
+      return graphQLMap["moisture"] as! ModelFloatInput?
     }
     set {
-      graphQLMap.updateValue(newValue, forKey: "weight")
+      graphQLMap.updateValue(newValue, forKey: "moisture")
     }
   }
 
@@ -488,8 +488,8 @@ public struct ModelFloatInput: GraphQLMapConvertible {
 public struct UpdateRecordInput: GraphQLMapConvertible {
   public var graphQLMap: GraphQLMap
 
-  public init(id: GraphQLID, date: String? = nil, planterId: GraphQLID, temperature: Double? = nil, humidity: Double? = nil, weight: Double? = nil) {
-    graphQLMap = ["id": id, "date": date, "planterID": planterId, "temperature": temperature, "humidity": humidity, "weight": weight]
+  public init(id: GraphQLID, date: String? = nil, planterId: GraphQLID, temperature: Double? = nil, humidity: Double? = nil, moisture: Double? = nil) {
+    graphQLMap = ["id": id, "date": date, "planterID": planterId, "temperature": temperature, "humidity": humidity, "moisture": moisture]
   }
 
   public var id: GraphQLID {
@@ -537,12 +537,12 @@ public struct UpdateRecordInput: GraphQLMapConvertible {
     }
   }
 
-  public var weight: Double? {
+  public var moisture: Double? {
     get {
-      return graphQLMap["weight"] as! Double?
+      return graphQLMap["moisture"] as! Double?
     }
     set {
-      graphQLMap.updateValue(newValue, forKey: "weight")
+      graphQLMap.updateValue(newValue, forKey: "moisture")
     }
   }
 }
@@ -1183,8 +1183,8 @@ public struct ModelIDKeyConditionInput: GraphQLMapConvertible {
 public struct ModelRecordFilterInput: GraphQLMapConvertible {
   public var graphQLMap: GraphQLMap
 
-  public init(id: ModelIDInput? = nil, date: ModelStringInput? = nil, planterId: ModelIDInput? = nil, temperature: ModelFloatInput? = nil, humidity: ModelFloatInput? = nil, weight: ModelFloatInput? = nil, and: [ModelRecordFilterInput?]? = nil, or: [ModelRecordFilterInput?]? = nil, not: ModelRecordFilterInput? = nil) {
-    graphQLMap = ["id": id, "date": date, "planterID": planterId, "temperature": temperature, "humidity": humidity, "weight": weight, "and": and, "or": or, "not": not]
+  public init(id: ModelIDInput? = nil, date: ModelStringInput? = nil, planterId: ModelIDInput? = nil, temperature: ModelFloatInput? = nil, humidity: ModelFloatInput? = nil, moisture: ModelFloatInput? = nil, and: [ModelRecordFilterInput?]? = nil, or: [ModelRecordFilterInput?]? = nil, not: ModelRecordFilterInput? = nil) {
+    graphQLMap = ["id": id, "date": date, "planterID": planterId, "temperature": temperature, "humidity": humidity, "moisture": moisture, "and": and, "or": or, "not": not]
   }
 
   public var id: ModelIDInput? {
@@ -1232,12 +1232,12 @@ public struct ModelRecordFilterInput: GraphQLMapConvertible {
     }
   }
 
-  public var weight: ModelFloatInput? {
+  public var moisture: ModelFloatInput? {
     get {
-      return graphQLMap["weight"] as! ModelFloatInput?
+      return graphQLMap["moisture"] as! ModelFloatInput?
     }
     set {
-      graphQLMap.updateValue(newValue, forKey: "weight")
+      graphQLMap.updateValue(newValue, forKey: "moisture")
     }
   }
 
@@ -1625,8 +1625,8 @@ public struct ModelCurrentFilterInput: GraphQLMapConvertible {
 public struct SearchableRecordFilterInput: GraphQLMapConvertible {
   public var graphQLMap: GraphQLMap
 
-  public init(id: SearchableIDFilterInput? = nil, date: SearchableStringFilterInput? = nil, planterId: SearchableIDFilterInput? = nil, temperature: SearchableFloatFilterInput? = nil, humidity: SearchableFloatFilterInput? = nil, weight: SearchableFloatFilterInput? = nil, and: [SearchableRecordFilterInput?]? = nil, or: [SearchableRecordFilterInput?]? = nil, not: SearchableRecordFilterInput? = nil) {
-    graphQLMap = ["id": id, "date": date, "planterID": planterId, "temperature": temperature, "humidity": humidity, "weight": weight, "and": and, "or": or, "not": not]
+  public init(id: SearchableIDFilterInput? = nil, date: SearchableStringFilterInput? = nil, planterId: SearchableIDFilterInput? = nil, temperature: SearchableFloatFilterInput? = nil, humidity: SearchableFloatFilterInput? = nil, moisture: SearchableFloatFilterInput? = nil, and: [SearchableRecordFilterInput?]? = nil, or: [SearchableRecordFilterInput?]? = nil, not: SearchableRecordFilterInput? = nil) {
+    graphQLMap = ["id": id, "date": date, "planterID": planterId, "temperature": temperature, "humidity": humidity, "moisture": moisture, "and": and, "or": or, "not": not]
   }
 
   public var id: SearchableIDFilterInput? {
@@ -1674,12 +1674,12 @@ public struct SearchableRecordFilterInput: GraphQLMapConvertible {
     }
   }
 
-  public var weight: SearchableFloatFilterInput? {
+  public var moisture: SearchableFloatFilterInput? {
     get {
-      return graphQLMap["weight"] as! SearchableFloatFilterInput?
+      return graphQLMap["moisture"] as! SearchableFloatFilterInput?
     }
     set {
-      graphQLMap.updateValue(newValue, forKey: "weight")
+      graphQLMap.updateValue(newValue, forKey: "moisture")
     }
   }
 
@@ -2083,7 +2083,7 @@ public enum SearchableRecordSortableFields: RawRepresentable, Equatable, JSONDec
   case planterId
   case temperature
   case humidity
-  case weight
+  case moisture
   /// Auto generated constant for unknown enum values
   case unknown(RawValue)
 
@@ -2094,7 +2094,7 @@ public enum SearchableRecordSortableFields: RawRepresentable, Equatable, JSONDec
       case "planterID": self = .planterId
       case "temperature": self = .temperature
       case "humidity": self = .humidity
-      case "weight": self = .weight
+      case "moisture": self = .moisture
       default: self = .unknown(rawValue)
     }
   }
@@ -2106,7 +2106,7 @@ public enum SearchableRecordSortableFields: RawRepresentable, Equatable, JSONDec
       case .planterId: return "planterID"
       case .temperature: return "temperature"
       case .humidity: return "humidity"
-      case .weight: return "weight"
+      case .moisture: return "moisture"
       case .unknown(let value): return value
     }
   }
@@ -2118,7 +2118,7 @@ public enum SearchableRecordSortableFields: RawRepresentable, Equatable, JSONDec
       case (.planterId, .planterId): return true
       case (.temperature, .temperature): return true
       case (.humidity, .humidity): return true
-      case (.weight, .weight): return true
+      case (.moisture, .moisture): return true
       case (.unknown(let lhsValue), .unknown(let rhsValue)): return lhsValue == rhsValue
       default: return false
     }
@@ -2619,7 +2619,7 @@ public enum SearchableCurrentSortableFields: RawRepresentable, Equatable, JSONDe
 
 public final class CreateRecordMutation: GraphQLMutation {
   public static let operationString =
-    "mutation CreateRecord($input: CreateRecordInput!, $condition: ModelRecordConditionInput) {\n  createRecord(input: $input, condition: $condition) {\n    __typename\n    id\n    date\n    planterID\n    planter {\n      __typename\n      id\n      userID\n      user {\n        __typename\n        id\n        name\n        createdAt\n        updatedAt\n      }\n      createdAt\n      updatedAt\n    }\n    temperature\n    humidity\n    weight\n    createdAt\n    updatedAt\n  }\n}"
+    "mutation CreateRecord($input: CreateRecordInput!, $condition: ModelRecordConditionInput) {\n  createRecord(input: $input, condition: $condition) {\n    __typename\n    id\n    date\n    planterID\n    planter {\n      __typename\n      id\n      userID\n      user {\n        __typename\n        id\n        name\n        createdAt\n        updatedAt\n      }\n      createdAt\n      updatedAt\n    }\n    temperature\n    humidity\n    moisture\n    createdAt\n    updatedAt\n  }\n}"
 
   public var input: CreateRecordInput
   public var condition: ModelRecordConditionInput?
@@ -2670,7 +2670,7 @@ public final class CreateRecordMutation: GraphQLMutation {
         GraphQLField("planter", type: .object(Planter.selections)),
         GraphQLField("temperature", type: .scalar(Double.self)),
         GraphQLField("humidity", type: .scalar(Double.self)),
-        GraphQLField("weight", type: .scalar(Double.self)),
+        GraphQLField("moisture", type: .scalar(Double.self)),
         GraphQLField("createdAt", type: .nonNull(.scalar(String.self))),
         GraphQLField("updatedAt", type: .nonNull(.scalar(String.self))),
       ]
@@ -2681,8 +2681,8 @@ public final class CreateRecordMutation: GraphQLMutation {
         self.snapshot = snapshot
       }
 
-      public init(id: GraphQLID, date: String, planterId: GraphQLID, planter: Planter? = nil, temperature: Double? = nil, humidity: Double? = nil, weight: Double? = nil, createdAt: String, updatedAt: String) {
-        self.init(snapshot: ["__typename": "Record", "id": id, "date": date, "planterID": planterId, "planter": planter.flatMap { $0.snapshot }, "temperature": temperature, "humidity": humidity, "weight": weight, "createdAt": createdAt, "updatedAt": updatedAt])
+      public init(id: GraphQLID, date: String, planterId: GraphQLID, planter: Planter? = nil, temperature: Double? = nil, humidity: Double? = nil, moisture: Double? = nil, createdAt: String, updatedAt: String) {
+        self.init(snapshot: ["__typename": "Record", "id": id, "date": date, "planterID": planterId, "planter": planter.flatMap { $0.snapshot }, "temperature": temperature, "humidity": humidity, "moisture": moisture, "createdAt": createdAt, "updatedAt": updatedAt])
       }
 
       public var __typename: String {
@@ -2748,12 +2748,12 @@ public final class CreateRecordMutation: GraphQLMutation {
         }
       }
 
-      public var weight: Double? {
+      public var moisture: Double? {
         get {
-          return snapshot["weight"] as? Double
+          return snapshot["moisture"] as? Double
         }
         set {
-          snapshot.updateValue(newValue, forKey: "weight")
+          snapshot.updateValue(newValue, forKey: "moisture")
         }
       }
 
@@ -2924,7 +2924,7 @@ public final class CreateRecordMutation: GraphQLMutation {
 
 public final class UpdateRecordMutation: GraphQLMutation {
   public static let operationString =
-    "mutation UpdateRecord($input: UpdateRecordInput!, $condition: ModelRecordConditionInput) {\n  updateRecord(input: $input, condition: $condition) {\n    __typename\n    id\n    date\n    planterID\n    planter {\n      __typename\n      id\n      userID\n      user {\n        __typename\n        id\n        name\n        createdAt\n        updatedAt\n      }\n      createdAt\n      updatedAt\n    }\n    temperature\n    humidity\n    weight\n    createdAt\n    updatedAt\n  }\n}"
+    "mutation UpdateRecord($input: UpdateRecordInput!, $condition: ModelRecordConditionInput) {\n  updateRecord(input: $input, condition: $condition) {\n    __typename\n    id\n    date\n    planterID\n    planter {\n      __typename\n      id\n      userID\n      user {\n        __typename\n        id\n        name\n        createdAt\n        updatedAt\n      }\n      createdAt\n      updatedAt\n    }\n    temperature\n    humidity\n    moisture\n    createdAt\n    updatedAt\n  }\n}"
 
   public var input: UpdateRecordInput
   public var condition: ModelRecordConditionInput?
@@ -2975,7 +2975,7 @@ public final class UpdateRecordMutation: GraphQLMutation {
         GraphQLField("planter", type: .object(Planter.selections)),
         GraphQLField("temperature", type: .scalar(Double.self)),
         GraphQLField("humidity", type: .scalar(Double.self)),
-        GraphQLField("weight", type: .scalar(Double.self)),
+        GraphQLField("moisture", type: .scalar(Double.self)),
         GraphQLField("createdAt", type: .nonNull(.scalar(String.self))),
         GraphQLField("updatedAt", type: .nonNull(.scalar(String.self))),
       ]
@@ -2986,8 +2986,8 @@ public final class UpdateRecordMutation: GraphQLMutation {
         self.snapshot = snapshot
       }
 
-      public init(id: GraphQLID, date: String, planterId: GraphQLID, planter: Planter? = nil, temperature: Double? = nil, humidity: Double? = nil, weight: Double? = nil, createdAt: String, updatedAt: String) {
-        self.init(snapshot: ["__typename": "Record", "id": id, "date": date, "planterID": planterId, "planter": planter.flatMap { $0.snapshot }, "temperature": temperature, "humidity": humidity, "weight": weight, "createdAt": createdAt, "updatedAt": updatedAt])
+      public init(id: GraphQLID, date: String, planterId: GraphQLID, planter: Planter? = nil, temperature: Double? = nil, humidity: Double? = nil, moisture: Double? = nil, createdAt: String, updatedAt: String) {
+        self.init(snapshot: ["__typename": "Record", "id": id, "date": date, "planterID": planterId, "planter": planter.flatMap { $0.snapshot }, "temperature": temperature, "humidity": humidity, "moisture": moisture, "createdAt": createdAt, "updatedAt": updatedAt])
       }
 
       public var __typename: String {
@@ -3053,12 +3053,12 @@ public final class UpdateRecordMutation: GraphQLMutation {
         }
       }
 
-      public var weight: Double? {
+      public var moisture: Double? {
         get {
-          return snapshot["weight"] as? Double
+          return snapshot["moisture"] as? Double
         }
         set {
-          snapshot.updateValue(newValue, forKey: "weight")
+          snapshot.updateValue(newValue, forKey: "moisture")
         }
       }
 
@@ -3229,7 +3229,7 @@ public final class UpdateRecordMutation: GraphQLMutation {
 
 public final class DeleteRecordMutation: GraphQLMutation {
   public static let operationString =
-    "mutation DeleteRecord($input: DeleteRecordInput!, $condition: ModelRecordConditionInput) {\n  deleteRecord(input: $input, condition: $condition) {\n    __typename\n    id\n    date\n    planterID\n    planter {\n      __typename\n      id\n      userID\n      user {\n        __typename\n        id\n        name\n        createdAt\n        updatedAt\n      }\n      createdAt\n      updatedAt\n    }\n    temperature\n    humidity\n    weight\n    createdAt\n    updatedAt\n  }\n}"
+    "mutation DeleteRecord($input: DeleteRecordInput!, $condition: ModelRecordConditionInput) {\n  deleteRecord(input: $input, condition: $condition) {\n    __typename\n    id\n    date\n    planterID\n    planter {\n      __typename\n      id\n      userID\n      user {\n        __typename\n        id\n        name\n        createdAt\n        updatedAt\n      }\n      createdAt\n      updatedAt\n    }\n    temperature\n    humidity\n    moisture\n    createdAt\n    updatedAt\n  }\n}"
 
   public var input: DeleteRecordInput
   public var condition: ModelRecordConditionInput?
@@ -3280,7 +3280,7 @@ public final class DeleteRecordMutation: GraphQLMutation {
         GraphQLField("planter", type: .object(Planter.selections)),
         GraphQLField("temperature", type: .scalar(Double.self)),
         GraphQLField("humidity", type: .scalar(Double.self)),
-        GraphQLField("weight", type: .scalar(Double.self)),
+        GraphQLField("moisture", type: .scalar(Double.self)),
         GraphQLField("createdAt", type: .nonNull(.scalar(String.self))),
         GraphQLField("updatedAt", type: .nonNull(.scalar(String.self))),
       ]
@@ -3291,8 +3291,8 @@ public final class DeleteRecordMutation: GraphQLMutation {
         self.snapshot = snapshot
       }
 
-      public init(id: GraphQLID, date: String, planterId: GraphQLID, planter: Planter? = nil, temperature: Double? = nil, humidity: Double? = nil, weight: Double? = nil, createdAt: String, updatedAt: String) {
-        self.init(snapshot: ["__typename": "Record", "id": id, "date": date, "planterID": planterId, "planter": planter.flatMap { $0.snapshot }, "temperature": temperature, "humidity": humidity, "weight": weight, "createdAt": createdAt, "updatedAt": updatedAt])
+      public init(id: GraphQLID, date: String, planterId: GraphQLID, planter: Planter? = nil, temperature: Double? = nil, humidity: Double? = nil, moisture: Double? = nil, createdAt: String, updatedAt: String) {
+        self.init(snapshot: ["__typename": "Record", "id": id, "date": date, "planterID": planterId, "planter": planter.flatMap { $0.snapshot }, "temperature": temperature, "humidity": humidity, "moisture": moisture, "createdAt": createdAt, "updatedAt": updatedAt])
       }
 
       public var __typename: String {
@@ -3358,12 +3358,12 @@ public final class DeleteRecordMutation: GraphQLMutation {
         }
       }
 
-      public var weight: Double? {
+      public var moisture: Double? {
         get {
-          return snapshot["weight"] as? Double
+          return snapshot["moisture"] as? Double
         }
         set {
-          snapshot.updateValue(newValue, forKey: "weight")
+          snapshot.updateValue(newValue, forKey: "moisture")
         }
       }
 
@@ -4884,7 +4884,7 @@ public final class DeleteCurrentMutation: GraphQLMutation {
 
 public final class GetRecordQuery: GraphQLQuery {
   public static let operationString =
-    "query GetRecord($id: ID!, $planterID: ID!) {\n  getRecord(id: $id, planterID: $planterID) {\n    __typename\n    id\n    date\n    planterID\n    planter {\n      __typename\n      id\n      userID\n      user {\n        __typename\n        id\n        name\n        createdAt\n        updatedAt\n      }\n      createdAt\n      updatedAt\n    }\n    temperature\n    humidity\n    weight\n    createdAt\n    updatedAt\n  }\n}"
+    "query GetRecord($id: ID!, $planterID: ID!) {\n  getRecord(id: $id, planterID: $planterID) {\n    __typename\n    id\n    date\n    planterID\n    planter {\n      __typename\n      id\n      userID\n      user {\n        __typename\n        id\n        name\n        createdAt\n        updatedAt\n      }\n      createdAt\n      updatedAt\n    }\n    temperature\n    humidity\n    moisture\n    createdAt\n    updatedAt\n  }\n}"
 
   public var id: GraphQLID
   public var planterID: GraphQLID
@@ -4935,7 +4935,7 @@ public final class GetRecordQuery: GraphQLQuery {
         GraphQLField("planter", type: .object(Planter.selections)),
         GraphQLField("temperature", type: .scalar(Double.self)),
         GraphQLField("humidity", type: .scalar(Double.self)),
-        GraphQLField("weight", type: .scalar(Double.self)),
+        GraphQLField("moisture", type: .scalar(Double.self)),
         GraphQLField("createdAt", type: .nonNull(.scalar(String.self))),
         GraphQLField("updatedAt", type: .nonNull(.scalar(String.self))),
       ]
@@ -4946,8 +4946,8 @@ public final class GetRecordQuery: GraphQLQuery {
         self.snapshot = snapshot
       }
 
-      public init(id: GraphQLID, date: String, planterId: GraphQLID, planter: Planter? = nil, temperature: Double? = nil, humidity: Double? = nil, weight: Double? = nil, createdAt: String, updatedAt: String) {
-        self.init(snapshot: ["__typename": "Record", "id": id, "date": date, "planterID": planterId, "planter": planter.flatMap { $0.snapshot }, "temperature": temperature, "humidity": humidity, "weight": weight, "createdAt": createdAt, "updatedAt": updatedAt])
+      public init(id: GraphQLID, date: String, planterId: GraphQLID, planter: Planter? = nil, temperature: Double? = nil, humidity: Double? = nil, moisture: Double? = nil, createdAt: String, updatedAt: String) {
+        self.init(snapshot: ["__typename": "Record", "id": id, "date": date, "planterID": planterId, "planter": planter.flatMap { $0.snapshot }, "temperature": temperature, "humidity": humidity, "moisture": moisture, "createdAt": createdAt, "updatedAt": updatedAt])
       }
 
       public var __typename: String {
@@ -5013,12 +5013,12 @@ public final class GetRecordQuery: GraphQLQuery {
         }
       }
 
-      public var weight: Double? {
+      public var moisture: Double? {
         get {
-          return snapshot["weight"] as? Double
+          return snapshot["moisture"] as? Double
         }
         set {
-          snapshot.updateValue(newValue, forKey: "weight")
+          snapshot.updateValue(newValue, forKey: "moisture")
         }
       }
 
@@ -5189,7 +5189,7 @@ public final class GetRecordQuery: GraphQLQuery {
 
 public final class ListRecordsQuery: GraphQLQuery {
   public static let operationString =
-    "query ListRecords($id: ID, $planterID: ModelIDKeyConditionInput, $filter: ModelRecordFilterInput, $limit: Int, $nextToken: String, $sortDirection: ModelSortDirection) {\n  listRecords(id: $id, planterID: $planterID, filter: $filter, limit: $limit, nextToken: $nextToken, sortDirection: $sortDirection) {\n    __typename\n    items {\n      __typename\n      id\n      date\n      planterID\n      planter {\n        __typename\n        id\n        userID\n        createdAt\n        updatedAt\n      }\n      temperature\n      humidity\n      weight\n      createdAt\n      updatedAt\n    }\n    nextToken\n  }\n}"
+    "query ListRecords($id: ID, $planterID: ModelIDKeyConditionInput, $filter: ModelRecordFilterInput, $limit: Int, $nextToken: String, $sortDirection: ModelSortDirection) {\n  listRecords(id: $id, planterID: $planterID, filter: $filter, limit: $limit, nextToken: $nextToken, sortDirection: $sortDirection) {\n    __typename\n    items {\n      __typename\n      id\n      date\n      planterID\n      planter {\n        __typename\n        id\n        userID\n        createdAt\n        updatedAt\n      }\n      temperature\n      humidity\n      moisture\n      createdAt\n      updatedAt\n    }\n    nextToken\n  }\n}"
 
   public var id: GraphQLID?
   public var planterID: ModelIDKeyConditionInput?
@@ -5294,7 +5294,7 @@ public final class ListRecordsQuery: GraphQLQuery {
           GraphQLField("planter", type: .object(Planter.selections)),
           GraphQLField("temperature", type: .scalar(Double.self)),
           GraphQLField("humidity", type: .scalar(Double.self)),
-          GraphQLField("weight", type: .scalar(Double.self)),
+          GraphQLField("moisture", type: .scalar(Double.self)),
           GraphQLField("createdAt", type: .nonNull(.scalar(String.self))),
           GraphQLField("updatedAt", type: .nonNull(.scalar(String.self))),
         ]
@@ -5305,8 +5305,8 @@ public final class ListRecordsQuery: GraphQLQuery {
           self.snapshot = snapshot
         }
 
-        public init(id: GraphQLID, date: String, planterId: GraphQLID, planter: Planter? = nil, temperature: Double? = nil, humidity: Double? = nil, weight: Double? = nil, createdAt: String, updatedAt: String) {
-          self.init(snapshot: ["__typename": "Record", "id": id, "date": date, "planterID": planterId, "planter": planter.flatMap { $0.snapshot }, "temperature": temperature, "humidity": humidity, "weight": weight, "createdAt": createdAt, "updatedAt": updatedAt])
+        public init(id: GraphQLID, date: String, planterId: GraphQLID, planter: Planter? = nil, temperature: Double? = nil, humidity: Double? = nil, moisture: Double? = nil, createdAt: String, updatedAt: String) {
+          self.init(snapshot: ["__typename": "Record", "id": id, "date": date, "planterID": planterId, "planter": planter.flatMap { $0.snapshot }, "temperature": temperature, "humidity": humidity, "moisture": moisture, "createdAt": createdAt, "updatedAt": updatedAt])
         }
 
         public var __typename: String {
@@ -5372,12 +5372,12 @@ public final class ListRecordsQuery: GraphQLQuery {
           }
         }
 
-        public var weight: Double? {
+        public var moisture: Double? {
           get {
-            return snapshot["weight"] as? Double
+            return snapshot["moisture"] as? Double
           }
           set {
-            snapshot.updateValue(newValue, forKey: "weight")
+            snapshot.updateValue(newValue, forKey: "moisture")
           }
         }
 
@@ -6529,7 +6529,7 @@ public final class ListCurrentsQuery: GraphQLQuery {
 
 public final class SearchRecordsQuery: GraphQLQuery {
   public static let operationString =
-    "query SearchRecords($filter: SearchableRecordFilterInput, $sort: SearchableRecordSortInput, $limit: Int, $nextToken: String, $from: Int) {\n  searchRecords(filter: $filter, sort: $sort, limit: $limit, nextToken: $nextToken, from: $from) {\n    __typename\n    items {\n      __typename\n      id\n      date\n      planterID\n      planter {\n        __typename\n        id\n        userID\n        createdAt\n        updatedAt\n      }\n      temperature\n      humidity\n      weight\n      createdAt\n      updatedAt\n    }\n    nextToken\n    total\n  }\n}"
+    "query SearchRecords($filter: SearchableRecordFilterInput, $sort: SearchableRecordSortInput, $limit: Int, $nextToken: String, $from: Int) {\n  searchRecords(filter: $filter, sort: $sort, limit: $limit, nextToken: $nextToken, from: $from) {\n    __typename\n    items {\n      __typename\n      id\n      date\n      planterID\n      planter {\n        __typename\n        id\n        userID\n        createdAt\n        updatedAt\n      }\n      temperature\n      humidity\n      moisture\n      createdAt\n      updatedAt\n    }\n    nextToken\n    total\n  }\n}"
 
   public var filter: SearchableRecordFilterInput?
   public var sort: SearchableRecordSortInput?
@@ -6642,7 +6642,7 @@ public final class SearchRecordsQuery: GraphQLQuery {
           GraphQLField("planter", type: .object(Planter.selections)),
           GraphQLField("temperature", type: .scalar(Double.self)),
           GraphQLField("humidity", type: .scalar(Double.self)),
-          GraphQLField("weight", type: .scalar(Double.self)),
+          GraphQLField("moisture", type: .scalar(Double.self)),
           GraphQLField("createdAt", type: .nonNull(.scalar(String.self))),
           GraphQLField("updatedAt", type: .nonNull(.scalar(String.self))),
         ]
@@ -6653,8 +6653,8 @@ public final class SearchRecordsQuery: GraphQLQuery {
           self.snapshot = snapshot
         }
 
-        public init(id: GraphQLID, date: String, planterId: GraphQLID, planter: Planter? = nil, temperature: Double? = nil, humidity: Double? = nil, weight: Double? = nil, createdAt: String, updatedAt: String) {
-          self.init(snapshot: ["__typename": "Record", "id": id, "date": date, "planterID": planterId, "planter": planter.flatMap { $0.snapshot }, "temperature": temperature, "humidity": humidity, "weight": weight, "createdAt": createdAt, "updatedAt": updatedAt])
+        public init(id: GraphQLID, date: String, planterId: GraphQLID, planter: Planter? = nil, temperature: Double? = nil, humidity: Double? = nil, moisture: Double? = nil, createdAt: String, updatedAt: String) {
+          self.init(snapshot: ["__typename": "Record", "id": id, "date": date, "planterID": planterId, "planter": planter.flatMap { $0.snapshot }, "temperature": temperature, "humidity": humidity, "moisture": moisture, "createdAt": createdAt, "updatedAt": updatedAt])
         }
 
         public var __typename: String {
@@ -6720,12 +6720,12 @@ public final class SearchRecordsQuery: GraphQLQuery {
           }
         }
 
-        public var weight: Double? {
+        public var moisture: Double? {
           get {
-            return snapshot["weight"] as? Double
+            return snapshot["moisture"] as? Double
           }
           set {
-            snapshot.updateValue(newValue, forKey: "weight")
+            snapshot.updateValue(newValue, forKey: "moisture")
           }
         }
 
@@ -7459,7 +7459,7 @@ public final class SearchCurrentsQuery: GraphQLQuery {
 
 public final class OnCreateRecordSubscription: GraphQLSubscription {
   public static let operationString =
-    "subscription OnCreateRecord {\n  onCreateRecord {\n    __typename\n    id\n    date\n    planterID\n    planter {\n      __typename\n      id\n      userID\n      user {\n        __typename\n        id\n        name\n        createdAt\n        updatedAt\n      }\n      createdAt\n      updatedAt\n    }\n    temperature\n    humidity\n    weight\n    createdAt\n    updatedAt\n  }\n}"
+    "subscription OnCreateRecord {\n  onCreateRecord {\n    __typename\n    id\n    date\n    planterID\n    planter {\n      __typename\n      id\n      userID\n      user {\n        __typename\n        id\n        name\n        createdAt\n        updatedAt\n      }\n      createdAt\n      updatedAt\n    }\n    temperature\n    humidity\n    moisture\n    createdAt\n    updatedAt\n  }\n}"
 
   public init() {
   }
@@ -7501,7 +7501,7 @@ public final class OnCreateRecordSubscription: GraphQLSubscription {
         GraphQLField("planter", type: .object(Planter.selections)),
         GraphQLField("temperature", type: .scalar(Double.self)),
         GraphQLField("humidity", type: .scalar(Double.self)),
-        GraphQLField("weight", type: .scalar(Double.self)),
+        GraphQLField("moisture", type: .scalar(Double.self)),
         GraphQLField("createdAt", type: .nonNull(.scalar(String.self))),
         GraphQLField("updatedAt", type: .nonNull(.scalar(String.self))),
       ]
@@ -7512,8 +7512,8 @@ public final class OnCreateRecordSubscription: GraphQLSubscription {
         self.snapshot = snapshot
       }
 
-      public init(id: GraphQLID, date: String, planterId: GraphQLID, planter: Planter? = nil, temperature: Double? = nil, humidity: Double? = nil, weight: Double? = nil, createdAt: String, updatedAt: String) {
-        self.init(snapshot: ["__typename": "Record", "id": id, "date": date, "planterID": planterId, "planter": planter.flatMap { $0.snapshot }, "temperature": temperature, "humidity": humidity, "weight": weight, "createdAt": createdAt, "updatedAt": updatedAt])
+      public init(id: GraphQLID, date: String, planterId: GraphQLID, planter: Planter? = nil, temperature: Double? = nil, humidity: Double? = nil, moisture: Double? = nil, createdAt: String, updatedAt: String) {
+        self.init(snapshot: ["__typename": "Record", "id": id, "date": date, "planterID": planterId, "planter": planter.flatMap { $0.snapshot }, "temperature": temperature, "humidity": humidity, "moisture": moisture, "createdAt": createdAt, "updatedAt": updatedAt])
       }
 
       public var __typename: String {
@@ -7579,12 +7579,12 @@ public final class OnCreateRecordSubscription: GraphQLSubscription {
         }
       }
 
-      public var weight: Double? {
+      public var moisture: Double? {
         get {
-          return snapshot["weight"] as? Double
+          return snapshot["moisture"] as? Double
         }
         set {
-          snapshot.updateValue(newValue, forKey: "weight")
+          snapshot.updateValue(newValue, forKey: "moisture")
         }
       }
 
@@ -7755,7 +7755,7 @@ public final class OnCreateRecordSubscription: GraphQLSubscription {
 
 public final class OnUpdateRecordSubscription: GraphQLSubscription {
   public static let operationString =
-    "subscription OnUpdateRecord {\n  onUpdateRecord {\n    __typename\n    id\n    date\n    planterID\n    planter {\n      __typename\n      id\n      userID\n      user {\n        __typename\n        id\n        name\n        createdAt\n        updatedAt\n      }\n      createdAt\n      updatedAt\n    }\n    temperature\n    humidity\n    weight\n    createdAt\n    updatedAt\n  }\n}"
+    "subscription OnUpdateRecord {\n  onUpdateRecord {\n    __typename\n    id\n    date\n    planterID\n    planter {\n      __typename\n      id\n      userID\n      user {\n        __typename\n        id\n        name\n        createdAt\n        updatedAt\n      }\n      createdAt\n      updatedAt\n    }\n    temperature\n    humidity\n    moisture\n    createdAt\n    updatedAt\n  }\n}"
 
   public init() {
   }
@@ -7797,7 +7797,7 @@ public final class OnUpdateRecordSubscription: GraphQLSubscription {
         GraphQLField("planter", type: .object(Planter.selections)),
         GraphQLField("temperature", type: .scalar(Double.self)),
         GraphQLField("humidity", type: .scalar(Double.self)),
-        GraphQLField("weight", type: .scalar(Double.self)),
+        GraphQLField("moisture", type: .scalar(Double.self)),
         GraphQLField("createdAt", type: .nonNull(.scalar(String.self))),
         GraphQLField("updatedAt", type: .nonNull(.scalar(String.self))),
       ]
@@ -7808,8 +7808,8 @@ public final class OnUpdateRecordSubscription: GraphQLSubscription {
         self.snapshot = snapshot
       }
 
-      public init(id: GraphQLID, date: String, planterId: GraphQLID, planter: Planter? = nil, temperature: Double? = nil, humidity: Double? = nil, weight: Double? = nil, createdAt: String, updatedAt: String) {
-        self.init(snapshot: ["__typename": "Record", "id": id, "date": date, "planterID": planterId, "planter": planter.flatMap { $0.snapshot }, "temperature": temperature, "humidity": humidity, "weight": weight, "createdAt": createdAt, "updatedAt": updatedAt])
+      public init(id: GraphQLID, date: String, planterId: GraphQLID, planter: Planter? = nil, temperature: Double? = nil, humidity: Double? = nil, moisture: Double? = nil, createdAt: String, updatedAt: String) {
+        self.init(snapshot: ["__typename": "Record", "id": id, "date": date, "planterID": planterId, "planter": planter.flatMap { $0.snapshot }, "temperature": temperature, "humidity": humidity, "moisture": moisture, "createdAt": createdAt, "updatedAt": updatedAt])
       }
 
       public var __typename: String {
@@ -7875,12 +7875,12 @@ public final class OnUpdateRecordSubscription: GraphQLSubscription {
         }
       }
 
-      public var weight: Double? {
+      public var moisture: Double? {
         get {
-          return snapshot["weight"] as? Double
+          return snapshot["moisture"] as? Double
         }
         set {
-          snapshot.updateValue(newValue, forKey: "weight")
+          snapshot.updateValue(newValue, forKey: "moisture")
         }
       }
 
@@ -8051,7 +8051,7 @@ public final class OnUpdateRecordSubscription: GraphQLSubscription {
 
 public final class OnDeleteRecordSubscription: GraphQLSubscription {
   public static let operationString =
-    "subscription OnDeleteRecord {\n  onDeleteRecord {\n    __typename\n    id\n    date\n    planterID\n    planter {\n      __typename\n      id\n      userID\n      user {\n        __typename\n        id\n        name\n        createdAt\n        updatedAt\n      }\n      createdAt\n      updatedAt\n    }\n    temperature\n    humidity\n    weight\n    createdAt\n    updatedAt\n  }\n}"
+    "subscription OnDeleteRecord {\n  onDeleteRecord {\n    __typename\n    id\n    date\n    planterID\n    planter {\n      __typename\n      id\n      userID\n      user {\n        __typename\n        id\n        name\n        createdAt\n        updatedAt\n      }\n      createdAt\n      updatedAt\n    }\n    temperature\n    humidity\n    moisture\n    createdAt\n    updatedAt\n  }\n}"
 
   public init() {
   }
@@ -8093,7 +8093,7 @@ public final class OnDeleteRecordSubscription: GraphQLSubscription {
         GraphQLField("planter", type: .object(Planter.selections)),
         GraphQLField("temperature", type: .scalar(Double.self)),
         GraphQLField("humidity", type: .scalar(Double.self)),
-        GraphQLField("weight", type: .scalar(Double.self)),
+        GraphQLField("moisture", type: .scalar(Double.self)),
         GraphQLField("createdAt", type: .nonNull(.scalar(String.self))),
         GraphQLField("updatedAt", type: .nonNull(.scalar(String.self))),
       ]
@@ -8104,8 +8104,8 @@ public final class OnDeleteRecordSubscription: GraphQLSubscription {
         self.snapshot = snapshot
       }
 
-      public init(id: GraphQLID, date: String, planterId: GraphQLID, planter: Planter? = nil, temperature: Double? = nil, humidity: Double? = nil, weight: Double? = nil, createdAt: String, updatedAt: String) {
-        self.init(snapshot: ["__typename": "Record", "id": id, "date": date, "planterID": planterId, "planter": planter.flatMap { $0.snapshot }, "temperature": temperature, "humidity": humidity, "weight": weight, "createdAt": createdAt, "updatedAt": updatedAt])
+      public init(id: GraphQLID, date: String, planterId: GraphQLID, planter: Planter? = nil, temperature: Double? = nil, humidity: Double? = nil, moisture: Double? = nil, createdAt: String, updatedAt: String) {
+        self.init(snapshot: ["__typename": "Record", "id": id, "date": date, "planterID": planterId, "planter": planter.flatMap { $0.snapshot }, "temperature": temperature, "humidity": humidity, "moisture": moisture, "createdAt": createdAt, "updatedAt": updatedAt])
       }
 
       public var __typename: String {
@@ -8171,12 +8171,12 @@ public final class OnDeleteRecordSubscription: GraphQLSubscription {
         }
       }
 
-      public var weight: Double? {
+      public var moisture: Double? {
         get {
-          return snapshot["weight"] as? Double
+          return snapshot["moisture"] as? Double
         }
         set {
-          snapshot.updateValue(newValue, forKey: "weight")
+          snapshot.updateValue(newValue, forKey: "moisture")
         }
       }
 

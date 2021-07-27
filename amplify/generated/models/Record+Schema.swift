@@ -11,7 +11,7 @@ extension Record {
     case planter
     case temperature
     case humidity
-    case weight
+    case moisture
   }
   
   public static let keys = CodingKeys.self
@@ -29,7 +29,7 @@ extension Record {
       .hasOne(record.planter, is: .optional, ofType: Planter.self, associatedWith: Planter.keys.id, targetName: "planterID"),
       .field(record.temperature, is: .optional, ofType: .double),
       .field(record.humidity, is: .optional, ofType: .double),
-      .field(record.weight, is: .optional, ofType: .double)
+      .field(record.moisture, is: .optional, ofType: .double)
     )
     }
 }
