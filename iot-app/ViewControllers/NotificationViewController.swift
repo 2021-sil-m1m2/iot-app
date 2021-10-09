@@ -13,6 +13,7 @@ class NotificationViewController: UIViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        // 通知機能は一旦なしで進める
     }
     
     /*
