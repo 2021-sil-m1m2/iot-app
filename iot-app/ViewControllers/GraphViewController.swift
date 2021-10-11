@@ -31,12 +31,14 @@ class GraphViewController: UIViewController {
         
         // planterIDに一致するレコードを取得し、ソートする
         listRecords()
+        print("recordsの中身を表示する")
+        print(records)
     }
     
     func listRecords() {
         // DynamoDB内のデータを検索する
         let record = Record.keys
-        let predicate = record.planterID == "test_planter"
+        let predicate = record.planterID == "test_planter4"
             //&& todo.description == "todo description"
             Amplify.API.query(request: .paginatedList(Record.self, where: predicate, limit: 1000)) { event in
                 switch event {
