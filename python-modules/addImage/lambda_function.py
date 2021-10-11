@@ -12,7 +12,7 @@ def lambda_handler(event, context):
     base_64ed_image = event['image']
     # バケット作成を作成してbynary変換して保存する。
     s3 = boto3.resource('s3')
-    bucket = s3.Bucket('iotapp75cbbde9a1354bf88b57cc80c8a178a4223506-dev')
+    bucket = s3.Bucket('amplify-iotapp-dev-141113-deployment')
     bucket.put_object(
                     #Key=f'{uuid.uuid4()}.jpg',
                     Key=event['planterID']+f'/{uuid.uuid4()}.jpg',
