@@ -9,6 +9,7 @@ import Amplify
 import AmplifyPlugins
 import Lottie
 import UIKit
+import AWSMobileClient
 
 class SignInViewController: UIViewController, UITextFieldDelegate {
 
@@ -18,6 +19,8 @@ class SignInViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var errorLabel: UILabel!
     
     var iconClick = true
+    
+    let appDelegate = UIApplication.shared.delegate as! AppDelegate
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -34,6 +37,17 @@ class SignInViewController: UIViewController, UITextFieldDelegate {
         let cognitoUser = Amplify.Auth.getCurrentUser()
         if cognitoUser != nil {
             // すでにログイン済みの場合、画面遷移する
+            print("ログイン済みです、emailを表示し画面遷移します")
+            AWSMobileClient.default().getUserAttributes { (attributes, error) in
+                if(error != nil){
+                    print("ERROR: \(error)")
+                }else{
+                    if let attributesDict = attributes{
+                        print(attributesDict["email"])
+                        self.appDelegate.email = attributesDict["email"]
+                    }
+                }
+            }
             performSegue(withIdentifier: "toTab", sender: nil)
         }
         
@@ -54,6 +68,7 @@ class SignInViewController: UIViewController, UITextFieldDelegate {
     }
     
     @IBAction func signIn(_ sender: Any) {
+        appDelegate.email = emailTextField.text
         signIn(email: emailTextField.text ?? "", password: passwordTextField.text ?? "")
     }
     

@@ -133,6 +133,7 @@
 		C1D1AC6B26652791000B9D60 /* Notification.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C1D1AC6A26652791000B9D60 /* Notification.storyboard */; };
 		C1D1AC6D266527A9000B9D60 /* NotificationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1D1AC6C266527A9000B9D60 /* NotificationViewController.swift */; };
 		C1D1AC6F26655C6C000B9D60 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = C1D1AC6E26655C6C000B9D60 /* GoogleService-Info.plist */; };
+		C1E7711A27144E0300602968 /* Planters.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1E7711927144E0300602968 /* Planters.swift */; };
 		C1E9698026569599001E3D59 /* AuthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1E9697F26569599001E3D59 /* AuthViewController.swift */; };
 		C1E969852656B97E001E3D59 /* Auth.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C1E969842656B97E001E3D59 /* Auth.storyboard */; };
 		C1E969872656BA18001E3D59 /* Planter.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C1E969862656BA18001E3D59 /* Planter.storyboard */; };
@@ -222,6 +223,7 @@
 		C1D1AC6C266527A9000B9D60 /* NotificationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationViewController.swift; sourceTree = "<group>"; };
 		C1D1AC6E26655C6C000B9D60 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		C1D1AC7026655F39000B9D60 /* iot-app.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "iot-app.entitlements"; sourceTree = "<group>"; };
+		C1E7711927144E0300602968 /* Planters.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Planters.swift; sourceTree = "<group>"; };
 		C1E9697F26569599001E3D59 /* AuthViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewController.swift; sourceTree = "<group>"; };
 		C1E969842656B97E001E3D59 /* Auth.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Auth.storyboard; sourceTree = "<group>"; };
 		C1E969862656BA18001E3D59 /* Planter.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Planter.storyboard; sourceTree = "<group>"; };
@@ -309,6 +311,7 @@
 				C147813E2652C6230003E18D /* Assets.xcassets */,
 				C14781402652C6230003E18D /* LaunchScreen.storyboard */,
 				C14781432652C6230003E18D /* Info.plist */,
+				C1E7711927144E0300602968 /* Planters.swift */,
 			);
 			path = "iot-app";
 			sourceTree = "<group>";
@@ -364,8 +367,6 @@
 			children = (
 				C126C5822658433800062E54 /* amplifyconfiguration.json */,
 				C126C5812658433800062E54 /* awsconfiguration.json */,
-				C14CC53226A9864700050F3D /* amplifyconfiguration.json */,
-				C1A50FB7268CA99300EB2B12 /* awsconfiguration.json */,
 			);
 			name = AmplifyConfig;
 			sourceTree = "<group>";
@@ -573,6 +574,7 @@
 				8FED549F057B43AFC9C81D9E /* Planter.swift in Sources */,
 				C1FE1ABE267E3FD90088E046 /* API.swift in Sources */,
 				4F851B35AFEB90703FFD94A6 /* Record+Schema.swift in Sources */,
+				C1E7711A27144E0300602968 /* Planters.swift in Sources */,
 				2FF5BBD19C82924AF33C3C4A /* Record.swift in Sources */,
 				B275DADF0FFEA6671F54D673 /* User+Schema.swift in Sources */,
 				FAF9DA9DCFDA4244F105151B /* User.swift in Sources */,

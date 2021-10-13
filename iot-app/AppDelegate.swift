@@ -8,10 +8,19 @@
 import Firebase
 import UIKit
 import UserNotifications
+import AWSAppSync
+import AWSMobileClient
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
+    var appSyncClient: AWSAppSyncClient?
+    
+    // ユーザ情報を取得する
+    var userid: String!
+    var email: String!
+    var planterID: String!
+    
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         

@@ -25,6 +25,8 @@ class Backend {
 //            try Amplify.add(plugin: AWSS3StoragePlugin())
             try Amplify.configure()
             print("Initialized Amplify")
+            
+            
         } catch {
             print("Could not initialize Amplify: \(error)")
         }
