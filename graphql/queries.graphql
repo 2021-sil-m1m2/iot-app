@@ -6,6 +6,7 @@ query GetRecord($id: ID!, $planterID: ID!) {
     planterID
     planter {
       id
+      name
       userID
       user {
         id
@@ -45,6 +46,7 @@ query ListRecords(
       planterID
       planter {
         id
+        name
         userID
         createdAt
         updatedAt
@@ -61,6 +63,7 @@ query ListRecords(
 query GetPlanter($id: ID!, $userID: ID!) {
   getPlanter(id: $id, userID: $userID) {
     id
+    name
     userID
     user {
       id
@@ -90,6 +93,7 @@ query ListPlanters(
   ) {
     items {
       id
+      name
       userID
       user {
         id
@@ -187,6 +191,7 @@ query SearchRecords(
       planterID
       planter {
         id
+        name
         userID
         createdAt
         updatedAt
@@ -217,6 +222,7 @@ query SearchPlanters(
   ) {
     items {
       id
+      name
       userID
       user {
         id

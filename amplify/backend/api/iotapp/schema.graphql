@@ -17,6 +17,7 @@ type Planter
   @key(name: "byUser", fields: ["userID"])
   @searchable {
     id: ID!
+    name: String!
     userID: ID!
     user: User @connection(fields: ["userID"])
 }

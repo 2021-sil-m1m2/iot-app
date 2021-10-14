@@ -10,6 +10,7 @@ import AWSDynamoDB
 class Planters: AWSDynamoDBObjectModel, AWSDynamoDBModeling {
     
     @objc var id: String = ""
+    @objc var name: String = ""
     @objc var userID: String = ""
 //    @objc var user: User?
 

@@ -41,9 +41,9 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SqA-g7-vXs">
-                                <rect key="frame" x="201" y="107" width="139" height="30"/>
+                                <rect key="frame" x="209" y="107" width="125" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="planterIDを変更する"/>
+                                <state key="normal" title="planterを変更する"/>
                                 <connections>
                                     <action selector="changePlanterID:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="yPT-eY-uMP"/>
                                 </connections>
@@ -55,6 +55,14 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="S7G-X8-iBS">
+                                <rect key="frame" x="209" y="146" width="156" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="planterを新規登録する"/>
+                                <connections>
+                                    <action selector="registerPlanterID:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="ote-VK-lVf"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>

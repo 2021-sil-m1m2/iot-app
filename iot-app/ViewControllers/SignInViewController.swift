@@ -32,24 +32,15 @@ class SignInViewController: UIViewController, UITextFieldDelegate {
         
         // NavigationBarを隠す
         navigationController?.setNavigationBarHidden(true, animated: false)
-        
+
         // 現在のログイン状態を取得する
         let cognitoUser = Amplify.Auth.getCurrentUser()
         if cognitoUser != nil {
             // すでにログイン済みの場合、画面遷移する
-            print("ログイン済みです、emailを表示し画面遷移します")
-            AWSMobileClient.default().getUserAttributes { (attributes, error) in
-                if(error != nil){
-                    print("ERROR: \(error)")
-                }else{
-                    if let attributesDict = attributes{
-                        print(attributesDict["email"])
-                        self.appDelegate.email = attributesDict["email"]
-                    }
-                }
-            }
+            print("ログイン済みです　@SignInViewのviewDidLoad")
             performSegue(withIdentifier: "toTab", sender: nil)
         }
+        
         
         // 画面のどこかがタップされた時にdismissKeyboard関数を呼び出す
         let tapGR: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard))
@@ -68,6 +59,7 @@ class SignInViewController: UIViewController, UITextFieldDelegate {
     }
     
     @IBAction func signIn(_ sender: Any) {
+        // emailをappDelegate.emailに格納する
         appDelegate.email = emailTextField.text
         signIn(email: emailTextField.text ?? "", password: passwordTextField.text ?? "")
     }
