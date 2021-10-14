@@ -6,10 +6,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Tab Bar Controller-->
+        <!--Tab View Controller-->
         <scene sceneID="AnZ-cS-xjH">
             <objects>
-                <tabBarController storyboardIdentifier="Tab" automaticallyAdjustsScrollViewInsets="NO" modalTransitionStyle="flipHorizontal" modalPresentationStyle="fullScreen" useStoryboardIdentifierAsRestorationIdentifier="YES" id="zBr-Oo-mZr" sceneMemberID="viewController">
+                <tabBarController storyboardIdentifier="Tab" automaticallyAdjustsScrollViewInsets="NO" modalTransitionStyle="flipHorizontal" modalPresentationStyle="fullScreen" useStoryboardIdentifierAsRestorationIdentifier="YES" id="zBr-Oo-mZr" customClass="TabViewController" customModule="iot_app" customModuleProvider="target" sceneMemberID="viewController">
                     <toolbarItems/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="2NO-KR-MGv">
                         <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
@@ -25,7 +25,18 @@
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7Uz-YC-Pnt" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="137.68115942028987" y="41.517857142857139"/>
+            <point key="canvasLocation" x="7" y="76"/>
+        </scene>
+        <!--Profile-->
+        <scene sceneID="HaJ-cU-mFl">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Profile" id="pKF-JV-z37" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Item" id="Hu7-ue-GW0"/>
+                    <navigationItem key="navigationItem" id="hLc-Sf-1fA"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="GNL-ye-qJm" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="711" y="-51"/>
         </scene>
         <!--Profile-->
         <scene sceneID="VcM-cs-fH9">

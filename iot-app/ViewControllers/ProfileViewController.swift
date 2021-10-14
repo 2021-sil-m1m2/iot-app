@@ -9,6 +9,7 @@ import Amplify
 import AmplifyPlugins
 import UIKit
 import AWSDynamoDB
+import AWSMobileClient
 
 class ProfileViewController: UIViewController {
 
@@ -49,36 +50,63 @@ class ProfileViewController: UIViewController {
 //        }
 //    }
     
-//    func fetchDynamoDBData(){
-//        let dynamoDBObjectMapper = AWSDynamoDBObjectMapper.default()
-//        let scanExpression = AWSDynamoDBScanExpression()
-//
-//        dynamoDBObjectMapper.scan(Planters.self, expression: scanExpression).continueWith(){ (task: AWSTask<AWSDynamoDBPaginatedOutput>!) -> Void in
-//            guard let items = task.result?.items as? [Planters] else {return}
-//            if let error = task.error as NSError?{
-//                print("The request failed. Error: \(error)")
-//                return
-//            }
-//
-//
-////            print(items[0].username)
-////            print(items.count)
-//
-//            for index in 0 ..< items.count{
-//                if items[index].id == self.appDelegate.planterID{
+    func fetchDynamoDBData(){
+        let dynamoDBObjectMapper = AWSDynamoDBObjectMapper.default()
+        let scanExpression = AWSDynamoDBScanExpression()
+
+        dynamoDBObjectMapper.scan(Planters.self, expression: scanExpression).continueWith(){ (task: AWSTask<AWSDynamoDBPaginatedOutput>!) -> Void in
+            guard let items = task.result?.items as? [Planters] else {return}
+            if let error = task.error as NSError?{
+                print("The request failed. Error: \(error)")
+                return
+            }
+
+
+//            print(items[0].username)
+//            print(items.count)
+
+            for index in 0 ..< items.count{
+                if items[index].userID == self.appDelegate.planterID {
 //                    self.appDelegate.userid = items[index].id
-//                    print(self.appDelegate.userid)
-//                }
-//            }
-//        }
-//
-//    }
+                    print("fetchDynamoのuser情報を表示する")
+                    print(items[index].name)
+                    print(items[index].userID)
+                    print(items[index].id)
+                }
+            }
+        }
+
+    }
+    
+    @IBAction func registerPlanterID(_ sender: Any) {
+//        print(appDelegate.email)
+//        print(appDelegate.userid)
+        
+        // 現在のログイン状態を取得する
+        let cognitoUser = Amplify.Auth.getCurrentUser()
+        if cognitoUser != nil {
+            AWSMobileClient.default().getUserAttributes { (attributes, error) in
+                if(error != nil){
+                    print("ERROR: \(error)")
+                }else{
+                    if let attributesDict = attributes{
+                        print(attributesDict["email"])
+                        print("userIDを表示します")
+                        print(cognitoUser?.userId)
+                        self.appDelegate.email = attributesDict["email"]
+                        self.appDelegate.userid = cognitoUser?.userId
+                        
+                    }
+                }
+            }
+        }
+    }
     
     @IBAction func changePlanterID(_ sender: Any) {
         print("emailを表示する")
         print(appDelegate.email)
-//        print("fetchDynamoを実行し、useridを表示する")
-//        fetchDynamoDBData()
+        print("fetchDynamoを実行し、useridを表示する")
+        fetchDynamoDBData()
     }
     
     @IBAction func signOut(_ sender: Any) {

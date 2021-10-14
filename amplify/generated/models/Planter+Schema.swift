@@ -6,6 +6,7 @@ extension Planter {
   // MARK: - CodingKeys 
    public enum CodingKeys: String, ModelKey {
     case id
+    case name
     case userID
     case user
   }
@@ -20,6 +21,7 @@ extension Planter {
     
     model.fields(
       .id(),
+      .field(planter.name, is: .required, ofType: .string),
       .field(planter.userID, is: .required, ofType: .string),
       .hasOne(planter.user, is: .optional, ofType: User.self, associatedWith: User.keys.id, targetName: "userID")
     )

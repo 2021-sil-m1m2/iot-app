@@ -25,11 +25,19 @@ class PlanterViewController: UIViewController {
     
     
     override func viewDidLoad() {
-
         super.viewDidLoad()
         
+        print("PlanterViewController.swiftのviewDidLoad内です")
     }
 
+    override func viewWillAppear(_ animated: Bool) {
+        print("PlanterViewController.swiftのviewWillAppear内です")
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        print("PlanterViewController.swiftのviewDidAppear内です")
+    }
+    
     func listRecords() {
         /*
         let record = Record.keys
