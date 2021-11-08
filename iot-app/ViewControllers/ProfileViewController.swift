@@ -18,16 +18,38 @@ class ProfileViewController: UIViewController {
     
     let appDelegate = UIApplication.shared.delegate as! AppDelegate
     
+    var timer : Timer!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
         
+        // 5秒おきに関数setUserを実行する
+        timer = Timer.scheduledTimer(
+            timeInterval: 3,
+            target: self,
+            selector: #selector(self.setUser(_:)),
+            userInfo: nil,
+            repeats: true )
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        planterIDLabel.text = appDelegate.planterID
-        emailLabel.text = appDelegate.email
+
+    }
+
+    @objc func setUser(_ sender: Timer) {
+        // appDelegateの変数にplanterIDとemailが格納されているか
+        print(appDelegate.planterID)
+        print(appDelegate.email)
+        if appDelegate.email != "取得中です" {
+            planterIDLabel.text = appDelegate.planterID
+            emailLabel.text = appDelegate.email
+            timer.invalidate()
+            print("ユーザ情報の取得が完了したのでタイマーを終了します")
+        } else{
+            print("3秒おきに表示されます")
+        }
     }
     
 //    func updateTodo() {

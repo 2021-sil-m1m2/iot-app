@@ -18,8 +18,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     // ユーザ情報を取得する
     var userid: String!
-    var email: String!
-    var planterID: String!
+    var email: String! = "取得中です"
+    var planterID: String! = "取得中です"
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
