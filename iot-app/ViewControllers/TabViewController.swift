@@ -19,6 +19,9 @@ class TabViewController: UITabBarController {
         // Do any additional setup after loading the view.
         print("TabBarController.swiftのviewDidLoad内です")
         
+        // 遷移後、マイページタブを開く
+        selectedIndex = 2
+        
         // ユーザ情報を取得し、appDelegate変数に格納する
         let cognitoUser = Amplify.Auth.getCurrentUser()
         if cognitoUser != nil {
