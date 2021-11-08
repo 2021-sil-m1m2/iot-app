@@ -10,6 +10,7 @@ import AmplifyPlugins
 import UIKit
 import AWSDynamoDB
 import AWSMobileClient
+import AWSAppSync
 
 class ProfileViewController: UIViewController {
 
@@ -17,6 +18,7 @@ class ProfileViewController: UIViewController {
     @IBOutlet weak var emailLabel: UILabel!
     
     let appDelegate = UIApplication.shared.delegate as! AppDelegate
+    var appSyncClient: AWSAppSyncClient?
     
     var timer : Timer!
     
@@ -32,10 +34,8 @@ class ProfileViewController: UIViewController {
             selector: #selector(self.setUser(_:)),
             userInfo: nil,
             repeats: true )
-    }
-    
-    override func viewWillAppear(_ animated: Bool) {
-
+        
+        appSyncClient = appDelegate.appSyncClient
     }
 
     @objc func setUser(_ sender: Timer) {
@@ -45,90 +45,40 @@ class ProfileViewController: UIViewController {
         if appDelegate.email != "取得中です" {
             planterIDLabel.text = appDelegate.planterID
             emailLabel.text = appDelegate.email
+            if appDelegate.planterID == "取得中です" {
+                planterIDLabel.text = "未設定"
+            }
             timer.invalidate()
             print("ユーザ情報の取得が完了したのでタイマーを終了します")
         } else{
-            print("3秒おきに表示されます")
+            print("3秒おきにユーザ情報を取得します")
         }
     }
     
-//    func updateTodo() {
-//        // Retrieve your Todo using Amplify.API.query
-//        var todo = Todo(name: "my first todo", description: "todo description")
-//        var newProfile = Planter(id: "new planterID", userID: <#T##String#>, user: <#T##User?#>)
-//        todo.description = "updated description"
-//        Amplify.API.mutate(request: .update(todo)) { event in
-//            switch event {
-//            case .success(let result):
-//                switch result {
-//                case .success(let todo):
-//                    print("Successfully created todo: \(todo)")
-//                case .failure(let error):
-//                    print("Got failed result with \(error.errorDescription)")
-//                }
-//            case .failure(let error):
-//                print("Got failed event with error \(error)")
-//            }
-//        }
-//    }
-    
-    func fetchDynamoDBData(){
-        let dynamoDBObjectMapper = AWSDynamoDBObjectMapper.default()
-        let scanExpression = AWSDynamoDBScanExpression()
-
-        dynamoDBObjectMapper.scan(Planters.self, expression: scanExpression).continueWith(){ (task: AWSTask<AWSDynamoDBPaginatedOutput>!) -> Void in
-            guard let items = task.result?.items as? [Planters] else {return}
-            if let error = task.error as NSError?{
-                print("The request failed. Error: \(error)")
+    // planterId（name）を新規登録する
+    @IBAction func registerPlanterID(_ sender: Any) {
+        print("registerPlanterIdを実行します")
+        // CreateToDoInput関数：入力パラメータを作成
+        let mutationInput = CreatePlanterInput(id: "test_id", name: "test_name", userId: "test_userId")
+        
+        // CreateTodoMutation関数：
+        // AppSyncのcreateTodoに設定されているresolverを実行し，DynamoDBにデータを追加する
+        appSyncClient?.perform(mutation: CreatePlanterMutation(input: mutationInput), resultHandler:  { (result, error) in
+            if let error = error as? AWSAppSyncClientError {
+                print("Error occurred: \(error.localizedDescription )")
+            }
+            if let resultError = result?.errors {
+                print("Error saving the item on server: \(resultError)")
                 return
             }
-
-
-//            print(items[0].username)
-//            print(items.count)
-
-            for index in 0 ..< items.count{
-                if items[index].userID == self.appDelegate.planterID {
-//                    self.appDelegate.userid = items[index].id
-                    print("fetchDynamoのuser情報を表示する")
-                    print(items[index].name)
-                    print(items[index].userID)
-                    print(items[index].id)
-                }
-            }
-        }
-
+            print("データを追加（runMutation）")
+        })
     }
     
-    @IBAction func registerPlanterID(_ sender: Any) {
-//        print(appDelegate.email)
-//        print(appDelegate.userid)
-        
-        // 現在のログイン状態を取得する
-        let cognitoUser = Amplify.Auth.getCurrentUser()
-        if cognitoUser != nil {
-            AWSMobileClient.default().getUserAttributes { (attributes, error) in
-                if(error != nil){
-                    print("ERROR: \(error)")
-                }else{
-                    if let attributesDict = attributes{
-                        print(attributesDict["email"])
-                        print("userIDを表示します")
-                        print(cognitoUser?.userId)
-                        self.appDelegate.email = attributesDict["email"]
-                        self.appDelegate.userid = cognitoUser?.userId
-                        
-                    }
-                }
-            }
-        }
-    }
-    
+    // 次ここから！！！
+    // planterId（name）を変更する
     @IBAction func changePlanterID(_ sender: Any) {
-        print("emailを表示する")
-        print(appDelegate.email)
-        print("fetchDynamoを実行し、useridを表示する")
-        fetchDynamoDBData()
+        
     }
     
     @IBAction func signOut(_ sender: Any) {
