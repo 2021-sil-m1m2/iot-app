@@ -44,7 +44,7 @@ class ConfirmViewController: UIViewController, UITextFieldDelegate {
                 print("Confirm signUp succeeded")
                 // 同期処理
                 DispatchQueue.main.sync {
-                    self.performSegue(withIdentifier: "toTab", sender: nil)
+                    self.performSegue(withIdentifier: "toSignIn", sender: nil)
                 }
             case .failure(let error):
                 print("An error occurred while confirming sign up \(error)")

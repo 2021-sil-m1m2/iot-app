@@ -33,14 +33,6 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SqA-g7-vXs">
-                                <rect key="frame" x="209" y="107" width="125" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="planterを変更する"/>
-                                <connections>
-                                    <action selector="changePlanterID:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="yPT-eY-uMP"/>
-                                </connections>
-                            </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="取得中です" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4oV-qU-i4F">
                                 <rect key="frame" x="53" y="151" width="241" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -49,7 +41,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="S7G-X8-iBS">
-                                <rect key="frame" x="209" y="146" width="156" height="30"/>
+                                <rect key="frame" x="110" y="197" width="156" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="planterを新規登録する"/>
                                 <connections>
@@ -62,6 +54,14 @@
                                 <state key="normal" title="Notificationに遷移する"/>
                                 <connections>
                                     <segue destination="KdR-EU-m9a" kind="show" id="2D0-hJ-bDC"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SqA-g7-vXs">
+                                <rect key="frame" x="110" y="245" width="125" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="planterを変更する"/>
+                                <connections>
+                                    <action selector="changePlanterID:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="yPT-eY-uMP"/>
                                 </connections>
                             </button>
                         </subviews>
