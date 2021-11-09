@@ -47,6 +47,7 @@ class ProfileViewController: UIViewController {
             emailLabel.text = appDelegate.email
             if appDelegate.planterID == "取得中です" {
                 planterIDLabel.text = "未設定"
+                appDelegate.planterID = "未設定"
             }
             timer.invalidate()
             print("ユーザ情報の取得が完了したのでタイマーを終了します")
@@ -58,8 +59,11 @@ class ProfileViewController: UIViewController {
     // planterId（name）を新規登録する
     @IBAction func registerPlanterID(_ sender: Any) {
         print("registerPlanterIdを実行します")
+        print(appDelegate.userid)
+        print(appDelegate.planterID)
+        print(appDelegate.email)
         // CreateToDoInput関数：入力パラメータを作成
-        let mutationInput = CreatePlanterInput(id: "test_id", name: "test_name", userId: "test_userId")
+        let mutationInput = CreatePlanterInput(name: appDelegate.planterID, userId: appDelegate.userid)
         
         // CreateTodoMutation関数：
         // AppSyncのcreateTodoに設定されているresolverを実行し，DynamoDBにデータを追加する
