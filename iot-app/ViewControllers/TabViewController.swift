@@ -12,6 +12,7 @@ import UIKit
 class TabViewController: UITabBarController {
 
     let appDelegate = UIApplication.shared.delegate as! AppDelegate
+    var planters: [Planter] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -44,6 +45,8 @@ class TabViewController: UITabBarController {
                                 print(cognitoUser?.userId)
                                 self.appDelegate.email = attributesDict["email"]
                                 self.appDelegate.userid = cognitoUser?.userId
+                                self.listPlanters()
+//                                self.appDelegate.planterName = self.planters[0].name
                                 print("signinでのユーザ情報の表示が完了しました")
                             }
                     }
@@ -59,6 +62,40 @@ class TabViewController: UITabBarController {
             }
             
         }
+    }
+    
+    func listPlanters() {
+        // DynamoDB内のデータを検索する
+        print("listPlantersに入った")
+        print(appDelegate.userid)
+        let planter = Planter.keys
+        let predicate = planter.userID == appDelegate.userid
+        
+        Amplify.API.query(request: .paginatedList(Planter.self, where: predicate, limit: 1000)) { event in
+            switch event {
+            case .success(let result):
+                switch result {
+                case .success(let planters):
+                    print("Successfully retrieved list of planters: \(planters)")
+                    self.planters.append(contentsOf: planters)
+                    for planter in planters{
+                        print("\(planter)\n")
+                    }
+                    if !planters.isEmpty {
+                        self.appDelegate.planterName = self.planters[0].name
+                    }
+                case .failure(let error):
+                    print("Got failed result with \(error.errorDescription)")
+                }
+            case .failure(let error):
+                print("Got failed event with error \(error)")
+            }
+        }
+
+        
+//        for planter in planters{
+//            print("\(planter)\n")
+//        }
     }
     
     override func viewWillAppear(_ animated: Bool) {

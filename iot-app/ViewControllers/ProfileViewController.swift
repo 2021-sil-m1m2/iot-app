@@ -14,7 +14,8 @@ import AWSAppSync
 
 class ProfileViewController: UIViewController {
 
-    @IBOutlet weak var planterIDLabel: UILabel!
+    @IBOutlet weak var userIdLabel: UILabel!
+    @IBOutlet weak var planterNameLabel: UILabel!
     @IBOutlet weak var emailLabel: UILabel!
     @IBOutlet weak var changePlanterIDButton: UIButton!
     
@@ -22,8 +23,6 @@ class ProfileViewController: UIViewController {
     var appSyncClient: AWSAppSyncClient?
     
     var timer : Timer!
-    
-    var planters: [Planter] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -49,18 +48,43 @@ class ProfileViewController: UIViewController {
         print(appDelegate.planterName)
         print(appDelegate.email)
         if appDelegate.email != "取得中です" {
-            planterIDLabel.text = appDelegate.planterName
+            planterNameLabel.text = appDelegate.planterName
             emailLabel.text = appDelegate.email
-            if appDelegate.planterName == "取得中です" {
-                planterIDLabel.text = "未設定"
-                appDelegate.planterName = "未設定"
-            }
+            userIdLabel.text = appDelegate.userid
+//            if appDelegate.planterName == "取得中です" {
+//                planterNameLabel.text = "未設定"
+//                appDelegate.planterName = "未設定"
+//            }
             timer.invalidate()
             print("ユーザ情報の取得が完了したのでタイマーを終了")
         } else{
             print("3秒おきにユーザ情報を取得")
         }
     }
+    
+//    func listPlanters() {
+//        // DynamoDB内のデータを検索する
+//        let planter = Planter.keys
+//        let predicate = planter.userID == appDelegate.userid
+//            Amplify.API.query(request: .paginatedList(Planter.self, where: predicate, limit: 1000)) { event in
+//                switch event {
+//                case .success(let result):
+//                    switch result {
+//                    case .success(let planters):
+//                        print("Successfully retrieved list of planters: \(planters)")
+//                        self.planters.append(contentsOf: planters)
+//                    case .failure(let error):
+//                        print("Got failed result with \(error.errorDescription)")
+//                    }
+//                case .failure(let error):
+//                    print("Got failed event with error \(error)")
+//                }
+//            }
+//
+//        for planter in planters{
+//            print("\(planter)\n")
+//        }
+//    }
     
     // planterId（name）を新規登録する
     @IBAction func registerPlanterID(_ sender: Any) {
@@ -89,7 +113,6 @@ class ProfileViewController: UIViewController {
                     self.appDelegate.planterName = text
                     print("入力された文字列を表示します")
                     print(self.appDelegate.planterName)
-                    
                     print("registerPlanterIdを実行します")
                     print(self.appDelegate.userid)
                     print(self.appDelegate.planterName)
@@ -109,6 +132,9 @@ class ProfileViewController: UIViewController {
                         }
                         print("データを追加（runMutation）")
                     })
+                    
+                    // planterNameLabelにplanterNameをセットする
+                    self.planterNameLabel.text = self.appDelegate.planterName
                 }
                     
             }
