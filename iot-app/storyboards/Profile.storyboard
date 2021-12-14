@@ -27,7 +27,7 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="取得中です" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pHW-4s-eoS">
-                                <rect key="frame" x="146" y="112" width="121" height="21"/>
+                                <rect key="frame" x="146" y="112" width="241" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
@@ -104,6 +104,7 @@
                         <outlet property="changePlanterIDButton" destination="SqA-g7-vXs" id="Bqn-9h-jRS"/>
                         <outlet property="emailLabel" destination="4oV-qU-i4F" id="RJ7-I4-wiI"/>
                         <outlet property="planterNameLabel" destination="pHW-4s-eoS" id="FqE-JD-ekc"/>
+                        <outlet property="registerPlanterIDButton" destination="S7G-X8-iBS" id="dHM-O4-Ape"/>
                         <outlet property="userIdLabel" destination="KoS-Bw-7j7" id="zwb-bU-IAw"/>
                     </connections>
                 </viewController>

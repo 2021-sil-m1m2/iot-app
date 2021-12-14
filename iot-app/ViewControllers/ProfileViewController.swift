@@ -17,6 +17,7 @@ class ProfileViewController: UIViewController {
     @IBOutlet weak var userIdLabel: UILabel!
     @IBOutlet weak var planterNameLabel: UILabel!
     @IBOutlet weak var emailLabel: UILabel!
+    @IBOutlet weak var registerPlanterIDButton: UIButton!
     @IBOutlet weak var changePlanterIDButton: UIButton!
     
     let appDelegate = UIApplication.shared.delegate as! AppDelegate
@@ -41,6 +42,8 @@ class ProfileViewController: UIViewController {
         
         // changePlanterIDButtonを非表示にする（実装予定）
         changePlanterIDButton.isHidden = true
+        // registerPlanterIDButtonを非表示にする（planterNameが未登録の場合、表示する）
+        registerPlanterIDButton.isHidden = true
     }
 
     @objc func setUser(_ sender: Timer) {
@@ -51,10 +54,10 @@ class ProfileViewController: UIViewController {
             planterNameLabel.text = appDelegate.planterName
             emailLabel.text = appDelegate.email
             userIdLabel.text = appDelegate.userid
-//            if appDelegate.planterName == "取得中です" {
-//                planterNameLabel.text = "未設定"
-//                appDelegate.planterName = "未設定"
-//            }
+            if appDelegate.planterName == "取得中です" {
+                registerPlanterIDButton.isHidden = false
+                planterNameLabel.text = "未登録です"
+            }
             timer.invalidate()
             print("ユーザ情報の取得が完了したのでタイマーを終了")
         } else{
@@ -135,6 +138,7 @@ class ProfileViewController: UIViewController {
                     
                     // planterNameLabelにplanterNameをセットする
                     self.planterNameLabel.text = self.appDelegate.planterName
+                    self.registerPlanterIDButton.isHidden = true
                 }
                     
             }
