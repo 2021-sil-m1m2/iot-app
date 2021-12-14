@@ -73,6 +73,7 @@
                     </tabBarItem>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
+                        <outlet property="changePlanterIDButton" destination="SqA-g7-vXs" id="Bqn-9h-jRS"/>
                         <outlet property="emailLabel" destination="4oV-qU-i4F" id="RJ7-I4-wiI"/>
                         <outlet property="planterIDLabel" destination="pHW-4s-eoS" id="DIv-Sd-S3W"/>
                     </connections>
