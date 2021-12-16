@@ -41,7 +41,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="S7G-X8-iBS">
-                                <rect key="frame" x="110" y="197" width="156" height="30"/>
+                                <rect key="frame" x="106" y="324" width="156" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="planterを新規登録する"/>
                                 <connections>
@@ -57,7 +57,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SqA-g7-vXs">
-                                <rect key="frame" x="110" y="245" width="125" height="30"/>
+                                <rect key="frame" x="106" y="372" width="125" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="planterを変更する"/>
                                 <connections>
@@ -92,6 +92,20 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="取得中です" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="41G-Yx-Cto">
+                                <rect key="frame" x="146" y="187" width="241" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="planterId" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iPD-EI-3dt">
+                                <rect key="frame" x="13" y="187" width="106" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -103,6 +117,7 @@
                     <connections>
                         <outlet property="changePlanterIDButton" destination="SqA-g7-vXs" id="Bqn-9h-jRS"/>
                         <outlet property="emailLabel" destination="4oV-qU-i4F" id="RJ7-I4-wiI"/>
+                        <outlet property="planterIdLabel" destination="41G-Yx-Cto" id="auO-Hq-xUF"/>
                         <outlet property="planterNameLabel" destination="pHW-4s-eoS" id="FqE-JD-ekc"/>
                         <outlet property="registerPlanterIDButton" destination="S7G-X8-iBS" id="dHM-O4-Ape"/>
                         <outlet property="userIdLabel" destination="KoS-Bw-7j7" id="zwb-bU-IAw"/>

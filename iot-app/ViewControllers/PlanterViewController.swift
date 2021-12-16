@@ -16,116 +16,68 @@ import AWSPluginsCore
 class PlanterViewController: UIViewController {
 
     @IBOutlet weak var imageView: UIImageView!
-    @IBOutlet weak var clientidLabel: UILabel!
+    @IBOutlet weak var planterNameLabel: UILabel!
+    @IBOutlet weak var planteridLabel: UILabel!
     @IBOutlet weak var temperatureLabel: UILabel!
     @IBOutlet weak var humidityLabel: UILabel!
-    @IBOutlet weak var weightLabel: UILabel!
+    @IBOutlet weak var moistureLabel: UILabel!
     
     var records: [Record] = []
+    let appDelegate = UIApplication.shared.delegate as! AppDelegate
     
+    var temperature = 0.0
+    var humidity = 0.0
+    var moisture = 0.0
     
     override func viewDidLoad() {
         super.viewDidLoad()
+      
+        planteridLabel.text = appDelegate.planterid
+        planterNameLabel.text = appDelegate.planterName
         
-        print("PlanterViewController.swiftのviewDidLoad内です")
-    }
-
-    override func viewWillAppear(_ animated: Bool) {
-        print("PlanterViewController.swiftのviewWillAppear内です")
+        // プランターの最新情報を取得し、表示する
+        listRecordsofPlanter()
     }
     
-    override func viewDidAppear(_ animated: Bool) {
-        print("PlanterViewController.swiftのviewDidAppear内です")
-    }
-    
-    func listRecords() {
-        /*
+    func listRecordsofPlanter() {
+        // planteridを用いて最新情報を取得する
+        print(appDelegate.planterid)
         let record = Record.keys
-        //let predicate = record.planterID == "test_planter2" && record.temperature == 24.1
-        let predicate = record.planterID == "test_planter"
-   
+        let predicate = record.planterID == appDelegate.planterid
+
         Amplify.API.query(request: .paginatedList(Record.self, where: predicate, limit: 1000)) { event in
-            
             switch event {
             case .success(let result):
                 switch result {
-                case .success(let records):
-                    print("Successfully retrieved list of todos: \(records)")
-                    self.records.append(contentsOf: records)
-                case .failure(let error):
-                    print("Got failed result with \(error.errorDescription)")
+                    case .success(let records):
+                        print("Successfully retrieved list of planters: \(records)")
+                        self.records.append(contentsOf: records)
+                        
+                        for record in records{
+                            print("\(record)\n")
+                        }
+                    
+                        DispatchQueue.main.async {
+                            // メインスレッドで実行 UIの処理など
+                            if !records.isEmpty {
+                                self.temperatureLabel.text = self.records[0].temperature?.description
+                                self.humidityLabel.text = self.records[0].humidity?.description
+                                self.moistureLabel.text = self.records[0].moisture?.description
+                            } else {
+                                self.temperatureLabel.text = "データがありません"
+                                self.humidityLabel.text = "データがありません"
+                                self.moistureLabel.text = "データがありません"
+                            }
+
+                        }
+                    case .failure(let error):
+                        print("Got failed result with \(error.errorDescription)")
                 }
-            case .failure(let error):
-                print("Got failed event with error \(error)")
+                case .failure(let error):
+                    print("Got failed event with error \(error)")
             }
 
-            //print(self.records.sort())
-            //print(self.records[0].date?.sorted())
-            //self.records.plan.sort()
-            
-            //let filter = SearchableRecordFilterInput.init(planterId: )
-            let filter = SearchableRecordFilterInput.init(date: "tre")
-         
-            SearchRecordsQuery(filter: filter, sort: <#T##SearchableRecordSortInput?#>, limit: <#T##Int?#>, nextToken: <#T##String?#>, from: <#T##Int?#>)
-
         }
-        */
-    
-//        let condition: SearchableIDFilterInput = SearchableIDFilterInput.init(eq: "test_planter")
-//        let filter: SearchableRecordFilterInput = SearchableRecordFilterInput.init(planterId: condition)
-//        print(SearchRecordsQuery(filter: filter))
-        
-        // これ惜しい気がする
-//        let searchIDFilter = SearchableIDFilterInput.init(eq: "test_planter")
-//        let searchRecordFilter = SearchableRecordFilterInput.init(planterId: searchIDFilter)
-//        print(SearchRecordsQuery(filter: searchRecordFilter))
-        
-//        let searchFieldSort = SearchableRecordSortableFields.init(rawValue: "createdAt")
-//        let searchDirectionSort = SearchableSortDirection.init(rawValue: "asc")
-//        let searchSort = SearchableRecordSortInput.init(field: searchFieldSort, direction: searchDirectionSort)
-//        print("ソートした結果")
-//        print(SearchRecordsQuery(sort: searchSort))
-        
-//        let filter: [String: Any] = [
-//            "name": [
-//                "matchPhrase": "first"
-//            ]
-//        ]
-        
-//        Amplify.API.query(request: .search(Record.self,
-//                                           filter: filter,
-//                                           limit: 1000,
-//                                           sort: QuerySortBy.ascending(Record.keys.id)))
-        // このAmplify.API..の形を使う？
-//        let record = Record.keys
-//        let planterID = "test_planter"
-        
-        //Amplify.API.query(request: .paginatedList(Record.self)){ event in
-        //Amplify.API.query(request: .query(modelName: "SearchRecordsQuery", byId: "planterID")){ event in
-        //Amplify.API.query(request: .get(Record.self, byId: planterID)){ result in
-//        Amplify.API.query(request: .search){
-//            switch result {
-//            case .failure(let error):
-//                print("Got failed event with error \(error)")
-//                return
-//            case .success(let user):
-//                print(user)
-//                return
-//            }
-//
-//        }
-//
-//        let filter: [String: Any] = [
-//            "planterID": [
-//                "matchPhrase": "test_planter"
-//            ]
-//        ]
-//        Amplify.API.query(request: .search(Record.self,
-//                                           filter: filter,
-//                                           limit: 1000,
-//                                           sort: QuerySortBy.ascending(Record.keys.id)))
-        
-
     }
     
     @IBAction func queryRecord(_ sender: Any) {
@@ -147,7 +99,7 @@ class PlanterViewController: UIViewController {
 //                    print("Got failed event with error \(error)")
 //                }
 //            }
-        listRecords()
+//        listRecords()
     }
     
     @IBAction func showRecords(_ sender: Any) {

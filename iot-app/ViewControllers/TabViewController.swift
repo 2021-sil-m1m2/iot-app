@@ -83,6 +83,7 @@ class TabViewController: UITabBarController {
                     }
                     if !planters.isEmpty {
                         self.appDelegate.planterName = self.planters[0].name
+                        self.appDelegate.planterid = self.planters[0].id
                     }
                 case .failure(let error):
                     print("Got failed result with \(error.errorDescription)")
@@ -91,15 +92,6 @@ class TabViewController: UITabBarController {
                 print("Got failed event with error \(error)")
             }
         }
-
-        
-//        for planter in planters{
-//            print("\(planter)\n")
-//        }
-    }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        print("TabBarController.swiftのviewWillAppear内です")
     }
     
     // 待機条件をクリアするまで処理を止める関数
