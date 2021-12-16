@@ -22,7 +22,7 @@ class PlanterViewController: UIViewController {
     @IBOutlet weak var humidityLabel: UILabel!
     @IBOutlet weak var moistureLabel: UILabel!
     
-    var records: [Record] = []
+    var currents: [Current] = []
     let appDelegate = UIApplication.shared.delegate as! AppDelegate
     
     var temperature = 0.0
@@ -42,27 +42,28 @@ class PlanterViewController: UIViewController {
     func listRecordsofPlanter() {
         // planteridを用いて最新情報を取得する
         print(appDelegate.planterid)
-        let record = Record.keys
-        let predicate = record.planterID == appDelegate.planterid
+        let current = Current.keys
+        let predicate = current.planterID == appDelegate.planterid
 
-        Amplify.API.query(request: .paginatedList(Record.self, where: predicate, limit: 1000)) { event in
+        Amplify.API.query(request: .paginatedList(Current.self, where: predicate, limit: 1000)) { event in
             switch event {
             case .success(let result):
                 switch result {
-                    case .success(let records):
-                        print("Successfully retrieved list of planters: \(records)")
-                        self.records.append(contentsOf: records)
+                    case .success(let currents):
+                        print("Successfully retrieved list of planters: \(currents)")
+                        self.currents.append(contentsOf: currents)
                         
-                        for record in records{
-                            print("\(record)\n")
+                        for current in currents{
+                            print("\(current)\n")
                         }
                     
                         DispatchQueue.main.async {
                             // メインスレッドで実行 UIの処理など
-                            if !records.isEmpty {
-                                self.temperatureLabel.text = self.records[0].temperature?.description
-                                self.humidityLabel.text = self.records[0].humidity?.description
-                                self.moistureLabel.text = self.records[0].moisture?.description
+                            if !currents.isEmpty {
+                                self.temperatureLabel.text = self.currents[0].temperature?.description
+                                self.humidityLabel.text = self.currents[0].humidity?.description
+                                // Currentのweightをmoistureにするのを忘れていた（schemaを修正する機会があれば。。）
+                                self.moistureLabel.text = self.currents[0].weight?.description
                             } else {
                                 self.temperatureLabel.text = "データがありません"
                                 self.humidityLabel.text = "データがありません"
@@ -103,19 +104,19 @@ class PlanterViewController: UIViewController {
     }
     
     @IBAction func showRecords(_ sender: Any) {
-        print("配列recordsを表示します")
-        for record in records{
-            print("\(record)\n")
-        }
-        
-        self.records.sort {
-            $0.date < $1.date
-        }
-        
-        print("ソート後の配列recordsを表示します")
-        for record in records{
-            print("\(record)\n")
-        }
+//        print("配列recordsを表示します")
+//        for record in records{
+//            print("\(record)\n")
+//        }
+//        
+//        self.records.sort {
+//            $0.date < $1.date
+//        }
+//        
+//        print("ソート後の配列recordsを表示します")
+//        for record in records{
+//            print("\(record)\n")
+//        }
         
     }
     
